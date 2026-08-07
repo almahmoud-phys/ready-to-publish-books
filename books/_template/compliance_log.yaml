@@ -1,0 +1,12 @@
+# books/<slug>/compliance_log.yaml — APPEND-ONLY. Written at every generation event (rule: .agent/rules/kdp-compliance.md).
+# publish-checklist generates KDP disclosure answers FROM THIS FILE. Corrections are new entries, never edits.
+book: <slug>
+track: <assisted|generated>
+events: []
+# event schema:
+# - event: generate | edit | export | cover
+#   skill: <skill-name>
+#   model: <model-id>
+#   artifact: <relative path>
+#   sha256: <hash>
+#   timestamp: <iso8601>
