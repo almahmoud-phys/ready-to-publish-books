@@ -127,3 +127,51 @@ Resolution via the 4 separation principles:
 **Our differentiators (exist in none of them)**: compliance_log.yaml, dual-track manifests, Gates A–E with floor principle, multi-platform export, model-tier routing with cost ceilings.
 
 **License rule**: check each repo license before copying any file verbatim; where unclear, reimplement the pattern — patterns are not copyrightable, files are.
+
+**Recon outcome (2026-08-08)**: book-generator and libriscribe are UNLICENSED (all rights reserved → patterns only, clean-room reimplementation shipped in `tooling/`); kindle-book-agency has MIT-class license (verify locally); Book Genesis v4 and PhilipSt/book-gen not found remotely (locate via original post links). See `.agent/workflows/m0-harvest-checklist.md`.
+
+---
+
+## ADR-007 — Book sequencing: asset-light pilot first, flagship second + figure/screenshot policy
+
+**Status**: ✅ LOCKED (2026-08-08)
+
+**Decision**:
+- **M1 pilot**: *The LLM Cost & Routing Playbook* (working title) — multi-provider architecture, model selection, cost engineering, failover. Assisted track, author's own name. Sellability is NOT assumed: stage 0 runs the niche-research v2 algorithm and the data decides GO/PIVOT/KILL.
+- **Flagship (book 2)**: GDSFactory/PIC practitioner guide — the authority-moat title. Scheduled after the pipeline is proven, WITH the asset-ledger feature (below) built at M2.
+- **Rejected candidates**: EU Grant Engineering (sellability doubt — founder's judgment, accepted), Claude Code/harness guides (market flooded: 10+ 2026 comps incl. multiple Mastering/For Beginners titles — evidence-recorded).
+
+**TRIZ read — the physical contradiction**: *the flagship must be authoritative (asset-heavy: real screenshots, runnable PIC code) AND the pipeline must be validated fast (asset-light).* Resolved by **separation in time**: pilot first (validation), flagship second (glory). Resolved by **separation between whole and parts**: the asset ledger separates text production (pipeline) from asset production (human batch session).
+
+**Asset ledger (new pipeline feature, M2)**: outline chapter contracts gain `assets_needed`; chapter-writer emits figure specs into `assets/` (e.g. "fig 4.2: KLayout screenshot of MZI cell, 1600px"); the human batch-produces authentic screenshots in one focused session; formatter-platform verifies asset completeness at Gate D/E.
+
+**Figure policy (extends kdp-compliance.md)**:
+1. Interior figures default to **code-generated** (matplotlib/mermaid/SVG) — deterministic tooling, NOT AI-generated images → no disclosure.
+2. AI-art interior images allowed but logged and disclosed.
+3. **Screenshots must always be authentic human captures** — never AI-fabricated. A fake "screenshot" of software is a credibility and integrity landmine; this is a hard rule.
+
+**Meadows read**: the expert's-curse bias ("I know it so it's trivial") is a missing information flow (LP6) — the buyer's cost of not-knowing is invisible to the expert. New paradigm (LP2): value = time saved × stakes for the buyer, not novelty for the author. Sellability doubts get encoded as tests (stage 0 thresholds), never overridden by enthusiasm — the author's and the agent's alike.
+
+---
+
+## ADR-008 — Niche data automation policy: automate collection, never the verdict, never scrape Amazon
+
+**Status**: ✅ LOCKED (2026-08-08)
+
+**Decision**: Niche data extraction is **partially automated by design**:
+
+| Data point | Automation | Mechanism |
+|---|---|---|
+| Comp discovery, prices, review counts/dates | ✅ Automated | LLM gatherers + web search (public data, low volume) |
+| Negative-review mining | ✅ Automated | Same |
+| Sales estimates from BSR | ✅ Automated | `pipeline/niche_calc.py` — deterministic BSR→sales bands (M2) |
+| Verdict computation | ✅ Automated | Deterministic rules engine applying skill-v2 thresholds → computed GO/PIVOT/KILL. The LLM never gets to be enthusiastic. |
+| Amazon autocomplete harvest | ⚠️ Semi | Human: ~10 min incognito, pastes into `research/keywords.md` |
+| BSR numbers | ⚠️ Semi | Human eyeballs comp pages or Publisher Rocket export → pastes. NO scraper. |
+| Staleness control | ✅ Automated | niche.md carries `last_checked`; pipeline flags research >30 days old before outline-architect runs (LP9: niche data decays weekly) |
+
+**TRIZ read**: automation (P38) vs. reliability/account-safety (P27) — resolved by **separation by condition**: automate what has legitimate data paths, keep humans on what doesn't. **Never build Amazon scraping bots**: Amazon has no public API for BSR/autocomplete, and scraping violates ToS — pointing automation at the gatekeeper of the very account we publish from is the account-risk archetype (Fixes That Fail) this system is designed against.
+
+**Meadows read**: automate the information flow (LP6), keep rule enforcement mechanical (LP5), leave human judgment exactly where it belongs — the HITL checkpoint that confirms the data. The failure mode avoided: a fully-automated pipeline that FEELS rigorous while feeding on scraped garbage → confident GO → bad book → wasted catalog slot.
+
+**Roadmap**: M1 = manual + LLM gatherers (validate the questions before automating answers) · M2 = niche_calc.py + staleness flag · M3 = Publisher Rocket CSV import (~EUR 100, best data, zero scraping risk) · Never = Amazon scraping.
