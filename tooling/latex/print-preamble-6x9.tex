@@ -1,0 +1,26 @@
+% tooling/latex/print-preamble-6x9.tex — clean-room print interior preamble (6x9 in, KDP paperback)
+% Used as: pandoc -H print-preamble-6x9.tex --pdf-engine=xelatex
+\usepackage[paperwidth=6in,paperheight=9in,margin=0.75in,inner=0.875in]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setmonofont{DejaVu Sans Mono}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\leftmark}
+\fancyhead[RO]{\small\rightmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries\Large}{\chaptertitlename\ \thechapter}{12pt}{\LARGE}
+\titlespacing*{\chapter}{0pt}{-24pt}{18pt}
+\setcounter{secnumdepth}{0}          % chapters unnumbered in body; TOC carries structure
+\setcounter{tocdepth}{1}
+\raggedbottom
+\emergencystretch=2em                % reduce overfull boxes (formatter-platform render check)
+\usepackage{setspace}
+\setstretch{1.08}
+% code blocks via pandoc highlighting: keep monospace small and unbroken-friendly
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}

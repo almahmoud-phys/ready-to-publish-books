@@ -1,0 +1,10 @@
+# tooling/pandoc/metadata.yaml — pandoc defaults for EPUB builds (per-book values injected from exports/metadata.json)
+lang: en
+rights: ""                      # filled per book — track-aware (kdp-compliance.md)
+css: tooling/pandoc/epub.css
+toc-depth: 2
+epub-cover-image: ""            # filled by cover-director output
+metadata:
+  creator: ""                   # author or pen name (manifest)
+  publisher: ""                 # imprint
+  subject: ""                   # primary category (metadata-seo)
