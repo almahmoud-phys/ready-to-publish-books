@@ -1,0 +1,23 @@
+# books/<slug>/manifest.yaml — the book's contract. Loaded at EVERY stage (context rule 1). Keep < 60 lines.
+slug: llm-cost-routing-playbook
+title: "The LLM Cost title: "<working title>" Routing Playbook"
+subtitle: "<keyword-loaded subtitle>"
+genre: non-fiction            # non-fiction default per ADR-001
+subgenre: practitioner-guide
+track: assisted               # assisted | generated — locked at Gate 1 (ADR-002). Choose deliberately.
+pen_name: ""                  # generated-track niche tests only
+language: en
+niche_seed: "<one-sentence idea>"
+persona: "<who buys this and what job they hire it for>"
+word_count_target: 30000      # practitioner guide default: 25k–45k
+platforms: [kdp, direct]      # kdp | direct | wide (wide = M5+)
+print: true                   # KDP paperback via LaTeX interior
+cover:
+  method: ai-images           # ADR-005; sub-decision recorded by cover-director
+models:                       # override router.py defaults only with reason
+  # outline-architect: opus-class
+  # chapter-writer: sonnet-class
+gates:
+  floor: 7                    # do not edit per-book — change control lives in .agent/rules/quality-gates.md
+  max_loopbacks: 3
+notes: ""

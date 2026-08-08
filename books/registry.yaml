@@ -2,7 +2,10 @@
 # One entry per book. new-book.sh appends; publish-checklist updates on publish.
 # This is the single glance-view of the whole catalog: stage, verdict, track, cost.
 
-books: []
+books:
+# Empty = `books` parses as null, not []. Readers: use `books or []`.
+# new-book.sh appends block entries below; do NOT restore `books: []` —
+# a flow-style empty list cannot take appended block items (invalid YAML).
 # entry schema:
 # - slug: <kebab-case>
 #   title: "<title>"
@@ -13,3 +16,12 @@ books: []
 #   published: null         # or date
 #   book_score: null        # floor score from stage 4
 #   cost_usd: null
+  - slug: llm-cost-routing-playbook
+    title: "The LLM Cost & Routing Playbook"
+    track: assisted
+    stage: 0
+    verdict: null
+    created: 2026-08-08
+    published: null
+    book_score: null
+    cost_usd: null

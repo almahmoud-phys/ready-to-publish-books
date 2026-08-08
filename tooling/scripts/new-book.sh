@@ -14,7 +14,10 @@ BOOK_DIR="$REPO/books/$SLUG"
 grep -q "slug: $SLUG" "$REPO/books/registry.yaml" 2>/dev/null && { echo "ERROR: $SLUG already in registry"; exit 1; }
 
 cp -r "$REPO/books/_template" "$BOOK_DIR"
-mkdir -p "$BOOK_DIR"/{research,outline,bible,chapters,summaries,audits,scores,edits,exports,assets}
+STAGE_DIRS=(research outline bible chapters summaries audits scores edits exports assets)
+mkdir -p "${STAGE_DIRS[@]/#/$BOOK_DIR/}"
+# git stores no empty dirs — .gitkeep preserves the stage structure across clones (ADR-010 portability).
+for d in "${STAGE_DIRS[@]}"; do touch "$BOOK_DIR/$d/.gitkeep"; done
 
 sed -i.bak \
   -e "s|^slug:.*|slug: $SLUG|" \
