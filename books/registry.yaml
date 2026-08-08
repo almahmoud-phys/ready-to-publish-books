@@ -1,0 +1,15 @@
+# books/registry.yaml — the catalog ledger (LP6: catalog-level information flow).
+# One entry per book. new-book.sh appends; publish-checklist updates on publish.
+# This is the single glance-view of the whole catalog: stage, verdict, track, cost.
+
+books: []
+# entry schema:
+# - slug: <kebab-case>
+#   title: "<title>"
+#   track: assisted | generated
+#   stage: 0                # current pipeline stage (0–7)
+#   verdict: null           # GO | PIVOT | KILL (stage 0)
+#   created: <YYYY-MM-DD>
+#   published: null         # or date
+#   book_score: null        # floor score from stage 4
+#   cost_usd: null

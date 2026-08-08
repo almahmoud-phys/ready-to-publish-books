@@ -1,0 +1,11 @@
+# Research workspace (ADR-010): local data — NEVER committed.
+# Recreate on any machine with: ./tooling/scripts/research-init.sh
+.kdp-research/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
