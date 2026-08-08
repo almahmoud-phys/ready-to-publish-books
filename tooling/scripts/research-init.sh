@@ -32,6 +32,24 @@ fi
 LEDGER="$RD/ledger/niche-ledger.csv"
 [[ -f "$LEDGER" ]] || echo "keyword,marketplace,format,recurring_problem,audience_specificity,seasonality,competitor_concentration,median_review_count,observed_bsr_range,trademark_status,differentiation_hypothesis,last_checked" > "$LEDGER"
 
+# harness view: .claude/skills must resolve to .agents/skills or Claude Code sees no skills
+# (ADR-014). A checkout without symlink support — Windows, or `core.symlinks=false` — leaves a
+# small TEXT FILE containing the link target instead. That failure is silent: the repo looks
+# complete and the harness simply finds nothing. Detect it here rather than trying to prevent
+# every environment in advance; this is the one script every new machine runs.
+LINK="$REPO/.claude/skills"
+if [[ -d "$LINK" && -f "$LINK/scorer/SKILL.md" ]]; then
+  :  # resolves — symlink or real dir, either way the harness can read it
+elif [[ -e "$LINK" && ! -d "$LINK" ]]; then
+  echo "WARNING: .claude/skills is a plain file, not a link — this checkout has no symlink support."
+  echo "         Claude Code will discover ZERO skills. Fix with:"
+  echo "           git config core.symlinks true && git checkout -- .claude/skills"
+  echo "         (or copy .agents/skills to .claude/skills and keep .agents/ authoritative)"
+else
+  mkdir -p "$REPO/.claude"
+  ln -s ../.agents/skills "$LINK" && echo "Recreated .claude/skills -> ../.agents/skills"
+fi
+
 # verify
 "$VENV/bin/kdp-scout" --help >/dev/null 2>&1 || { echo "ERROR: kdp-scout did not install cleanly"; exit 1; }
 
