@@ -7,7 +7,10 @@
       "verdict": "PIVOT",
       "recommended_seed": "llm inference",
       "rerun_required": true,
-      "completed": "2026-08-08T12:38:28Z"
+      "completed": "2026-08-08T12:38:28Z",
+      "pivot_cycles": 0,
+      "seed_lineage": [],
+      "collector_health": null
     },
     "1_outline": {
       "status": "pending",

@@ -2,7 +2,13 @@
   "slug": "<slug>",
   "created": "<iso8601>",
   "stages": {
-    "0_niche-research": {"status": "pending", "verdict": null},
+    "0_niche-research": {
+      "status": "pending",
+      "verdict": null,
+      "pivot_cycles": 0,
+      "seed_lineage": [],
+      "collector_health": null
+    },
     "1_outline": {"status": "pending", "gate_a": null, "hitl_gate_1": null},
     "2_chapters": {"status": "pending", "chapters_done": [], "continuity_reports": 0},
     "3_adversarial-editor": {"status": "pending", "gate_b": null},

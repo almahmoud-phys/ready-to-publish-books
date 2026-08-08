@@ -93,3 +93,32 @@
 **Meadows read**: LP6. A skill the harness cannot see is not a channel, and the failure is silent: the pipeline still "has" 13 skills. Making discovery structural rather than documentary closes the gap.
 
 **Consequence and guard**: auto-discovery makes every stage skill invokable at any time, which is a *Drifting Goals* risk — invokable is not the same as due. CLAUDE.md states explicitly that discovery does not relax the DAG; stage order and the HITL gates decide what runs.
+
+---
+
+## ADR-015 — Stage 0 is a bounded PIVOT explorer, not an autonomous niche hunter
+
+**Status**: 🔒 LOCKED (2026-08-08)
+
+**Context**: the obvious next step after the first stage-0 run was to let the agent loop: set a goal, run the scripts, and on KILL or PIVOT generate new seeds and re-run until something earns a GO. The mechanical half of that is real work worth automating. The other half quietly replaces the system's goal.
+
+**Decision**: stage 0 runs unattended **inside a human-locked charter** (`books/<slug>/research/charter.md`: reader problem, useful outcome, authority envelope + exclusions, allowed adjacency, `max_pivot_cycles`). Within it:
+
+1. **PIVOT auto-continues; KILL stops; GO stops.** A pivot must preserve `reader_problem` and `authority_envelope` and cite evidence for its new angle. Failing either, it is not a pivot — it is a different book, and that is the human's call.
+2. **Asymmetric confirmation.** The human may veto a computed GO. Nobody — human or agent — may promote a PIVOT or KILL to GO without new evidence.
+3. **The provenance rule.** The model may classify, dedupe and rank phrases; it may never originate a market-facing seed. Every candidate traces to the charter, the harvest, a comp title, or sourced review language, recorded in `candidates.csv`.
+4. **The verdict is computed, not narrated.** `tooling/scripts/niche_verdict.py` reads `evidence.yaml`, cross-checks each claim against the artifact backing it, and refuses GO on any `UNKNOWN` or failed check. `INCOMPLETE` is the absence of a verdict, never rounded up or down.
+5. **Circuit breaker.** The wrappers detect refusal and exit 3; the first refusal ends all Amazon activity for the session. No retry, no backoff.
+6. **Loop state lives in `state.json`** (`pivot_cycles`, `seed_lineage`, `collector_health`), not in context.
+
+**Rejected: auto-continue until GO.** Its termination condition is "found something", and it will always find something. The stated goal is a durable catalog of genuinely useful books, never book count — a loop that cannot stop silently substitutes "produce a passing market" for it. **Drifting Goals**, and it inverts the gate's purpose: stage 0 exists to kill cheaply, and a loop that cannot terminate never kills. Generating another seed instead of collecting the missing comp and trademark evidence is also **Shifting the Burden** — the cheap symptomatic move crowding out the fundamental one.
+
+**Meadows read**: the charter is an LP3 intervention — it fixes the goal in a file so the loop optimizes inside it rather than around it. The circuit breaker is LP8: a negative feedback loop protecting the publishing account, the stock the whole catalog depends on. Retry-with-backoff would have been **Fixes That Fail** — more probes, stronger blocking, less evidence, more probing.
+
+**TRIZ read**: Separation by Condition resolves the automation-versus-reliability contradiction. Automate the safe, repetitive, verifiable measurement; keep the human exactly where truth lives outside the system — lived experience (authority fit), live-page reality (comps), and legal judgment (trademark). P23 Feedback: `collector_health` calibrates the instrument before its readings are trusted, so a CAPTCHA can never be recorded as "no demand".
+
+**Two tool findings that shaped this** (verified in the vendored source, not assumed):
+- `kdp-scout` returns `None` for HTTP error, CAPTCHA and zero-results alike (`niche_scorer.py:63-84`) and exits 0 either way (`cli.py:2178`). Refusal is undetectable from exit status — hence exit 3 in the wrappers.
+- `kdp-scout score` scores unmeasured components as `0.0` rather than unknown (`keyword_engine.py:626`), and `discover` defaults to 200 reverse-ASIN probes (`cli.py:1427`). Neither is wrapped: the first makes "unmeasured" look like "measured badly", the second is an account-risk multiplier.
+
+**Consequences**: a GO now requires evidence that cannot all be gathered in one unattended pass — comp BSRs, prices, review dates, negative-review language and a trademark screen all need a human in the loop. That is the intended cost. The loop's job is to reach a defensible PIVOT cheaply and often; earning a GO is deliberately slower than earning a KILL.
