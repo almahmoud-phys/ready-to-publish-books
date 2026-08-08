@@ -23,7 +23,7 @@ books:
     title: "The LLM Cost & Routing Playbook"
     track: assisted
     stage: 0
-    verdict: null
+    verdict: PIVOT      # entry phrase has no buyer language; reposition on the inference shelf
     created: 2026-08-08
     published: null
     book_score: null

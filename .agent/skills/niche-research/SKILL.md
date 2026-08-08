@@ -18,7 +18,7 @@ Kill bad books cheaply. A book that can't win its niche must die at stage 0, not
 
 ## Tooling (ADR-009 — verified OSS stack, local-first)
 
-- **KDP Scout** (MIT, local SQLite, no account/telemetry): autocomplete A–Z mining, category scans, BSR/price/review snapshots, scoring, CSV/JSON export. Multi-marketplace: com/ca/au/de/uk/fr/es/it.
+- **KDP Scout** (MIT, local SQLite, no account/telemetry): autocomplete A–Z mining, category scans, BSR/price/review snapshots, scoring, CSV export (`export ads`/`export backend` — there is no generic JSON dump; `mine` returns nothing on stdout and writes rows to its own DB). Marketplaces: us/ca/au/de/uk/fr/es/it.
 - **trendspyg** (MIT): Google Trends demand-direction — sustained/rising vs declining. Cache results.
 - **Trademark gate**: USPTO + EUIPO search for final title/series/brand candidates.
 - **Risk tiers (hard rule)**: suggestion-API mining = allowed with conservative rate limits · product-page snapshots = low volume, top-10 ALWAYS human-verified · bulk scraping/proxies/UA evasion = banned permanently (ADR-008).
@@ -27,7 +27,7 @@ Kill bad books cheaply. A book that can't win its niche must die at stage 0, not
 
 ### Step 1 — Demand evidence (does money change hands here?)
 - [ ] **Trend direction**: trendspyg on the 2–3 seed topics — sustained or rising = pass; clearly declining = flag.
-- [ ] **Autocomplete mining**: `kdp-scout mine "<seed>" -m com --department books` per seed (plus target marketplaces for future translations). Rich, buyer-intent suggestions = pass; empty autocomplete (like "llm cost") = the phrase is wrong, mine adjacent seeds.
+- [ ] **Autocomplete mining**: `./tooling/scripts/niche_mine.sh "<seed>" -m us` per seed (marketplace enum: us|de|uk|fr|es|it|ca|au — never `com`; call the wrapper, not KDP Scout directly, per ADR-009 P24). Rich, buyer-intent suggestions = pass; an empty harvest = either the phrase is wrong (mine adjacent seeds) or the collector is blocked — distinguish the two with a known-good control seed ("historical fiction" returns ~28) before recording it as signal.
 - [ ] **Comp BSR pull**: top 5–10 comps — record BSR (overall + category). Estimate daily sales (bands: ~10k ≈ 10–20/day, ~50k ≈ 3–8/day, ~100k ≈ 1–3/day, >1M ≈ ~0). KDP Scout snapshots assist; **top-10 verified by human on the live page**.
 - [ ] **Review velocity**: reviews ≈ 1–2% of buyers; recent dates (90 days) = CURRENT demand.
 - [ ] **Price points**: healthy practitioner band $9.99–29.99 ebook / $19–45 print. All-$2.99 niche = weak willingness-to-pay.

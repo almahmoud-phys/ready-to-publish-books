@@ -59,3 +59,21 @@
 **Meadows read**: this closes a *Drifting Goals* mechanism. A forward-route lets the system satisfy the floor by changing the description rather than the book — the goal quietly degrades from "genuinely useful book" to "book that scores".
 
 **Consequences**: a Market failure can send a book back to stage 0, where the honest outcome may be PIVOT or KILL. That is the intended behavior, not a defect.
+
+---
+
+## ADR-013 — A wrapper is unverified until it has run against the real tool
+
+**Status**: 🔒 LOCKED (2026-08-08)
+
+**Context**: stage 0 was run for the first time. Every KDP Scout wrapper in `tooling/scripts/` had been written from a plausible reading of the tool and had never been executed against it. `niche_mine.sh` passed `--format json` (no such option) and `-m com` (the marketplace enum is `us|de|uk|fr|es|it|ca|au`); `niche_snapshot.sh` called `kdp-scout asin`, a command that does not exist. Both were syntactically valid, both were referenced by the skill contracts, and both would have failed the moment a stage depended on them.
+
+**Decision**: a wrapper script counts as delivered only after it has been run end to end against the real tool and its output inspected. Documented CLI shapes in skills and ADRs are transcribed from `--help`, never inferred. Where a tool's output cannot be trusted to be non-empty, the wrapper exits non-zero rather than passing an empty result forward — and where an empty result is genuinely ambiguous, the wrapper names the control test that disambiguates it (`niche_mine.sh` points at a known-good seed).
+
+**Rationale**: the M2 orchestrator will invoke these scripts unattended. A wrapper that fails loudly costs one run; a wrapper that returns nothing quietly poisons a verdict.
+
+**Meadows read**: LP6 again, one layer down. The wrappers *are* the information channel between the market and every downstream stage. An unexercised channel is not a channel — it is an assumption with a filename.
+
+**TRIZ read**: P23 Feedback. The measurement instrument must itself be measured before its readings are trusted; the control seed is the calibration standard that separates "no demand" from "no data".
+
+**Consequences**: `niche_score.sh` was added (stage-0 Step 2 needs `niche-score`, and skills call wrappers, not tools — ADR-009 P24). Amazon began refusing search probes during the first stage-0 run; backing off is the correct response under ADR-008, and any Step-2 data gap is recorded in `niche.md` rather than filled in by estimate.

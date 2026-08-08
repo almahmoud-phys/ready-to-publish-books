@@ -2,15 +2,54 @@
   "slug": "llm-cost-routing-playbook",
   "created": "2026-08-08T10:50:30Z",
   "stages": {
-    "0_niche-research": {"status": "pending", "verdict": null},
-    "1_outline": {"status": "pending", "gate_a": null, "hitl_gate_1": null},
-    "2_chapters": {"status": "pending", "chapters_done": [], "continuity_reports": 0},
-    "3_adversarial-editor": {"status": "pending", "gate_b": null},
-    "4_scorer": {"status": "pending", "gate_c": null, "book_score": null, "loopbacks_used": {}},
-    "5_proof-fact": {"status": "pending", "gate_d": null},
-    "6_exports": {"status": "pending", "gate_e": null},
-    "7_publish-checklist": {"status": "pending", "go_no_go": null, "hitl_gate_2": null}
+    "0_niche-research": {
+      "status": "complete",
+      "verdict": "PIVOT",
+      "recommended_seed": "llm inference",
+      "rerun_required": true,
+      "completed": "2026-08-08T12:38:28Z"
+    },
+    "1_outline": {
+      "status": "pending",
+      "gate_a": null,
+      "hitl_gate_1": null
+    },
+    "2_chapters": {
+      "status": "pending",
+      "chapters_done": [],
+      "continuity_reports": 0
+    },
+    "3_adversarial-editor": {
+      "status": "pending",
+      "gate_b": null
+    },
+    "4_scorer": {
+      "status": "pending",
+      "gate_c": null,
+      "book_score": null,
+      "loopbacks_used": {}
+    },
+    "5_proof-fact": {
+      "status": "pending",
+      "gate_d": null
+    },
+    "6_exports": {
+      "status": "pending",
+      "gate_e": null
+    },
+    "7_publish-checklist": {
+      "status": "pending",
+      "go_no_go": null,
+      "hitl_gate_2": null
+    }
   },
-  "cost_usd": {"by_stage": {}, "total": 0.0, "ceiling": 50.0},
-  "published": {"kdp": null, "direct": null}
+  "cost_usd": {
+    "by_stage": {},
+    "total": 0.0,
+    "ceiling": 50.0
+  },
+  "published": {
+    "kdp": null,
+    "direct": null
+  }
 }

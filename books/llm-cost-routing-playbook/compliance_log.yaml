@@ -12,3 +12,15 @@
 #   artifact: <relative path>
 #   sha256: <hash>
 #   timestamp: <iso8601>
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/niche.md
+  sha256: ccdc740a2af47e134ddf70ad984224a5840a396064716a6a9d68ea2f98846655
+  timestamp: 2026-08-08T12:38:28Z
+- event: generate
+  skill: niche-research
+  model: tool:kdp-scout+trendspyg
+  artifact: research/niche-ledger.csv
+  sha256: ff43d02af8188fec9569c494ee3ad2404b8d0f30dee914c0f0e9500c7d4eb6a6
+  timestamp: 2026-08-08T12:38:28Z
