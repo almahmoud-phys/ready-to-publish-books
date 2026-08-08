@@ -4,10 +4,10 @@ description: "Stage 7 — final go/no-go. Verifies every gate artifact, generate
 model_tier: mid
 stage: 7
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/state.json, books/<slug>/compliance_log.yaml, .agent/rules/kdp-compliance.md, .agent/rules/quality-gates.md]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/state.json, books/<slug>/compliance_log.yaml, .agents/rules/kdp-compliance.md, .agents/rules/quality-gates.md]
   read: [books/<slug>/scores/scorecard.json, books/<slug>/exports/, books/<slug>/edits/fact-report.md]
   never_read: [chapters/ (judgment is done — verify artifacts, not content)]
-outputs: [books/<slug>/exports/publish-runbook.md, state.json final update, .agent/memories/<slug>-retrospective.md (post-publish)]
+outputs: [books/<slug>/exports/publish-runbook.md, state.json final update, .agents/memories/<slug>-retrospective.md (post-publish)]
 ---
 
 # Publish Checklist
@@ -36,7 +36,7 @@ Step-by-step for each platform in manifest.platforms: KDP (ebook + print), direc
 Present go/no-go + runbook. **HALT.** The human publishes. No skill in this repo ever performs the publish action itself (fable authorization gate).
 
 ## Post-publish: retrospective (LP6 memory loop)
-After the human confirms publication + 2 weeks of signals (or after M1 manually): write `.agent/memories/<slug>-retrospective.md` — what scored well/poorly, loopback hotspots, cost per stage, lessons for skills/rules. Book N+1 inherits.
+After the human confirms publication + 2 weeks of signals (or after M1 manually): write `.agents/memories/<slug>-retrospective.md` — what scored well/poorly, loopback hotspots, cost per stage, lessons for skills/rules. Book N+1 inherits.
 
 ## Anti-patterns
 - ❌ Answering disclosure from memory instead of the log — the log exists precisely for this.

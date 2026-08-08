@@ -77,3 +77,19 @@
 **TRIZ read**: P23 Feedback. The measurement instrument must itself be measured before its readings are trusted; the control seed is the calibration standard that separates "no demand" from "no data".
 
 **Consequences**: `niche_score.sh` was added (stage-0 Step 2 needs `niche-score`, and skills call wrappers, not tools — ADR-009 P24). Amazon began refusing search probes during the first stage-0 run; backing off is the correct response under ADR-008, and any Step-2 data gap is recorded in `niche.md` rather than filled in by estimate.
+
+---
+
+## ADR-014 — `.agents/` is the source of truth; `.claude/` is a symlinked harness view
+
+**Status**: 🔒 LOCKED (2026-08-08)
+
+**Context**: the 13 skills lived at `.agent/skills/` and were invisible to Claude Code, which auto-discovers only `.claude/skills/<name>/SKILL.md`. Every session therefore loaded them by hand through CLAUDE.md routing — the skills existed but the harness could not see them, which is precisely the M0 exit criterion ("skills load in Claude Code") going unmet while looking met.
+
+**Decision**: the directory is `.agents/` (plural, harness-neutral) and remains the single source of truth for skills, rules, workflows and memories. `.claude/skills` is a committed **relative symlink** to `../.agents/skills`. Any future harness gets its own symlinked view; no skill file is ever duplicated. `.gitignore` commits the symlink and ignores the rest of `.claude/` as per-machine session state.
+
+**TRIZ read**: P24 Intermediary — the symlink is a temporary carrier between a harness's fixed expectation and the repo's neutral layout, and it costs nothing to add or remove. P6 Universality: one skill file serves every runtime. The alternative (copy skills into `.claude/`) creates two sources of truth that silently diverge — a physical contradiction resolved by *separation in representation*, not by choosing a side.
+
+**Meadows read**: LP6. A skill the harness cannot see is not a channel, and the failure is silent: the pipeline still "has" 13 skills. Making discovery structural rather than documentary closes the gap.
+
+**Consequence and guard**: auto-discovery makes every stage skill invokable at any time, which is a *Drifting Goals* risk — invokable is not the same as due. CLAUDE.md states explicitly that discovery does not relax the DAG; stage order and the HITL gates decide what runs.

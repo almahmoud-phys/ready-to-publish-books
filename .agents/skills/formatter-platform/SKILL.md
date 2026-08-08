@@ -4,7 +4,7 @@ description: "Stage 6 (after metadata-seo) — compile chapters into platform-re
 model_tier: cheap_with_tooling
 stage: 6
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, .agent/rules/style.md (formatting section)]
+  always_read: [books/<slug>/manifest.yaml, .agents/rules/style.md (formatting section)]
   read: [books/<slug>/chapters/ (final, post-Gate-D), books/<slug>/exports/metadata.json, tooling/pandoc/, tooling/latex/]
   never_read: [scores/, audits/, research/]
 outputs: [books/<slug>/frontmatter.md, books/<slug>/exports/master.epub, exports/kdp/, exports/direct/, exports/print/]

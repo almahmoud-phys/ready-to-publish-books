@@ -1,5 +1,19 @@
 # Implementation Plan — "Ready To Publish Books"
 
+> **What this file is**: the canonical build plan for the *pipeline itself* — the evidence base
+> it was designed from, the TRIZ/Meadows analysis behind its shape, the repo layout, the stage
+> DAG, the managed-context rules, the model-routing table, and the M0–M5 milestones. It answers
+> *why the system is built this way*.
+>
+> **Status: LIVE — M0 done, M1 active, M2–M5 open.** Not an archive. It moves to `docs/` only
+> once M5 ships, at which point it becomes the design record.
+>
+> **What this file is not**: the runtime contract. `CLAUDE.md` routes an agent through the
+> pipeline, `.agents/rules/*.md` hold the enforcing thresholds, and `decisions-log.md` holds the
+> locked ADRs. Where this plan and a rule disagree, **the rule wins** — this document describes
+> intent, the rules are what execute. Sections below marked with a milestone (M2, M4…) describe
+> components that do not exist yet.
+
 # Objective
 
 Build an automated, harness-driven pipeline that takes a one-line book idea to a **ready-to-publish** package (EPUB + print PDF + cover + KDP metadata + compliance record), with quality gates, adversarial verification, managed context, and a learning loop that makes every subsequent book better. Human touches only two gates: outline approval and the publish click.
@@ -53,7 +67,7 @@ Resolutions:
   - *Fixes That Fail*: publish slop → account restriction → catalog dies. Gate: floor-principle scoring, no publish below threshold.
   - *Tragedy of the Commons*: KDP is flooded with AI books (releases ~tripled 2022–2025). Response: niche quality + series depth, not volume.
   - *Drifting Goals*: never lower the score floor to hit throughput. The floor is in `rules/quality-gates.md`, not in a session prompt.
-- **LP6 (Information flows)**: per-book retrospective → distilled patterns → `.agent/memories/` (Tier-2 memory protocol). Book N+1 inherits book N's lessons.
+- **LP6 (Information flows)**: per-book retrospective → distilled patterns → `.agents/memories/` (Tier-2 memory protocol). Book N+1 inherits book N's lessons.
 - **LP8 (Negative feedback)**: adversarial editor + evidence-based scorer as standing balancing loops; their strength scales with output volume.
 
 ### Ideal Final Result
@@ -77,7 +91,7 @@ Alternatives dismissed:
 ready-to-publish-books/
 ├── CLAUDE.md                      # router: pipeline map, stage table, gate rules
 ├── AGENTS.md                      # harness-agnostic mirror of CLAUDE.md
-├── .agent/
+├── .agents/
 │   ├── skills/                    # one SKILL.md per stage (the prepared skills)
 │   │   ├── niche-research/SKILL.md
 │   │   ├── outline-architect/SKILL.md
@@ -140,7 +154,7 @@ ready-to-publish-books/
 3. Each SKILL.md frontmatter declares its **context budget**: files to read, files forbidden to read.
 4. Draft-before-judgment is a M1 contract expectation, not a hard runtime guarantee: chapter-writer should avoid scoring rubrics, and this is enforced by isolation in M2; scorer runs only on complete drafts.
 5. Judges get excerpts + summaries per pass; full read only at final audit.
-6. Retrospective at book end → `.agent/memories/` pattern entries.
+6. Retrospective at book end → `.agents/memories/` pattern entries.
 
 ### Model routing (router.py defaults; overridable per-book in manifest)
 
@@ -180,8 +194,8 @@ Target: **<$30–50 per book** end-to-end (proven benchmark: book-generator).
 
 | # | Deliverable | Exit criteria |
 |---|---|---|
-| M0 | Repo scaffold, all 13 SKILL.md drafts, rules, CLAUDE.md | Skills load in Claude Code; router table agreed |
-| M1 | First book, manual skill walk-through (no orchestrator) | Gate E reached; you approve the prose |
+| M0 ✅ | Repo scaffold, all 13 SKILL.md drafts, rules, CLAUDE.md | **Met 2026-08-08** — skills load in Claude Code via the `.claude/skills` → `.agents/skills` symlink; router table agreed |
+| M1 ▶ | First book, manual skill walk-through (no orchestrator) | Gate E reached; you approve the prose · *stage 0 run 1 complete: PIVOT (`books/llm-cost-routing-playbook/research/niche.md`)* |
 | M2 | Orchestrator: DAG, parallelism, resumability, model router | Interrupted run resumes correctly; parallel chapters don't collide |
 | M3 | Scoring contracts + adversarial loop + loop-back wiring | Floor principle enforced; failed gate routes to correct stage |
 | M4 | Export hardening: epubcheck, print PDF, cover assembly, metadata | KDP-ready package; first book published |

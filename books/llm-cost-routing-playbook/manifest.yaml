@@ -27,6 +27,6 @@ models:                       # override router.py defaults only with reason
   # outline-architect: opus-class
   # chapter-writer: sonnet-class
 gates:
-  floor: 7                    # do not edit per-book — change control lives in .agent/rules/quality-gates.md
+  floor: 7                    # do not edit per-book — change control lives in .agents/rules/quality-gates.md
   max_loopbacks: 3
 notes: ""

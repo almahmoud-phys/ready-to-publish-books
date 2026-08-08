@@ -8,7 +8,7 @@
 | Dimension | Question |
 |---|---|
 | Originality | Does this say something comps don't? Flag passages that could appear in any book on the topic |
-| Prose | Sentence-level quality, rhythm, banlist compliance (`.agent/rules/style.md`) |
+| Prose | Sentence-level quality, rhythm, banlist compliance (`.agents/rules/style.md`) |
 | Coherence | Do chapters honor outline contracts? Do promises made get kept? |
 | Market | Would the target persona pay for this over the top 3 comps? Why? |
 | Voice | Consistent, distinctive, matches style sheet |
@@ -51,4 +51,4 @@ Theme · Characters · Pacing · Emotion
 2. Every score < 9 requires ≥ 2 citations. Every score < floor requires a `weakest_passage`.
 3. Judge reads: outline contracts, rolling summaries, targeted excerpts. Full read only at final pass (context discipline).
 4. Independent judgments: multi-pass scoring with different excerpt seeds; disagreement > 1 point → third pass, take median.
-5. Floor default: **7/10** per dimension (change control: `.agent/rules/quality-gates.md`).
+5. Floor default: **7/10** per dimension (change control: `.agents/rules/quality-gates.md`).

@@ -1,4 +1,4 @@
-# books/llm-cost-routing-playbook/compliance_log.yaml — APPEND-ONLY. Written at every generation event (rule: .agent/rules/kdp-compliance.md).
+# books/llm-cost-routing-playbook/compliance_log.yaml — APPEND-ONLY. Written at every generation event (rule: .agents/rules/kdp-compliance.md).
 # publish-checklist generates KDP disclosure answers FROM THIS FILE. Corrections are new entries, never edits.
 # This file is a YAML SEQUENCE — appenders write top-level `- event:` items
 # (compile_book.py log_event, kdp-compliance.md). It must NOT open with mapping

@@ -6,7 +6,7 @@ stage: 2
 context_budget:
   always_read: [books/<slug>/manifest.yaml, books/<slug>/bible/]
   read: [books/<slug>/outline/chapter_NN.md (this chapter), books/<slug>/summaries/ (prior chapter summaries only)]
-  never_read: [books/<slug>/scores/, .agent/rules/scoring-contract.md, other chapters in full, audits/]
+  never_read: [books/<slug>/scores/, .agents/rules/scoring-contract.md, other chapters in full, audits/]
 outputs: [books/<slug>/chapters/chapter_NN.md, books/<slug>/summaries/chapter_NN.summary.md]
 ---
 

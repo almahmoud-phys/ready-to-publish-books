@@ -7,6 +7,11 @@
 !.codanna/settings.toml
 .fastembed_cache/
 
+# Harness view: .claude/skills is a committed symlink to .agents/skills (the source of
+# truth). Everything else Claude Code drops here is per-machine session state.
+.claude/*
+!.claude/skills
+
 # Python
 __pycache__/
 *.pyc

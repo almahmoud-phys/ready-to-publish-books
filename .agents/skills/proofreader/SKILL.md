@@ -4,7 +4,7 @@ description: "Stage 5 (parallel with fact-checker) — mechanical copy edit: gra
 model_tier: cheap
 stage: 5
 context_budget:
-  always_read: [books/<slug>/bible/style-sheet.md, .agent/rules/style.md]
+  always_read: [books/<slug>/bible/style-sheet.md, .agents/rules/style.md]
   read: [books/<slug>/chapters/ (one at a time)]
   never_read: [books/<slug>/scores/, outline/, research/]
 outputs: [books/<slug>/chapters/ (edited in place), books/<slug>/edits/edit-log.md]

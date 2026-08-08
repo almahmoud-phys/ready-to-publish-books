@@ -4,7 +4,7 @@ description: "Stage 1 (parallel with outline) — build the book's single source
 model_tier: strong
 stage: 1
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/research/niche.md, .agent/rules/style.md]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/research/niche.md, .agents/rules/style.md]
   read: [books/<slug>/outline/outline.md]
   never_read: [books/<slug>/scores/]
 outputs: [books/<slug>/bible/style-sheet.md, books/<slug>/bible/terminology.md, books/<slug>/bible/canon.md]

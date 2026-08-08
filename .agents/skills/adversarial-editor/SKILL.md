@@ -6,7 +6,7 @@ stage: 3
 context_budget:
   always_read: [books/<slug>/manifest.yaml, books/<slug>/bible/, books/<slug>/outline/]
   read: [books/<slug>/chapters/ (full draft — first full read in the pipeline), books/<slug>/summaries/continuity-report.md]
-  never_read: [books/<slug>/scores/, .agent/rules/scoring-contract.md]
+  never_read: [books/<slug>/scores/, .agents/rules/scoring-contract.md]
 outputs: [books/<slug>/audits/structural.md]
 ---
 

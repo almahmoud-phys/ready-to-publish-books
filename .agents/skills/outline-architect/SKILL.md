@@ -5,7 +5,7 @@ model_tier: strong
 stage: 1
 context_budget:
   always_read: [books/<slug>/manifest.yaml, books/<slug>/research/niche.md]
-  read: [.agent/rules/style.md, .agent/rules/quality-gates.md]
+  read: [.agents/rules/style.md, .agents/rules/quality-gates.md]
   never_read: [books/<slug>/chapters/, books/<slug>/scores/]
 outputs: [books/<slug>/outline/outline.md, books/<slug>/outline/chapter_NN.md contracts]
 ---
