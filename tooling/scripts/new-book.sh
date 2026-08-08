@@ -19,16 +19,27 @@ mkdir -p "${STAGE_DIRS[@]/#/$BOOK_DIR/}"
 # git stores no empty dirs — .gitkeep preserves the stage structure across clones (ADR-010 portability).
 for d in "${STAGE_DIRS[@]}"; do touch "$BOOK_DIR/$d/.gitkeep"; done
 
+# TITLE is arbitrary user text and needs two layers of escaping. YAML first: the
+# template wraps the title in double quotes, so `"` and `\` must be escaped for a
+# double-quoted scalar. Then sed: `&` means "the whole match", `|` closes the
+# expression. Miss either and the line corrupts silently (the script still exits 0).
+# SLUG is kebab-case-validated above and can contain none of these.
+TITLE_YAML="$(printf '%s' "$TITLE" | sed -e 's|\\|\\\\|g' -e 's|"|\\"|g')"
+TITLE_ESC="$(printf '%s' "$TITLE_YAML" | sed -e 's|[\\&|]|\\&|g')"
 sed -i.bak \
   -e "s|^slug:.*|slug: $SLUG|" \
-  -e "s|^title:.*|title: \"$TITLE\"|" \
+  -e "s|^title:.*|title: \"$TITLE_ESC\"  # [FACTORY] provisional — a stage-0 PIVOT may rename the book|" \
   "$BOOK_DIR/manifest.yaml" && rm -f "$BOOK_DIR/manifest.yaml.bak"
-sed -i.bak "s|<slug>|$SLUG|g" "$BOOK_DIR/state.json" "$BOOK_DIR/compliance_log.yaml" && rm -f "$BOOK_DIR"/*.bak
+NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+sed -i.bak -e "s|<slug>|$SLUG|g" -e "s|<iso8601>|$NOW|g" \
+  "$BOOK_DIR/state.json" "$BOOK_DIR/compliance_log.yaml" && rm -f "$BOOK_DIR"/*.bak
 
 TODAY="$(date +%F)"
+# TITLE_YAML, not raw TITLE: the registry is the catalog ledger and a title containing
+# a double quote corrupts it exactly as it corrupted the manifest.
 cat >> "$REPO/books/registry.yaml" <<EOF
   - slug: $SLUG
-    title: "$TITLE"
+    title: "$TITLE_YAML"
     track: assisted
     stage: 0
     verdict: null

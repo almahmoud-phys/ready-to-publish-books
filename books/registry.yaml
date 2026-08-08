@@ -1,11 +1,14 @@
 # books/registry.yaml — the catalog ledger (LP6: catalog-level information flow).
 # One entry per book. new-book.sh appends; publish-checklist updates on publish.
 # This is the single glance-view of the whole catalog: stage, verdict, track, cost.
-
-books:
+#
 # Empty = `books` parses as null, not []. Readers: use `books or []`.
 # new-book.sh appends block entries below; do NOT restore `books: []` —
 # a flow-style empty list cannot take appended block items (invalid YAML).
+# Entries are indented 2 spaces to match what new-book.sh writes. Do NOT re-serialize
+# this file through a YAML dumper: it strips these comments and re-indents the entries
+# to column 0, after which the next append mixes indent levels and the file stops parsing.
+books:
 # entry schema:
 # - slug: <kebab-case>
 #   title: "<title>"

@@ -28,6 +28,6 @@ Produce one chapter that **keeps its contract**: the promise, the word budget (�
 6. Word budget check ±10%. Self-fix once; do not polish further.
 
 ## Anti-patterns
-- ❌ Reading scoring rubrics or "improving" against imagined judges — draft-before-judgment is structural.
+- ❌ Reading scoring rubrics or "improving" against imagined judges — draft-before-judgment is a stage-1 convention (enforced by subprocess isolation in M2).
 - ❌ Introducing terms/examples not in the bible without adding them to your summary's "new canon candidates" section.
 - ❌ Exceeding context budget: if you need a prior chapter's exact text, the summary was defective — flag it, don't load the chapter.

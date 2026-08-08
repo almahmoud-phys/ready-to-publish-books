@@ -2,6 +2,11 @@
 # Recreate on any machine with: ./tooling/scripts/research-init.sh
 .kdp-research/
 
+# Codanna code index — settings.toml is config (committed); the index is regenerable data.
+.codanna/*
+!.codanna/settings.toml
+.fastembed_cache/
+
 # Python
 __pycache__/
 *.pyc

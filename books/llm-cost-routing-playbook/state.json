@@ -1,6 +1,6 @@
 {
   "slug": "llm-cost-routing-playbook",
-  "created": "<iso8601>",
+  "created": "2026-08-08T10:50:30Z",
   "stages": {
     "0_niche-research": {"status": "pending", "verdict": null},
     "1_outline": {"status": "pending", "gate_a": null, "hitl_gate_1": null},

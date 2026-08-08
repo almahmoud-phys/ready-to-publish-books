@@ -5,9 +5,9 @@ model_tier: strong_synthesis_cheap_gatherers
 stage: 0
 context_budget:
   always_read: [books/<slug>/manifest.yaml]
-  read: [.agent/memories/]
+  read: [.agent/memories/, books/<slug>/research/niche-ledger.csv]
   never_read: [books/<slug>/chapters/, other books' workspaces]
-outputs: [books/<slug>/research/niche.md, books/<slug>/research/keywords.md, books/<slug>/research/niche-ledger.csv]
+outputs: [books/<slug>/research/niche.md, books/<slug>/research/keywords.md]
 tooling: [kdp-scout (local CLI, MIT), trendspyg (Google Trends), USPTO+EUIPO trademark search]
 ---
 
@@ -58,13 +58,15 @@ Kill bad books cheaply. A book that can't win its niche must die at stage 0, not
 - `last_checked` drives the staleness flag: research >30 days old must be refreshed before outline-architect runs (LP9 — niche data decays weekly).
 
 ## Procedure
-1. Load manifest: seed idea, audience hypothesis, track, genre. Check `.agent/memories/` for prior niche patterns.
+1. Load manifest: seed idea, audience hypothesis, track, genre. Load `<slug>/research/niche-ledger.csv` for source signals and `.agent/memories/` for prior niche patterns.
 2. **Evidence fan-out** (cheap-model gatherers + KDP Scout/trendspyg runs, parallel, ONE batch + one follow-up): Steps 1–2 data collection.
 3. **Synthesize** (strong model) Steps 3–4 into `research/niche.md`; write the niche ledger.
 4. Append compliance log entry for AI-generated research artifacts.
 5. **HITL checkpoint**: present niche.md summary incl. all recorded numbers; human confirms verdict before stage 1.
 
 ## Output contract
+Writes back to `manifest.yaml`: `persona`.
+
 `research/niche.md` must contain: persona, comp table WITH BSR + review dates + prices, autocomplete harvest (per seed, per marketplace), trend direction, result counts, 3-book shelf, category difficulty, publisher-mix note, negative-review findings, gap statement, differentiation contract (3 promises), asset-feasibility note, trademark status, and the verdict with the numbers that produced it. Missing any → stage incomplete.
 
 ## Anti-patterns

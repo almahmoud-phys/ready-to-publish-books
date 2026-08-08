@@ -24,8 +24,18 @@ out, seed, market, today, ledger = sys.argv[1:6]
 try:
     data = json.load(open(out))
     suggestions = data if isinstance(data, list) else data.get("suggestions", data.get("keywords", []))
-except Exception:
-    suggestions = []
+except Exception as exc:
+    print(f"ERROR: failed to parse {out}: {exc}")
+    sys.exit(2)
+
+if not suggestions:
+    print(f"ERROR: no suggestions harvested for '{seed}' ({market})")
+    sys.exit(2)
+
+if not isinstance(suggestions, list):
+    print(f"ERROR: unexpected KDP Scout payload type {type(suggestions).__name__}: {out}")
+    sys.exit(2)
+
 with open(ledger, "a", newline="") as f:
     w = csv.writer(f)
     for s in suggestions:

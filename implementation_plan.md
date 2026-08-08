@@ -127,7 +127,8 @@ ready-to-publish-books/
 4  scorer (10-dim, floor, citations)                 → scores/scorecard.json
    loop-back: any dim < floor → exact stage, with cited evidence (max 3 cycles)
 5  proofreader + fact-checker (parallel)             → edits/
-6  formatter-platform + cover-director + metadata-seo (parallel) → exports/
+6  metadata-seo                                      → exports/metadata.json, exports/blurbs.md
+   cover-director + formatter-platform                → exports/
 7  publish-checklist                                 → go/no-go + disclosure answers
    ── HITL GATE 2: human publishes ──
 ```
@@ -137,7 +138,7 @@ ready-to-publish-books/
 1. `manifest.yaml` + `bible/` are the ONLY artifacts loaded at every stage.
 2. Chapters never re-enter context in full after writing. Continuity runs on 200-word rolling summaries in `summaries/`.
 3. Each SKILL.md frontmatter declares its **context budget**: files to read, files forbidden to read.
-4. Draft-before-judgment is structural: chapter-writer has no read access to scoring rubrics; scorer runs only on complete drafts.
+4. Draft-before-judgment is a M1 contract expectation, not a hard runtime guarantee: chapter-writer should avoid scoring rubrics, and this is enforced by isolation in M2; scorer runs only on complete drafts.
 5. Judges get excerpts + summaries per pass; full read only at final audit.
 6. Retrospective at book end → `.agent/memories/` pattern entries.
 

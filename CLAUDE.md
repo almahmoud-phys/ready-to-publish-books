@@ -16,13 +16,13 @@ This file is the **single entry point** for any agent harness working in this re
 | 3 | `adversarial-editor` | strong | `audits/structural.md` |
 | 4 | `scorer` | strong | `scores/scorecard.json` |
 | 5 | `proofreader` + `fact-checker` (parallel) | cheap / mid | `edits/` |
-| 6 | `formatter-platform` + `cover-director` + `metadata-seo` (parallel) | cheap / external | `exports/` |
+| 6 | `metadata-seo` → `formatter-platform` + `cover-director` | cheap / external | `exports/` |
 | 7 | `publish-checklist` | mid | go/no-go + disclosure answers |
 | — | **HITL GATE 2**: human publishes | — | — |
 
 ## Non-negotiable operating rules
 
-1. **Separation in time** — draft fast, judge later. `chapter-writer` never reads scoring rubrics; `scorer` runs only on complete drafts.
+1. **Separation in time** — draft fast, judge later. In M1, `chapter-writer` should avoid scoring rubrics by contract; in M2, subprocess/context isolation enforces it. `scorer` runs only on complete drafts.
 2. **Floor principle** — a book is its weakest dimension. Every score cites the manuscript (`.agent/rules/scoring-contract.md`).
 3. **Loop-back, not restart** — a failed gate routes to the *exact failing stage* with cited evidence. Max 3 cycles, then escalate to human.
 4. **Compliance by construction** — every generation event is appended to `books/<slug>/compliance_log.yaml` (`.agent/rules/kdp-compliance.md`).

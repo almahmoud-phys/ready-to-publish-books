@@ -25,3 +25,37 @@
 **Meadows read**: registry.yaml closes the catalog-level information gap; the git-ignored workspace keeps the market-knowledge stock (ledger) inside the system's boundary but outside its versioned surface — portable because structure is code, data is regenerate-able.
 
 **Uniform book workflow**: `research-init.sh` (once per machine) → `new-book.sh` (once per book) → stage 0 niche-research (wrappers → ledger → niche.md) → HITL gate → stages 1–7 → publish → retrospective → registry updated.
+
+---
+
+## ADR-011 — manifest.yaml is the single source of truth; owning stages write back
+
+**Status**: 🔒 LOCKED (2026-08-08)
+
+**Context**: `manifest.yaml` is the only artifact loaded at EVERY stage (managed context rule 1), yet several of its fields (`persona`, `subtitle`) are *outputs* of stages that never wrote them back. Every stage ≥1 read a literal placeholder forever, and a hand-written guess in those slots is indistinguishable downstream from a researched value.
+
+**Decision**: The manifest is the distilled single source of truth. The stage that owns a field writes it back on completion: niche-research → `persona`, metadata-seo → `subtitle`, outline-architect → `track` (already did). The stage artifact (`research/niche.md`, `exports/metadata.json`) remains the evidence; the manifest field is the distilled value. Fields carry ownership tags — `[HUMAN]` / `[FACTORY]` / `[STAGE n]` / `[DEFAULT]` — so neither human nor agent fills what it does not own.
+
+**Alternative rejected**: consumers read `research/*` directly. Rejected because every later stage would need extra reads, breaking the declared per-skill context budgets — the differentiator of this pipeline.
+
+**Meadows read**: the manifest is the highest-traffic information channel in the system (LP6). Fabricated information there is worse than missing information: missing announces itself, invented does not. Ownership tags make provenance travel with the value.
+
+**TRIZ read**: physical contradiction — the manifest must be complete (stages load it) and empty (facts not yet known). Resolved by **Separation in Time**, the same principle the pipeline already uses for draft-before-judgment: fields fill progressively, each at the stage that earns it, never as a form completed at birth. P10 Preliminary Action is scoped to structure, never to content.
+
+**Consequences**: each owning SKILL.md declares its write-back explicitly. Enforcement is by contract in M1; the M2 orchestrator can assert it.
+
+---
+
+## ADR-012 — Gate C loop-backs never route forward
+
+**Status**: 🔒 LOCKED (2026-08-08)
+
+**Context**: the Gate C loop-back table routed the Market and Opening dimensions to `metadata-seo` — stage 6, forward of the stage-4 scorer and past stage 5 — while the plan states a failed gate "routes to the exact failing stage".
+
+**Decision**: loop-backs route backward only. Opening → `outline-architect` (stage 1) and/or `chapter-writer` (stage 2). Market → `niche-research` (stage 0, repositioning) and/or `outline-architect`. `metadata-seo` is removed from that row, and the rule states explicitly that a loop-back never routes forward.
+
+**Rationale**: metadata-seo is stage-6 packaging — it writes keywords and a blurb. It cannot fix a book whose market fit or opening chapter is weak. Routing a quality failure to the packaging stage would let a book pass Gate C by relabelling itself.
+
+**Meadows read**: this closes a *Drifting Goals* mechanism. A forward-route lets the system satisfy the floor by changing the description rather than the book — the goal quietly degrades from "genuinely useful book" to "book that scores".
+
+**Consequences**: a Market failure can send a book back to stage 0, where the honest outcome may be PIVOT or KILL. That is the intended behavior, not a defect.

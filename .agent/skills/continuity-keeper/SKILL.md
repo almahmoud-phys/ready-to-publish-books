@@ -7,7 +7,7 @@ context_budget:
   always_read: [books/<slug>/manifest.yaml, books/<slug>/bible/terminology.md, books/<slug>/bible/canon.md]
   read: [books/<slug>/summaries/, books/<slug>/outline/]
   never_read: [books/<slug>/chapters/ (full), scores/, audits/]
-outputs: [books/<slug>/summaries/continuity-report.md]
+outputs: [books/<slug>/summaries/continuity-report.md, books/<slug>/summaries/continuity-canon-proposals.md]
 ---
 
 # Continuity Keeper
@@ -24,7 +24,7 @@ The balancing loop (Meadows LP8) inside drafting: cheap, frequent correction bea
    - **Dependency breaks**: chapter NN uses something only defined in NN+3.
 3. Emit `continuity-report.md`: findings as precise directives — "chapter 4: rename X→Y", "chapter 7 summary missing claim Z".
 4. Route: directives go to `chapter-writer` as micro-fix loop-backs (not full rewrites). Update summaries after fixes.
-5. New canon candidates from summaries → propose additions to bible/canon.md (human approves at next gate; bible stays append-disciplined).
+5. New canon candidates from summaries → `summaries/continuity-canon-proposals.md`. Human approves candidates at next Gate and hands approved items to `story-bible`.
 
 ## Constraints
 - **Never read full chapters.** If a summary is too thin to judge, the fix is a better summary — flag "defective summary: chapter NN".

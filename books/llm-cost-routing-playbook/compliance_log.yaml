@@ -1,8 +1,10 @@
 # books/llm-cost-routing-playbook/compliance_log.yaml — APPEND-ONLY. Written at every generation event (rule: .agent/rules/kdp-compliance.md).
 # publish-checklist generates KDP disclosure answers FROM THIS FILE. Corrections are new entries, never edits.
-book: llm-cost-routing-playbook
-track: <assisted|generated>
-events: []
+# This file is a YAML SEQUENCE — appenders write top-level `- event:` items
+# (compile_book.py log_event, kdp-compliance.md). It must NOT open with mapping
+# keys: a `book:`/`events: []` header makes the first append unparseable, and the
+# script appending it still exits 0. Book slug comes from the path; `track` lives
+# in manifest.yaml (its owner) — duplicating it here would be a second source of truth.
 # event schema:
 # - event: generate | edit | export | cover
 #   skill: <skill-name>

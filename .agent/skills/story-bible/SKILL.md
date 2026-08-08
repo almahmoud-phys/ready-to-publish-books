@@ -24,7 +24,8 @@ The bible is the only artifact (with the manifest) loaded at EVERY stage — it 
 ## Procedure
 1. Derive from niche.md + outline spine.
 2. Every entry must be **load-bearing**: if no stage would ever check against it, cut it (TESE trimming).
-3. Human review at Gate 1 (presented with the outline — one approval covers both).
+3. Reconcile approved canonical additions from `summaries/continuity-canon-proposals.md` into `bible/canon.md` before handing back to chapter pipeline.
+4. Human review at Gate 1 (presented with the outline — one approval covers both).
 
 ## Anti-patterns
 - ❌ Bible bloat — it's read on every invocation; every line costs every stage.

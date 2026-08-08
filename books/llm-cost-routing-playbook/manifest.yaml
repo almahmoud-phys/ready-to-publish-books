@@ -1,14 +1,23 @@
 # books/<slug>/manifest.yaml — the book's contract. Loaded at EVERY stage (context rule 1). Keep < 60 lines.
+#
+# FIELD OWNERSHIP. This file is the highest-traffic information channel in the system,
+# so a guess written here propagates to every stage and is indistinguishable from a
+# researched value. Each field is filled by whoever holds its truth, at the stage that
+# earns it — never all at once at birth. [HUMAN] = only you know it, fill before stage 0.
+# [FACTORY] = new-book.sh wrote it. [STAGE n] = that stage's output; leave the placeholder
+# until it runs. [DEFAULT] = correct as-is; change only with a recorded reason.
 slug: llm-cost-routing-playbook
-title: "The LLM Cost title: "<working title>" Routing Playbook"
-subtitle: "<keyword-loaded subtitle>"
-genre: non-fiction            # non-fiction default per ADR-001
-subgenre: practitioner-guide
-track: assisted               # assisted | generated — locked at Gate 1 (ADR-002). Choose deliberately.
-pen_name: ""                  # generated-track niche tests only
-language: en
-niche_seed: "<one-sentence idea>"
-persona: "<who buys this and what job they hire it for>"
+title: "The LLM Cost & Routing Playbook"  # [FACTORY] provisional — a stage-0 PIVOT may rename the book
+subtitle: "<keyword-loaded subtitle>"   # [STAGE 6] metadata-seo; needs stage-0 keyword data
+genre: non-fiction            # [DEFAULT] non-fiction per ADR-001
+subgenre: practitioner-guide  # [DEFAULT]
+track: assisted               # [STAGE 1] assisted | generated — locked at Gate 1 (ADR-002).
+                              # A default occupying a decision slot: choose deliberately at Gate 1.
+pen_name: ""                  # [STAGE 1] generated-track niche tests only
+language: en                  # [DEFAULT]
+niche_seed: "<one-sentence idea>"       # [HUMAN] the one field no stage can derive — the pipeline's input
+persona: "<who buys this and what job they hire it for>"  # [STAGE 0] niche-research OUTPUT, not an input.
+                              # Writing this by hand pre-answers the question stage 0 exists to answer.
 word_count_target: 30000      # practitioner guide default: 25k–45k
 platforms: [kdp, direct]      # kdp | direct | wide (wide = M5+)
 print: true                   # KDP paperback via LaTeX interior

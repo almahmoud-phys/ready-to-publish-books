@@ -1,6 +1,6 @@
 ---
 name: metadata-seo
-description: "Stage 6 (parallel) — the book's discoverability package: title/subtitle, 7 KDP keywords, categories, blurbs in 3 lengths, platform variants (KDP vs direct-sales landing copy). Grounded in niche.md research, never invented in a vacuum."
+description: "Stage 6 (prior to formatter-platform compile) — the book's discoverability package: title/subtitle, 7 KDP keywords, categories, blurbs in 3 lengths, platform variants (KDP vs direct-sales landing copy). Grounded in niche.md research, never invented in a vacuum."
 model_tier: cheap
 stage: 6
 context_budget:
@@ -14,6 +14,8 @@ outputs: [books/<slug>/exports/metadata.json, books/<slug>/exports/blurbs.md]
 
 ## Purpose
 Metadata is the book's interface with the marketplace's rules (Meadows LP5 — work the actual rules, not wishes). Discovery is decided by keywords/categories; conversion is decided by title + blurb. Different jobs, different copy.
+
+Writes back to `manifest.yaml`: `subtitle` (single source of truth).
 
 ## Procedure
 1. **Title/subtitle**: title = memorable promise; subtitle = keyword-loaded clarity ("X: How to Y in Z without W"). Check against comp titles — distinct but category-legible. Rights check: no trademarks, no misleading claims (kdp-compliance.md rule 6).

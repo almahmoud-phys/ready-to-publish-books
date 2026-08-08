@@ -20,7 +20,8 @@ The last balancing loop (LP8) before the irreversible action. This skill verifie
 2. scorecard.json: book_score ≥ floor, no open loopbacks.
 3. compliance_log.yaml: complete — every artifact in exports/ has a generation event with hash. Spot-verify 3 hashes.
 4. Export validity: epubcheck exit 0 on kdp EPUB; print PDF page count matches spine width used by cover-director.
-5. metadata.json complete; title/description human-approved.
+5. If `manifest.track == generated`, assert `frontmatter.md` exists and contains the KDP disclosure note before Gate E PASS.
+6. metadata.json complete; title/description human-approved.
 
 ## Disclosure answers (generated FROM the log)
 - Text: `assisted` → "No AI-generated text" (AI tools used for research/editing only) | `generated` → "Yes, AI-generated text" with tool description.
