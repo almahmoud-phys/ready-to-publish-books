@@ -156,7 +156,7 @@ Resolution via the 4 separation principles:
 
 ## ADR-008 — Niche data automation policy: automate collection, never the verdict, never scrape Amazon
 
-**Status**: ✅ LOCKED (2026-08-08)
+**Status**: ✅ LOCKED (2026-08-08) · **amended by ADR-009**
 
 **Decision**: Niche data extraction is **partially automated by design**:
 
@@ -175,3 +175,36 @@ Resolution via the 4 separation principles:
 **Meadows read**: automate the information flow (LP6), keep rule enforcement mechanical (LP5), leave human judgment exactly where it belongs — the HITL checkpoint that confirms the data. The failure mode avoided: a fully-automated pipeline that FEELS rigorous while feeding on scraped garbage → confident GO → bad book → wasted catalog slot.
 
 **Roadmap**: M1 = manual + LLM gatherers (validate the questions before automating answers) · M2 = niche_calc.py + staleness flag · M3 = Publisher Rocket CSV import (~EUR 100, best data, zero scraping risk) · Never = Amazon scraping.
+
+---
+
+## ADR-009 — Niche tooling stack: KDP Scout + trendspyg + trademark gate (amends ADR-008)
+
+**Status**: ✅ LOCKED (2026-08-08)
+
+**Decision**: Adopt the verified OSS stack for stage-0 data collection instead of building our own miners:
+- **KDP Scout** (`github.com/rxpelle/kdp-scout`, MIT, verified: LICENSE + SECURITY.md + package structure + Reddit launch trail) — Amazon autocomplete A–Z mining, category scans, BSR/price/review snapshots, scoring, CSV/JSON export, local SQLite. Multi-marketplace (com/ca/au/de/uk/fr/es/it) → enables per-market niche testing for future translated editions.
+- **trendspyg** (MIT, PyPI) — Google Trends demand-direction check (sustained/rising vs declining). Cache results; unofficial client may break upstream.
+- **Trademark gate** (USPTO + EUIPO — we're in Belgium) — final title/series/brand screening. Lives in `metadata-seo` (title selection) and `publish-checklist` (final brand-risk screen).
+- **Niche ledger** — local CSV/DuckDB per book: keyword, marketplace, format, recurring problem, audience specificity, seasonality, competitor concentration, median review count, observed BSR range, trademark status, differentiation hypothesis.
+
+**Amendment to ADR-008 — the risk tiers** (replaces the flat "no scraping"):
+
+| Mechanism | Risk | Verdict |
+|---|---|---|
+| Amazon **suggestion API** (KDP Scout autocomplete mining — the same endpoint a browser hits per keystroke) | Low | ✅ Allowed, conservative rate limits |
+| Product-page **snapshots** (BSR/price/reviews via KDP Scout) | Medium | ⚠️ Low volume + conservative rate limits; **top-10 always human-verified** (HITL checkpoint unchanged) |
+| Bulk/high-frequency scraping, proxies, UA evasion | High | ❌ Banned permanently — the account we publish from is the asset |
+
+**TRIZ read**: P26 Copying — adopt the proven inexpensive part (MIT, local, rate-limited) instead of re-deriving it. M2's `niche_calc.py` becomes an **importer + verdict engine** over KDP Scout exports, not a miner.
+
+**Meadows read**: the niche ledger keeps the LP6 information flow local and queryable (SQLite/DuckDB inside our boundary); the trademark gate closes a legal-risk hole that keyword opportunity alone can't see (keyword demand ≠ safe branding).
+
+**Their 4-part scoring rule adopted as cross-check** (maps 1:1 to our Steps 1–4): Demand (autocomplete rich + trend not declining) · Buyers (several books with repeatable rank, not one outlier) · Weakness (comps reveal a gap) · Safety (trademark clear + original content).
+
+**Install (local, isolated venv — inspect before use per SECURITY.md)**:
+```bash
+git clone https://github.com/rxpelle/kdp-scout.git && cd kdp-scout
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e . && kdp-scout config init
+```
