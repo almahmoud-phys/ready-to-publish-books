@@ -133,6 +133,9 @@ failure this guard exists to prevent.
     sources, classes 9/16/41, searched <date>". Absence of evidence with its scope stated. The
     human converts that to clear at sign-off; a real conflict goes to a lawyer, not to a rerun.
   - Same discipline as a zero-keyword harvest: a null result is a measurement, not a conclusion.
+  - **GO requires a human sign-off line** in `research/trademark.md`: `human_signoff: <who> <date>`.
+    `niche_verdict.py` checks for it. Your `no_conflict_found` is a search result; clearance is
+    a legal judgment, and only that line represents it.
 
 ### Step 4 — Verdict (computed, not narrated)
 

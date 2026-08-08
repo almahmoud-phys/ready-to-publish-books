@@ -337,7 +337,17 @@ def main() -> None:
         and not _unknown(evidence.get("differentiation_contract", "UNKNOWN"))
         and authority_fit == "y"
     )
-    trademark_clear = evidence.get("trademark_status") == "no_conflict_found"
+    # `no_conflict_found` is a value an AGENT may write — it means "I searched N sources and
+    # saw nothing", which is absence of evidence. Clearance is a legal judgment the contract
+    # reserves to the human, so GO additionally requires a human sign-off line in trademark.md.
+    # Without this, an agent-authored search result silently satisfied the legal gate.
+    trademark_signoff = False
+    _tm = book_dir / "research" / "trademark.md"
+    if _tm.exists():
+        trademark_signoff = bool(
+            re.search(r"(?im)^\s*human_signoff\s*[:=]\s*\S+", _tm.read_text(encoding="utf-8"))
+        )
+    trademark_clear = evidence.get("trademark_status") == "no_conflict_found" and trademark_signoff
 
     go_conditions = (
         not issues  # every field measured AND every cross-check passed

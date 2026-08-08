@@ -121,7 +121,7 @@ def main():
 
             # 2. Everything measured and consistent, goal set, trademark evidenced -> GO.
             make_book(root, "go", FILLED_CHARTER, full_evidence(seed, n),
-                      trademark="screen 2026-08-08\nverdict: no_conflict_found\n")
+                      trademark="screen 2026-08-08\nverdict: no_conflict_found\nhuman_signoff: owner 2026-08-08\n")
             check("complete + consistent is GO", run(root, "go"), "GO")
 
             # 3. The gate's whole purpose: a claim the artifact does not support must not pass.
@@ -138,6 +138,16 @@ def main():
             make_book(root, "clear", FILLED_CHARTER, full_evidence(seed, n, trademark_status="clear"),
                       trademark="verdict: clear\n")
             check("trademark 'clear' is rejected", run(root, "clear"), "INCOMPLETE", "invalid value")
+
+            # 5b. An agent-written search result is not legal clearance: without the human
+            #     sign-off line, GO must not be reachable however complete the rest is.
+            make_book(root, "nosign", FILLED_CHARTER, full_evidence(seed, n),
+                      trademark="verdict: no_conflict_found\n")
+            got = run(root, "nosign")
+            ok = not got.startswith("GO")
+            print(f"{'PASS' if ok else 'FAIL'}  unsigned trademark cannot reach GO\n      -> {got[:110]}")
+            if not ok:
+                failures.append("unsigned trademark cannot reach GO")
 
             # 6. Partial evidence still yields PIVOT — this is what run 1 actually produced,
             #    and a gate that could only say INCOMPLETE until every field was filled would

@@ -8,9 +8,13 @@
       "recommended_seed": "llm inference",
       "rerun_required": true,
       "completed": "2026-08-08T12:38:28Z",
-      "pivot_cycles": 0,
-      "seed_lineage": [],
-      "collector_health": null
+      "pivot_cycles": 1,
+      "seed_lineage": [
+        "llm cost / llm routing (run 1, 0 keywords)",
+        "llm inference (recommended)"
+      ],
+      "collector_health": "CONFIRMED",
+      "note": "run 1 predates evidence.yaml + charter; reconciled 2026-08-08"
     },
     "1_outline": {
       "status": "pending",

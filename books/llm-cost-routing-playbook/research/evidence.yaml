@@ -1,15 +1,30 @@
 # Stage-0 evidence scaffold for a single book. Values start as UNKNOWN.
 # `clear` is deliberately NOT a legal trademark_status value: agents only record
 # `no_conflict_found`, then humans convert that to `clear` at sign-off.
-collector_health: UNKNOWN          # CONFIRMED only if a control seed was mined this session
-trend_direction: UNKNOWN           # rising | flat | declining
-autocomplete_richness: UNKNOWN     # map of seed -> harvested keyword count
-comps_under_50k_bsr: UNKNOWN      # integer
-comp_table: UNKNOWN                # list of {title, asin, bsr, price, review_count, latest_review_date}
+
+# Filled 2026-08-08 from stage-0 run 1. Fields still UNKNOWN were not measured;
+# they are the GO blockers listed in research/niche.md section 7.
+collector_health: CONFIRMED
+trend_direction: rising
+autocomplete_richness:
+  ai agents: 17
+  ai cost: 1
+  ai engineering: 14
+  generative ai: 18
+  llm: 29
+  llm deployment: 2
+  llm evaluation: 2
+  llm inference: 2
+  llm ops: 1
+  llm quantization: 1
+  llmops: 4
+  prompt engineering: 12
+comps_under_50k_bsr: UNKNOWN
+comp_table: UNKNOWN
 result_count_or_subniche: UNKNOWN
-category_difficulty: UNKNOWN       # BSR of rank #20 in 2 target categories
+category_difficulty: UNKNOWN
 gap_statement: UNKNOWN
-differentiation_contract: UNKNOWN  # 3 promises, each citing a negative review
-authority_fit: UNKNOWN             # y | n — from charter.authority_envelope
+differentiation_contract: UNKNOWN
+authority_fit: UNKNOWN
 asset_feasibility: UNKNOWN
-trademark_status: UNKNOWN          # no_conflict_found | conflict | uncertain
+trademark_status: UNKNOWN
