@@ -4,6 +4,7 @@ Harness-driven pipeline: one-line book idea → ready-to-publish package (EPUB +
 
 - **Status**: M0 scaffold complete (2026-08-08)
 - **Entry point**: `CLAUDE.md`
+- **Start here (human)**: [docs/how-to-hunt-a-niche.md](docs/how-to-hunt-a-niche.md) — plain-English walkthrough of stage 0: finding buyer language, reading the data, and deciding GO / PIVOT / KILL.
 - **Structure**: `.agents/` (skills, rules, workflows, memories — harness-neutral source of truth) · `.claude/skills` → symlink to `.agents/skills` so Claude Code auto-discovers them · `books/` (per-book workspaces) · `pipeline/` (orchestrator, M2) · `tooling/` (pandoc/latex, harvest) · `tests/` (golden-book regression)
 - **Governance**: `implementation_plan.md` + `decisions-log.md` (ADR-001…006)
 - **Private**: contains unpublished manuscripts and niche research.
