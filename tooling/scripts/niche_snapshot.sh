@@ -40,9 +40,9 @@ fi
 SCOUT_RC=${PIPESTATUS[0]}
 set -e
 
-if grep -Fq "CAPTCHA detected" "$TMP_OUTPUT" || \
-   grep -Fq "search failed or CAPTCHA" "$TMP_OUTPUT" || \
-   grep -Fq "No niches could be analyzed" "$TMP_OUTPUT"; then
+if grep -Eqi \
+   'CAPTCHA detected|search failed or CAPTCHA|No niches could be analyzed|Network error querying|NameResolutionError|Failed to resolve|Max retries exceeded|HTTP[^[:alnum:]]*(403|429)' \
+   "$TMP_OUTPUT"; then
   echo "Refusal detected in track add output — circuit-breaker triggered (exit 3)."
   echo "If KDP Scout suggests configuring a proxy, ignore it: ADR-008 bans proxies permanently."
   rm -f "$TMP_OUTPUT"
@@ -59,9 +59,9 @@ set +e
 SCOUT_RC=${PIPESTATUS[0]}
 set -e
 
-if grep -Fq "CAPTCHA detected" "$TMP_OUTPUT" || \
-   grep -Fq "search failed or CAPTCHA" "$TMP_OUTPUT" || \
-   grep -Fq "No niches could be analyzed" "$TMP_OUTPUT"; then
+if grep -Eqi \
+   'CAPTCHA detected|search failed or CAPTCHA|No niches could be analyzed|Network error querying|NameResolutionError|Failed to resolve|Max retries exceeded|HTTP[^[:alnum:]]*(403|429)' \
+   "$TMP_OUTPUT"; then
   echo "Refusal detected in track list output — circuit-breaker triggered (exit 3)."
   echo "If KDP Scout suggests configuring a proxy, ignore it: ADR-008 bans proxies permanently."
   rm -f "$TMP_OUTPUT"

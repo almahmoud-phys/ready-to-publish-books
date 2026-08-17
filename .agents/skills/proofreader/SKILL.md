@@ -4,10 +4,10 @@ description: "Stage 5 (parallel with fact-checker) — mechanical copy edit: gra
 model_tier: cheap
 stage: 5
 context_budget:
-  always_read: [books/<slug>/bible/style-sheet.md, .agents/rules/style.md]
-  read: [books/<slug>/chapters/ (one at a time)]
+  always_read: [books/<slug>/bible/style-sheet.md, books/<slug>/constitution.md, .agents/rules/style.md, .agents/rules/task-ledger.md]
+  read: [books/<slug>/tasks.md (Stage 5 and current chapter mechanical tasks only), books/<slug>/chapters/ (one at a time)]
   never_read: [books/<slug>/scores/, outline/, research/]
-outputs: [books/<slug>/chapters/ (edited in place), books/<slug>/edits/edit-log.md]
+outputs: [books/<slug>/chapters/ (edited in place), books/<slug>/edits/edit-log.md, books/<slug>/tasks.md proof evidence]
 ---
 
 # Proofreader

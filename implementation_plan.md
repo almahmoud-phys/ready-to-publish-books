@@ -91,6 +91,7 @@ Alternatives dismissed:
 ready-to-publish-books/
 ├── CLAUDE.md                      # router: pipeline map, stage table, gate rules
 ├── AGENTS.md                      # harness-agnostic mirror of CLAUDE.md
+├── books/_template/constitution.md # per-book governance contract copied into every new workspace
 ├── .agents/
 │   ├── skills/                    # one SKILL.md per stage (the prepared skills)
 │   │   ├── niche-research/SKILL.md
@@ -114,10 +115,12 @@ ready-to-publish-books/
 │   ├── router.py                  # model routing table (stage → model tier) (M2)
 │   └── state.py                   # state.json ledger read/write (M2)
 ├── books/<slug>/                  # per-book workspace = the managed context
+│   ├── constitution.md            # per-book governance contract (read at every stage)
 │   ├── manifest.yaml              # goal, genre, track (generated|assisted), gates, models
 │   ├── state.json                 # resumable stage ledger
 │   ├── compliance_log.yaml        # every generation event: tool, model, artifact hash
-│   ├── research/ outline/ bible/
+│   ├── tasks.md                    # detailed human/AI checklist; never pipeline state
+│   ├── research/ outline/ bible/   # outline owns hierarchy + per-chapter contracts
 │   ├── chapters/                  # chapter_NN.md (write-only until stage 3)
 │   ├── summaries/                 # 200-word rolling chapter summaries
 │   ├── audits/ scores/ edits/
@@ -149,12 +152,19 @@ ready-to-publish-books/
 
 ### Managed context rules (the differentiator)
 
-1. `manifest.yaml` + `bible/` are the ONLY artifacts loaded at every stage.
+1. `manifest.yaml`, `constitution.md`, and `bible/` are the core artifacts loaded at every stage.
 2. Chapters never re-enter context in full after writing. Continuity runs on 200-word rolling summaries in `summaries/`.
 3. Each SKILL.md frontmatter declares its **context budget**: files to read, files forbidden to read.
 4. Draft-before-judgment is a M1 contract expectation, not a hard runtime guarantee: chapter-writer should avoid scoring rubrics, and this is enforced by isolation in M2; scorer runs only on complete drafts.
 5. Judges get excerpts + summaries per pass; full read only at final audit.
 6. Retrospective at book end → `.agents/memories/` pattern entries.
+
+### Book contract and amendment protocol
+
+- `books/_template/constitution.md` is copied verbatim into every new workspace by `new-book.sh`, making `constitution.md` part of factory inheritance.
+- Every stage contract should list `books/<slug>/constitution.md` under `always_read`.
+- Amendment rule: owner approval required; any amendment records scope and trigger; affected stages must re-run before progress resumes.
+- Conflict rule: when `constitution.md`, `manifest.yaml`, `state.json`, or `compliance_log.yaml` disagree, stop for reconciliation before any new stage starts.
 
 ### Model routing (router.py defaults; overridable per-book in manifest)
 
@@ -209,3 +219,182 @@ Target: **<$30–50 per book** end-to-end (proven benchmark: book-generator).
 4. **Multi-platform: KDP + direct sales + wide later; no KU** (ADR-004) ✅
 5. **AI-image covers; typography-vs-imagery sub-decision deferred to M4** (ADR-005) ✅
 6. **Greenfield repo + M0 harvest phase; no cloning** (ADR-006) ✅
+
+---
+
+# M1 First Real Book Launch Plan — 2026-08-09
+
+## Objective
+
+Take one **new, authority-backed non-fiction practitioner guide** from a human-supplied seed to a verified KDP + direct-sales package, then stop at the human publish action. The existing `books/llm-cost-routing-playbook/` workspace remains a Stage-0 sample/fixture and is not the first real publication.
+
+**Classification:** plan-first. The book choice is not yet present in the repo, the sample has been explicitly retired as a publication candidate by the owner, and publication is outward-facing.
+
+**Definition of done:**
+
+- a fresh `books/<slug>/` workspace reaches Gates A–E with reproducible evidence;
+- every score dimension is at least 7/10 and cites the manuscript;
+- all factual claims are verified, rewritten, or cut;
+- EPUB passes `epubcheck`, the print PDF is visually inspected, and cover/metadata/compliance/originality checks pass;
+- the owner reads and approves the complete book and performs the final publish action;
+- the retrospective is captured for Book 2.
+
+## Context & Reflection
+
+### Evidence loaded
+
+- The [Project Hub](https://app.notion.com/p/3b50c17b1b0c81f59fbafef8d28988ad) and its complete visible child tree were loaded on 2026-08-09. The hub's goal is a durable catalog of useful books, not throughput.
+- The [Stage-0 guide](https://app.notion.com/p/3b70c17b1b0c819c8d8ce33eea5b2b17), [numbers guide](https://app.notion.com/p/3b70c17b1b0c81328724e8ce9b9e81dd), [Book 1 case study](https://app.notion.com/p/3b70c17b1b0c81a9a891f7a12aa88c3d), [failure guide](https://app.notion.com/p/3b70c17b1b0c812b9075c0c68ec97185), [post-GO route](https://app.notion.com/p/3b70c17b1b0c81878b27f034757571c3), and [stage reference](https://app.notion.com/p/3b70c17b1b0c81c6922ae160e0398bbe) confirm that a false Stage-0 signal is the most expensive upstream failure.
+- The sample is a `PIVOT` with no outline, manuscript, score, or export. It is useful as a test fixture, not as book content: [`state.json`](books/llm-cost-routing-playbook/state.json), [`research/niche.md`](books/llm-cost-routing-playbook/research/niche.md).
+- The current verdict prefers the ignored machine-global ledger over the committed book-local ledger: [`tooling/scripts/niche_verdict.py`](tooling/scripts/niche_verdict.py). The sample therefore changes result between this machine and a clean checkout.
+- The Stage-0 contract requires refusal detection and exit 3, but [`tooling/scripts/niche_mine.sh`](tooling/scripts/niche_mine.sh) does not inspect KDP Scout output for refusal markers before reading its persistent database.
+- M1 is intentionally a manual walkthrough. The M2 orchestrator does not exist yet, and building it now would automate contracts that the first real book has not validated.
+- Codanna was used first, as requested. Its Python symbol index works, but documentation search is disabled and the index contains no document embeddings; Markdown contracts were therefore confirmed with narrow primary-file reads.
+
+### Systems diagnosis
+
+**Core contradiction:** move quickly toward a first publication without weakening evidence reliability, quality, or account safety.
+
+- **Active archetypes:** Fixes That Fail (bad evidence produces a fast but wrong verdict) and Drifting Goals (schedule pressure invites weaker gates).
+- **Highest accessible leverage:** LP5 rules and LP6 information flows. A trustworthy Stage-0 decision has more leverage than additional pipeline automation.
+- **TRIZ resolution:** P10 Preliminary Action repairs the gate before book creation; P1 Segmentation isolates the new book from the sample and machine-global state; P23 Feedback makes refusals and provenance observable; P2 Taking Out excludes unrelated M2 work.
+- **Ideal Final Result:** a book advances only when its committed local evidence reproduces the same verdict in a clean environment, a blocked collector cannot masquerade as absent demand, and unknowns remain `UNKNOWN` rather than guesses.
+
+## Chosen Strategy
+
+Run a **manual M1 critical path**:
+
+1. harden only the two Stage-0 integrity seams;
+2. obtain one human-authored seed and authority fence;
+3. create a fresh book workspace;
+4. run the existing skills stage by stage with their gates;
+5. harden export tooling just before Stage 6, when the manuscript has earned that investment;
+6. stop for the owner's final publish action.
+
+Alternatives dismissed:
+
+- **Continue the sample:** contradicts the owner's current instruction and would inherit sample-specific evidence, authority claims, and hidden-state defects.
+- **Build M2 first:** expands scope into orchestration before the manual pipeline and its contracts have passed once.
+- **Start drafting before GO:** shifts the burden from market validation to prose and makes sunk cost pressure part of the verdict.
+
+## Execution Plan
+
+### 0. Approval and decision record
+
+- Obtain approval for this plan.
+- Append an ADR amendment stating that `llm-cost-routing-playbook` is a non-publishing sample and the first real M1 title will use a fresh workspace. Do not rewrite historical ADR-007.
+- Keep Notion as planning history and the repo as the runtime source of truth.
+
+**Verification:** the decision is recorded without modifying the sample workspace.
+
+### 1. Repair the Stage-0 trust boundary
+
+Scope:
+
+- `tooling/scripts/niche_mine.sh`
+- `tooling/scripts/niche_verdict.py`
+- `tests/test_niche_verdict.py`
+- new deterministic `tests/test_niche_mine.py`
+- `decisions-log.md` for the ADR amendment
+
+Changes:
+
+- capture and scan the current KDP Scout invocation for refusal markers; return exit 3 and append no rows on refusal;
+- make verdict computation use only `books/<slug>/research/niche-ledger.csv` for book evidence;
+- make the mining-to-book evidence transfer explicit rather than allowing the verdict to read shared machine state;
+- replace environment-dependent tests with temporary, book-local fixtures;
+- test empty-but-healthy, refused, consistent, inconsistent, unsigned-trademark, PIVOT, and GO paths.
+
+**Verification:** shell syntax passes; both test programs pass; a clean-state run and a run with `.kdp-research/ledger/` present produce the same verdict; simulated refusal exits 3 and leaves the ledger unchanged.
+
+### 2. Select and birth the real book
+
+The owner supplies the one input the system cannot derive:
+
+- reader problem and useful outcome;
+- authority envelope and explicit exclusions;
+- one seed idea plus allowed adjacent pivots;
+- intended author identity/brand boundary.
+
+I will convert that into one recommended seed/working title, then run:
+
+```bash
+./tooling/scripts/new-book.sh <slug> "<working title>"
+```
+
+Only `manifest.niche_seed` and the human-owned charter are filled before research. No persona, subtitle, market number, or differentiation promise is guessed.
+
+**Verification:** factory validation passes; registry entry and all stage directories exist; the workspace contains no copied sample evidence or state.
+
+### 3. Run Stage 0 to an honest verdict
+
+- prove collector health with the control seed before interpreting zeros;
+- mine charter-, harvest-, competitor-, or review-derived candidates only, with provenance;
+- collect current trends, top-10 competitor facts, negative-review gaps, asset feasibility, and preliminary trademark evidence;
+- require human verification for live comps and trademark risk acceptance;
+- run `niche_verdict.py` and obey `GO | PIVOT | KILL | INCOMPLETE`;
+- allow at most three charter-bounded pivots; never promote PIVOT/KILL without new evidence.
+
+**Verification:** verdict recomputes from committed book-local evidence; every load-bearing current figure has a source and date; GO is impossible with an unknown field, failed control, refusal, or missing human trademark signoff.
+
+### 4. Design the book and pass Gate A
+
+- run `outline-architect`, then derive `story-bible` from the approved outline rather than pretending they are independent;
+- reconcile the 8–12k M1 acceptance target with the 30k template default using the validated reader outcome and shelf evidence; record one explicit word target before drafting;
+- present chapter promises, dependencies, asset needs, and track choice for approval;
+- lock `assisted` or `generated` in both manifest and registry.
+
+**Verification:** every chapter has a promise, word budget, dependency links, and required assets; bible matches the outline; owner approval is recorded.
+
+### 5. Draft, attack, score, and correct
+
+- write one chapter per invocation using only its contract and the bible;
+- run continuity after each batch using summaries;
+- run the adversarial structural audit on the complete draft;
+- resolve critical findings, then score the complete post-audit manuscript;
+- route every sub-7 dimension backward to its responsible stage with citations, maximum three cycles;
+- sequence proofreader and fact-checker edits to avoid concurrent writes to the same chapters.
+
+**Verification:** Gates B–D pass; no critical structural finding or factual flag remains; all compliance events and costs are logged; surrounding stage checks remain green.
+
+### 6. Harden and run packaging just in time
+
+- install/verify Pandoc, epubcheck, XeLaTeX, and the selected cover composition tool only when Stage D passes;
+- resolve the byline/author field, direct-sales PDF/EPUB variants, export hashes, and the originality-check artifact before Gate E;
+- run metadata first, formatter next, and cover print-spread work after final page count;
+- render and visually inspect EPUB/PDF/cover, not merely infer success from file existence.
+
+**Verification:** EPUB validation exits 0; print PDF and cover dimensions render correctly; every export is hashed in the append-only compliance log; metadata, rights, disclosure, originality, and platform variants are complete.
+
+### 7. Publish and close the loop
+
+- run `publish-checklist` and produce a go/no-go plus exact disclosure answers;
+- obtain explicit owner authorization for the outward publication action;
+- owner performs the KDP/direct-sales publish step;
+- record publication state and write the first retrospective into `.agents/memories/`.
+
+**Verification:** all Gates A–E are PASS; owner has read the complete book; live listings are observed; registry/state are updated; retrospective names reusable lessons and failures.
+
+## Human Interaction Contract
+
+There are two formal HITL gates, but the honest M1 workload includes these human inputs:
+
+1. seed + authority charter;
+2. live top-10 competitor verification + trademark signoff;
+3. outline/track approval (formal Gate 1);
+4. title/description and cover selection;
+5. cover-to-cover manuscript approval + publish click (formal Gate 2).
+
+This replaces the misleading claim that M1 needs only two human touches while preserving the two formal pipeline gates.
+
+## Verification Plan
+
+- **Preflight:** deterministic Stage-0 tests, refusal simulation, shell syntax, clean-state reproducibility.
+- **Per stage:** emit the required Gate A–E verification block with file-and-line evidence.
+- **Surrounding health:** run all repo tests after production-code changes; validate shell and Python syntax; run the relevant exporter checks after packaging changes.
+- **Adversarial checks:** after consequential edits, use distinct attackers for behavioral correctness, scope drift, and contract contradiction.
+- **Final observation:** validate files, inspect renders, recompute disclosure from the log, and observe the live listing after the owner publishes.
+
+## Approval Gate
+
+No Stage-0 code, decision record, or new book workspace will be changed until the owner approves this plan. After approval, execution starts at Step 1; the first book seed is collected only after the trust-boundary tests pass.

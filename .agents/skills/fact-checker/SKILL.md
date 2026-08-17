@@ -4,10 +4,10 @@ description: "Stage 5 (parallel with proofreader) — non-fiction's teeth (ADR-0
 model_tier: mid
 stage: 5
 context_budget:
-  always_read: [books/<slug>/bible/terminology.md, books/<slug>/outline/ (key_claims per chapter)]
-  read: [books/<slug>/chapters/ (one at a time)]
+  always_read: [books/<slug>/bible/terminology.md, books/<slug>/constitution.md, books/<slug>/outline/ (key_claims per chapter), .agents/rules/task-ledger.md]
+  read: [books/<slug>/tasks.md (Stage 5 and current chapter verification tasks only), books/<slug>/chapters/ (one at a time)]
   never_read: [books/<slug>/scores/]
-outputs: [books/<slug>/edits/fact-report.md, books/<slug>/chapters/ (flagged/resolved)]
+outputs: [books/<slug>/edits/fact-report.md, books/<slug>/chapters/ (flagged/resolved), books/<slug>/tasks.md fact evidence]
 ---
 
 # Fact-Checker

@@ -84,3 +84,36 @@ th { background: #f0f0f0; font-family: 'Helvetica Neue', Arial, sans-serif; }
   margin: 1.2em 0;
   page-break-inside: avoid;
 }
+/* Every narrative starts on a fresh screen/page. Exercise headings intentionally
+   lack this class so the collected drill section remains compact. */
+h1.story-opening,
+h2.story-opening {
+  break-before: page;
+  page-break-before: always;
+  margin-top: 0;
+  margin-bottom: 1.75em;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+h1.story-opening .story-label,
+h2.story-opening .story-label {
+  display: block;
+  margin-bottom: 0.55em;
+  color: #315c73;
+  font-size: 0.48em;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+}
+
+h1.story-opening .story-title,
+h2.story-opening .story-title {
+  display: block;
+  color: #151515;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.12em;
+  font-weight: normal;
+  line-height: 1.16;
+}

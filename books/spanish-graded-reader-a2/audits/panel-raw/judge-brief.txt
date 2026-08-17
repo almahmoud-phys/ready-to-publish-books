@@ -1,0 +1,111 @@
+<task>
+<goal>
+You are an independent literary judge. Below are six short Spanish texts, each an A1-level
+(beginner) reader passage aimed at adult English speakers learning Spanish. They come from
+different candidate books under consideration by a publisher.
+
+Judge them. Read-only analysis: do NOT modify, create, or write any file. Ignore the repository
+you are running in; it is irrelevant. Everything you need is in this brief.
+</goal>
+
+<current-state>
+You know nothing about who wrote these or why. You are not told which sample anyone prefers.
+Judge only the text in front of you.
+
+Context you DO need: the intended reader is an adult, roughly 25-55, who has finished a
+beginner app course, can read simple present-tense Spanish, and is buying a book to read for
+pleasure rather than to study. They are self-conscious about reading "baby books". They read on
+a Kindle, usually at night, usually tired.
+
+All six samples are constrained to roughly the same beginner vocabulary and grammar ceiling.
+That constraint is fixed and is NOT a defect to penalise. Simple sentences are the assignment.
+The question is what a writer did WITHIN that constraint.
+</current-state>
+
+<samples>
+SAMPLES ARE IN THE FILE /tmp/panel/samples.txt — READ IT FIRST. It contains six passages
+labelled MUESTRA A through MUESTRA F.
+</samples>
+
+<change>No file changes. Analysis only.</change>
+<do-not-touch>Every file. Read /tmp/panel/samples.txt and nothing else.</do-not-touch>
+<gates>None.</gates>
+
+<report>
+For EACH of the six samples A-F, output a block in exactly this form:
+
+SAMPLE <letter>
+  adult_dignity: <0-10>
+  local_closure: <0-10>
+  character_motivation: <0-10>
+  desire_to_continue: <0-10>
+  natural_spanish: <0-10>
+  sentence_pleasure: <0-10>
+  critical: <yes|no>
+  evidence: <one quoted Spanish phrase or sentence from that sample that most justifies your
+             lowest score, then one clause saying why>
+
+Definitions, apply them strictly and identically to all six:
+- adult_dignity: would an adult be embarrassed to be seen reading this on a train? 10 = not at
+  all; 0 = it reads as a children's picture book or a classroom worksheet.
+- local_closure: does THIS passage, read alone with no other passage, deliver a complete
+  experience with an ending that lands? 10 = yes; 0 = it is a fragment that only makes sense as
+  part of something else.
+- character_motivation: do the people in it want something, and does what they do follow from
+  what they want? 10 = yes; 0 = they are labels performing vocabulary.
+- desire_to_continue: after finishing, do you want the next passage from this same book? 10 =
+  strongly; 0 = actively not.
+- natural_spanish: does it read as Spanish a native speaker would actually write, given the
+  beginner ceiling? 10 = yes; 0 = translated-from-English or textbook-artificial.
+- sentence_pleasure: at the level of individual sentences and their rhythm, is there any
+  craft or pleasure? 10 = real craft; 0 = flat filler.
+- critical: answer "yes" ONLY if you judge this sample unsuitable to sell to the adult reader
+  described above, or you would not read on. Otherwise "no".
+
+Every score of 6 or below MUST be accompanied by a quoted passage in `evidence`. An unquoted
+low score is not usable. Quote in Spanish, verbatim.
+
+Then output:
+
+RANKING: <best to worst, e.g. C > A > F > D > B > E>
+
+Then, in a short paragraph each:
+1. Which sample is most clearly written for an ADULT, and which is most clearly not, and how
+   you can tell. Be concrete about the linguistic signals.
+2. The single strongest sample: name the one specific thing it does that the others do not.
+3. The single weakest sample: name the specific thing that sinks it.
+4. Is there any sample here you believe an adult would pay money for and finish? If none, say
+   none. Do not be polite about this.
+
+Then close with EXACTLY ONE verdict block, no prose inside it. Re-read your own analysis before
+writing it and confirm each vote matches what you argued above.
+
+<debate>
+  <agreed_points><point>...</point></agreed_points>
+  <contested_points>
+    <point id="1">
+      <position_a>At least one sample here is genuinely suitable for an adult reader.</position_a>
+      <position_b>None of these samples clears the bar for an adult reader.</position_b>
+    </point>
+    <point id="2">
+      <position_a>The best sample's quality comes from craft the beginner constraint did not prevent.</position_a>
+      <position_b>The beginner constraint makes all six functionally equivalent; ranking is noise.</position_b>
+    </point>
+    <point id="3">
+      <position_a>Each top-ranked sample stands alone as a complete story.</position_a>
+      <position_b>The top-ranked samples are fragments that only work as part of a longer work.</position_b>
+    </point>
+  </contested_points>
+  <verdict contract="defend-or-concede">
+    <for_point id="1">concede a | concede b | stand</for_point>
+    <for_point id="2">concede a | concede b | stand</for_point>
+    <for_point id="3">concede a | concede b | stand</for_point>
+  </verdict>
+</debate>
+</report>
+
+<constraint>
+Read-only. No branches, worktrees, commits, or file writes. Do not search the web.
+Do not look for the origin of these texts. Judge the text as given.
+</constraint>
+</task>

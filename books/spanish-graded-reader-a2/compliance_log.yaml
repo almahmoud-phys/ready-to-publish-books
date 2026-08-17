@@ -1,0 +1,2617 @@
+# books/spanish-graded-reader-a1/compliance_log.yaml — APPEND-ONLY. Written at every generation event (rule: .agents/rules/kdp-compliance.md).
+# publish-checklist generates KDP disclosure answers FROM THIS FILE. Corrections are new entries, never edits.
+# This file is a YAML SEQUENCE — appenders write top-level `- event:` items
+# (compile_book.py log_event, kdp-compliance.md). It must NOT open with mapping
+# keys: a `book:`/`events: []` header makes the first append unparseable, and the
+# script appending it still exits 0. Book slug comes from the path; `track` lives
+# in manifest.yaml (its owner) — duplicating it here would be a second source of truth.
+# event schema:
+# - event: generate | edit | export | cover
+#   skill: <skill-name>
+#   model: <model-id>
+#   artifact: <relative path>
+#   sha256: <hash>
+#   timestamp: 2026-08-12T03:30:47Z
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/charter.md
+  sha256: 4c1c7d1cd21b1692d7f411e507c1653c7485698d5e9b420d5bfa58e2b0b95f84
+  timestamp: 2026-08-12T03:38:05Z
+  note: "agent-drafted under explicit owner delegation 2026-08-12; charter NOT owner-attested"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/evidence.yaml
+  sha256: e1b7b6c62a75105abd0e049e680f0f1e5b4cf8bc89d542e29cf96b78c3e6c66c
+  timestamp: 2026-08-12T03:38:05Z
+  note: "agent-drafted under explicit owner delegation 2026-08-12; charter NOT owner-attested"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/candidates.csv
+  sha256: 72dad3f39b012b0978160b837534c405f98120c68ba049007cdbc1e030947eb0
+  timestamp: 2026-08-12T03:38:05Z
+  note: "agent-drafted under explicit owner delegation 2026-08-12; charter NOT owner-attested"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: tasks.md
+  sha256: ae1dbdcdff3bbcef9ff78ac208cf6083436df0a49bab5c7ecd5f387c15f7ef86
+  timestamp: 2026-08-12T03:38:05Z
+  note: "agent-drafted under explicit owner delegation 2026-08-12; charter NOT owner-attested"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/trademark.md
+  sha256: 6662e7bc24e5b1e299dc5c6329e75c350f39d668062ca0df485d36b065b07f0f
+  timestamp: 2026-08-12T11:00:49Z
+  note: "stage-0 evidence pass 2: category rank-20, healthy autocomplete via wrapper, trademark screen"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/niche-ledger.csv
+  sha256: cdab5a8b258df9960f2f58e47f221b48e69f4af702ddc0744fb416484edb07e6
+  timestamp: 2026-08-12T11:00:49Z
+  note: "stage-0 evidence pass 2: category rank-20, healthy autocomplete via wrapper, trademark screen"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/evidence.yaml
+  sha256: 98bae53ffbc8b74f569cb0b4c1f5159655eec694a1d31ee4ff4277ab030709f2
+  timestamp: 2026-08-12T11:00:49Z
+  note: "stage-0 evidence pass 2: category rank-20, healthy autocomplete via wrapper, trademark screen"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/reviews.md
+  sha256: 2fc87a62c53fb89e0545da5a8e1fc5f03839a7f40809d20c1fdcfb0d70d5754d
+  timestamp: 2026-08-12T12:05:50Z
+  note: "Goodreads critical-review pass; gap_statement + differentiation_contract derived"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: research/evidence.yaml
+  sha256: a5758f339e08e10373be5085f4d8d1ba662c22e73bd34c0a99cb613445cc09a2
+  timestamp: 2026-08-12T12:05:50Z
+  note: "Goodreads critical-review pass; gap_statement + differentiation_contract derived"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: tasks.md
+  sha256: 4fe486dc031075bc298019f249b8ec421a72d009676a57d5eaa4374f98e4b3ca
+  timestamp: 2026-08-12T21:49:59Z
+  note: "pipeline proof: A1 story passed graded_reader_check at 0.979 coverage, 0 locale violations"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: assets/wordlist-a1-provisional.txt
+  sha256: 530ec6bdd7395f41fc1c0dd1d7eca8c2d77bdf4123104737bf9f7aa33cf505a6
+  timestamp: 2026-08-12T21:49:59Z
+  note: "pipeline proof: A1 story passed graded_reader_check at 0.979 coverage, 0 locale violations"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: chapters/sample-story-pipeline-proof.md
+  sha256: 544f94a2043c0070671f79615bc8d25b948deaad1147260877ef9f077848d1b4
+  timestamp: 2026-08-12T21:49:59Z
+  note: "pipeline proof: A1 story passed graded_reader_check at 0.979 coverage, 0 locale violations"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: assets/wordlist-es-opensubtitles-top2000.txt
+  sha256: 2606261ef529a8930bf084f02103c2dcbab2bd35d5bf795ba67b0a632c66b14f
+  timestamp: 2026-08-12T22:40:22Z
+  note: "licensed OpenSubtitles wordlist adopted; story validated 0.971 against independent source"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: assets/WORDLIST-PROVENANCE.md
+  sha256: 0dc4f66ef591dd494f63c0098c2086b922705e03ac24f089125d8128ae06049a
+  timestamp: 2026-08-12T22:40:22Z
+  note: "licensed OpenSubtitles wordlist adopted; story validated 0.971 against independent source"
+- event: generate
+  skill: niche-research
+  model: claude-opus-5
+  artifact: tasks.md
+  sha256: b87b50b47726d3621c542b89b49f86dffb5ff38a01ea18d5918eab21cf8972f2
+  timestamp: 2026-08-12T22:40:22Z
+  note: "licensed OpenSubtitles wordlist adopted; story validated 0.971 against independent source"
+- event: generate
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: outline/outline.md
+  sha256: 7e2cf2ca8514bf8b72ef44e75ea7d2a91a0efb8507369dcddee9f2f43356cfb6
+  timestamp: 2026-08-12T22:53:34Z
+  note: "stage 1 outline + bible; awaiting HITL Gate 1"
+- event: generate
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: bible/cast.md
+  sha256: 02efb0e7eaa09e8d9f781adea0292a9fcc3ec667e6178dc0df36dd438bd98b3c
+  timestamp: 2026-08-12T22:53:34Z
+  note: "stage 1 outline + bible; awaiting HITL Gate 1"
+- event: generate
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: bible/places.md
+  sha256: ddbfc9f9f0a729f7e89c39d4cd9c1508a7973f47d7f4c2838312ffa7c9e3e002
+  timestamp: 2026-08-12T22:53:34Z
+  note: "stage 1 outline + bible; awaiting HITL Gate 1"
+- event: generate
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: bible/vocabulary-ledger.md
+  sha256: 7fb5813ad4da319bc0a3180f5dbb18670fdad7bbb19669afee3474ac7b062962
+  timestamp: 2026-08-12T22:53:34Z
+  note: "stage 1 outline + bible; awaiting HITL Gate 1"
+- event: generate
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: research/niche.md
+  sha256: d69ca8df3d1253a3d7e8497014d2f189021581c3b0509ef16451247c55ba829e
+  timestamp: 2026-08-12T22:53:34Z
+  note: "stage 1 outline + bible; awaiting HITL Gate 1"
+- event: edit
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: outline/outline.md
+  sha256: e22c68d0d3efb759e71eec1f132ee16b1efc0b6187d6de5f029c8aa2b5037f4d
+  timestamp: 2026-08-12T23:25:24Z
+  note: "outline v1.1 after codex Gate 1 review: dramatic contracts, letter engine, sample absorbed"
+- event: edit
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: bible/cast.md
+  sha256: 1c88ca89f628c794c09d993cee6920bd162bff5cbd9a1750080ccabffc994960
+  timestamp: 2026-08-12T23:25:24Z
+  note: "outline v1.1 after codex Gate 1 review: dramatic contracts, letter engine, sample absorbed"
+- event: edit
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: bible/places.md
+  sha256: bdc85119d43ebba89138bab3b76637422b9f8b10b9945542af58adbd70678d61
+  timestamp: 2026-08-12T23:25:24Z
+  note: "outline v1.1 after codex Gate 1 review: dramatic contracts, letter engine, sample absorbed"
+- event: edit
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: tasks.md
+  sha256: 572c1bc42e9e7b0b852d372dcb5d192a42a54fedd770df287ed992182b3f271f
+  timestamp: 2026-08-12T23:25:24Z
+  note: "outline v1.1 after codex Gate 1 review: dramatic contracts, letter engine, sample absorbed"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: audits/part1-panel-preregistration.md
+  sha256: e350ab0ed4e909e73b3ba04949e81cfbed7cdafc4239cd18484a19743030b322
+  timestamp: 2026-08-13T01:20:00Z
+  note: "Part I quality panel: thresholds fixed BEFORE any judge was dispatched"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: audits/panel-controls/control-juvenile.md
+  sha256: ac77945c3c383a7793c11f8b2728f702b62851f00ecefd32fd7bf68cf31135ab
+  timestamp: 2026-08-13T01:20:00Z
+  note: "Part I quality panel: deliberately juvenile negative control, agent-written (ADR-008 bans using a competitor's text)"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: audits/panel-controls/control-textbook.md
+  sha256: 2c8ce3f817c1205e62268f7932970e9d13cf413c27e6fc3ed1eb81f3797f55d2
+  timestamp: 2026-08-13T01:20:00Z
+  note: "Part I quality panel: flat textbook-register control, agent-written"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: audits/part1-panel-results.md
+  sha256: bc62a0597d446f1e41a66c53d76b69d71ca206cdcb7915646957c793c3dab221
+  timestamp: 2026-08-13T01:20:00Z
+  note: "Part I quality panel VERDICT=PASS across 2 rounds, 3 independent families (codex/qwen/deepseek), blinded"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/01-la-carta-sin-dueno.md
+  sha256: 6262bd93a9db0b3c15ea3060d1dddce55f7c4faf2b64b10143ccd6059a660637
+  timestamp: 2026-08-13T01:20:00Z
+  note: "panel round 1 failed local_closure 6.67<7.0; ending rewritten; round 2 = 7.00 PASS"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/02-el-pan-de-las-cinco.md
+  sha256: 16dd2067c96cf2fda03ec6cebba4e76b1a1573c4338fcc72f100daaffe0de103
+  timestamp: 2026-08-13T01:20:00Z
+  note: "panel round 1 failed local_closure 6.67<7.0; ending rewritten; round 2 = 8.33 PASS"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/04-todos-los-dias-lo-mismo.md
+  sha256: 666466438c8171da3beac087d02ffdc288d63957765b9574ffc4e9822506a234
+  timestamp: 2026-08-13T01:20:00Z
+  note: "fixed wrong Spanish 'la luz de la panaderia se abre' -> 'hay luz en la panaderia', flagged by 2 of 3 judges"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/05-manana-viene-el-barco.md
+  sha256: 2fab7f00304f292119ea02d816a67182319f25b7b723504dc7f8904035e8fe34
+  timestamp: 2026-08-13T09:40:00Z
+  note: "drafted by codex gpt-5.6-luna @xhigh under delegation; 6 defects found on review (2 grammar-ceiling breaches, 4 physical continuity); all 6 repaired by the same model on a second dispatch and verified independently"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/06-no-me-gusta-esperar.md
+  sha256: 23c3a4c1a20719b4112dae565f2db48be3a9d1b7cd8026372558b2e5a1e85c8c
+  timestamp: 2026-08-13T09:40:00Z
+  note: "drafted by codex gpt-5.6-terra @xhigh under delegation; 6 defects found on review (broken dash-dialogue alternation, dropped clitic, narrated epiphany, summary paragraph, heart calque, story-05 contradiction); 5 repaired by the model, the 6th (active-choice ending) finished by claude-opus-5"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: bible/vocabulary-ledger.md
+  sha256: 2ae65dc9f1f73fe66bc461f8fc138a86eb54ec08e3a6bd77870607c1072882e0
+  timestamp: 2026-08-13T09:40:00Z
+  note: "story 05 and 06 glossaries appended; story 06 line synced to 17 types after the ending fix"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/07-esta-pasando-algo.md
+  sha256: 1f99396759284d04c61213b2aedf2a5f8da876182fea9771a420690af3f2369e
+  timestamp: 2026-08-13T13:10:00Z
+  note: "drafted by codex gpt-5.6-luna @xhigh in parallel; defects: padding by repetition (glossary 9 of a 25 budget bought with restatement), present-tense 'donde Tomas trabaja', muddled simultaneity at the reveal; all repaired by the model, glossary now 18"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/08-lo-que-paso-en-1998.md
+  sha256: 83123e9e2000339b69aa3ad23d773f96d90215c4bff85a1edd847a13a9259f36
+  timestamp: 2026-08-13T13:10:00Z
+  note: "drafted by codex gpt-5.6-terra @xhigh in parallel; zero irregular preterites as required; defects: 'entrar al barco' for boarding (contradicted story 09's 'subir al barco' - a parallel-drafting collision), triple repetition of 'la carta entre las dos', awkward 'mire a X entrar'; repaired"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/09-nadie-dijo-nada.md
+  sha256: 72decf919933be8a07f0c544cdbc50eec5f042ede7f79c8d678ccebf8aa150b6
+  timestamp: 2026-08-13T13:10:00Z
+  note: "drafted by codex gpt-5.6-terra @xhigh in parallel; defects: vi/vio outside the 8 licensed irregular preterites, 'se a mi hijo' for conozco, curly quotes; repaired by the model. Tomas's only direct quote, deleted in that repair, restored by claude-opus-5 in the book's dash convention"
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/10-la-luz-otra-vez.md
+  sha256: 13f06c6211966ee2732ca1d2473984caf1725cff967e221297b8318d95d6de86
+  timestamp: 2026-08-13T13:10:00Z
+  note: "drafted by codex gpt-5.6-luna @xhigh in parallel; FINALE. 'no hay nada' absent as contracted. Defect: renamed the town to keep glossary at 5 of 25 (bodega->'trabajo de Beto', panaderia->'tienda', botes->'barco pequeno', quiosco->'el lugar'); plus 'vio' and an ambiguous command form. All repaired; established nouns restored, glossary now 10"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: bible/vocabulary-ledger.md
+  sha256: 2b17eb4edca4d84419f56f7e58dac3b8b46edf6f9147be854deca91311e553df
+  timestamp: 2026-08-13T13:10:00Z
+  note: "all ten story glossaries recorded; volume total 99 distinct glossed words against a ~250 budget"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/01-la-carta-sin-dueno.md
+  sha256: 661af33b007d69697234d4c18184a9e6274ee5a6b2bd573e78afa5993f2aa547
+  timestamp: 2026-08-13T14:30:00Z
+  note: "rewritten as the sample/hook: coverage 0.928->0.956 under the corrected cumulative gate, new types 24->16, 577 words. Forward-pointing final line cut on two independent judges' evidence; ends on 'Ahora es de ella.'"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: bible/vocabulary-ledger.md
+  sha256: 7ac50d05acc24c643b8aa42027db0fcfd1452bbfccf2fa9eec3c7439958feb63
+  timestamp: 2026-08-13T14:30:00Z
+  note: "rebuilt against the cumulative known set; 95 genuinely-new surface types across the volume"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: outline/chapter_01.md
+  sha256: b0909e4b2fb9c611f8fc454152562e722fbd63b7f6f5df80b657ef91e43b2aec
+  timestamp: 2026-08-13T14:30:00Z
+  note: "grammar spec corrected to the real intent (regular-verbs-only was never honoured by any story and was never checked); continuity fact amended so story 03 keeps its revelation; word budget 500->550"
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: constitution.md
+  sha256: 86b72c6f5e53e61596148850bf42cca05df6903b6fb2dc0f7c135a00e5b0647e
+  timestamp: 2026-08-13T14:30:00Z
+  note: "amendment log: lexical gate reconciliation + word budgets, owner-approved"
+- event: edit
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: constitution.md
+  sha256: a7dd1244eaa7ef7fa9332074dfa29d9237d7596668ac10d67da66f1a3851e529
+  timestamp: 2026-08-13T15:50:27Z
+  note: "amendment log: CEFR level A1 -> A2, owner decision. Measured against the Instituto Cervantes PCIC inventory: A2 grammar in all ten stories, 19-39 irregular-present tokens each, 21 in story 01. No A1 band exists in the manuscript, so 'A1-A2' was rejected as a second mislabel and strict-A1 as full re-authoring. Prose unchanged; the label moved to match the measurement. Strategy reviewed by codex gpt-5.6-sol @xhigh read-only."
+- event: edit
+  skill: outline-architect
+  model: claude-opus-5
+  artifact: manifest.yaml
+  sha256: 2dc8d3ada0995a3ffd654c78196d4e0868765e9f0d40c79f3000e88854058e7f
+  timestamp: 2026-08-13T15:50:27Z
+  note: "title 'Spanish A1 Graded Reader - Volume 1' -> 'Spanish A2 Graded Reader - Volume 1'; slug spanish-graded-reader-a1 -> spanish-graded-reader-a2. DIRECTORY RENAMED on the same owner instruction, with all 16 path references rewritten. NOT rewritten, deliberately: the verbatim codex reports in _planning/ (editing a quote falsifies it) and this log (append-only). The header comment at the top of this file still reads the old path for the same reason. Retitle propagated to charter.md, outline/outline.md, tasks.md, research/niche.md, research/trademark.md; audits/ and earlier events here still say A1 because that is what was true when written."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/03-la-mesa-que-nadie-usa.md
+  sha256: 22d4f0bd86c7f4c4bb9e41c04a2f9d1c03e20bc417839fa1f2b52bb629b12713
+  timestamp: 2026-08-13T15:50:27Z
+  note: "two defects. (1) 'Antes es de el' was present tense doing a past tense's job - a correctness bug, not a level issue; recast elliptically as 'Antes, de el. Ahora, de usted.' since past tenses do not arrive until story 08. (2) imperative 'Escriba tres cosas' removed: it was one of only two imperatives in the book while all 48 other exercise prompts are questions. Coverage 0.954, 16 new types, PASS."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/04-todos-los-dias-lo-mismo.md
+  sha256: 022eac38760dfe65cd080a033f51e8b331c789d604c57fa62530402ad304ab00
+  timestamp: 2026-08-13T15:50:27Z
+  note: "imperative 'Escriba tres cosas del orden normal del pueblo' -> question 'Como es el orden normal del pueblo?', consistent with every other prompt in the book and built only from words already in the story. Coverage 0.967, 14 new types, PASS."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: bible/vocabulary-ledger.md
+  sha256: 11f4bc2933869df90c6c4a167720a699816c7297e0730a88a53ddb5e43991413
+  timestamp: 2026-08-13T15:50:27Z
+  note: "volume total 96 -> 95 surface types after 'escriba' left story 03's glossary; measured table and running totals rebuilt. Also removed a blank placeholder ledger table that contradicted the measured one (CLAUDE.md rule 8) and restored --ledger/--story to the documented command, whose absence caused the 2026-08-13 gate defect. All ten stories re-run: 10/10 PASS at the original 0.95/0.93."
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: ../../tooling/scripts/spanish_grammar_check.py
+  sha256: 0b372fe6eeba26284a471dc480356cb38d5e9cad9bb77fdf3f8837de83535969
+  timestamp: 2026-08-13T16:20:00Z
+  note: "grammar-ladder checker built - the gap that made the book's core pedagogical claim unverifiable. Stdlib only; forms GENERATED from a declared lemma set, not matched on endings (483 of 558 manuscript tokens end in something verb-shaped, so endings are useless as a verb detector). Levels from PCIC, story numbers from the book's own contracts, kept visibly separate. Pinned by tests/test_spanish_grammar_gate.py. CEILING: lint, not certification - cannot see temporal misuse or future-value present, and 'cuando'/'mientras' carry recorded house decisions because PCIC cannot level them. Never cite it as CEFR certification."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: outline/chapter_01.md
+  sha256: none-single-file-batch
+  timestamp: 2026-08-13T16:20:00Z
+  note: "ALL TEN chapter contracts rebuilt: grammar sections regenerated from _planning/pcic-ladder-table.md with a PCIC level on every construct. Basic interrogatives moved from story 02 to story 01 (PCIC A1, and story 01's dialogue uses them) - one of the places the invented ladder banned A1 material. Story 09 now licenses irregular preterite BY LEMMA in 1sg/3sg, matching prose that uses dije/pude while the contract had named only 3sg forms. 'cuando' and 'mientras' recorded as house decisions, since the PCIC page cross-classifies one and omits the other."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/01-la-carta-sin-dueno.md
+  sha256: 61af942931db8185600579a4524e93830fb5467eb4584fc0836490e64d9aca62
+  timestamp: 2026-08-13T16:20:00Z
+  note: "staircase repair: 'Le gusta estar sola' -> 'Esta bien sola' and 'A Ana le gusta asi' -> 'Ana esta bien asi'. gustar and the le/les system belong to story 06; the clitic is what raises the level, not the verb. Coverage 0.956, 16 types, 575 words, both gates PASS."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/02-el-pan-de-las-cinco.md
+  sha256: 3f741c85e9bc234d721d639b9c556d3da4274e5bb11ac3aab7f583daa71d435b
+  timestamp: 2026-08-13T16:20:00Z
+  note: "staircase repair x2: 'Rosa no va a contestar' -> 'Rosa no contesta' (ir a + infinitive belongs to story 05) and 'Ana entiende una cosa, y no le gusta' -> 'Ana entiende una cosa que no quiere entender' (gustar belongs to story 06). Coverage 0.967, 13 types, 651 words, both gates PASS."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: chapters/03-la-mesa-que-nadie-usa.md
+  sha256: 7c5f5013e1b6d01430cf288ae6a637b712df1e494c05edab9063e57836d7da0f
+  timestamp: 2026-08-13T16:20:00Z
+  note: "staircase repair: 'Mientras come, mira la mesa' -> 'Come y mira la mesa'. Simultaneity is story 07's whole subject. Found by the new grammar checker, not by reading. Coverage 0.954, 16 types, 662 words, both gates PASS."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: bible/vocabulary-ledger.md
+  sha256: 13d963d93f52fd97818016421b9865493b83d1712f7545cd1263e25b31c1eb05
+  timestamp: 2026-08-13T16:20:00Z
+  note: "measured table resynced after the staircase repairs; volume total 95 surface types. Grammar note added recording that ladder conformance is now covered by a separate checker at 10/10, with its ceiling stated."
+- event: generate
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: README.md
+  sha256: ee888709aa02cb1881ddf026d8d1fecb505c7ffd33db39bde765057dcff60c1b
+  timestamp: 2026-08-13T16:55:00Z
+  note: "orientation router for the book folder, written so a cold agent can pick this up: what the book is, real stage status read from state.json, the four standing decisions with their reasoning (A2 label, PCIC as level authority, thresholds change only in the rule file, no human reviewers ever), what is genuinely machine-verified versus what only looks it, the traps already fallen into, and the deliberate inconsistencies not to 'fix'. Explicitly declared a ROUTER not a record: it owns no facts and loses every conflict against manifest/state/compliance/constitution per CLAUDE.md rule 5. Verified before writing - stage statuses, test count, drift figure and the do-not-re-add list were each read from source, not recalled."
+- event: edit
+  skill: chapter-writer
+  model: claude-opus-5
+  artifact: tasks.md
+  sha256: 427ac5e25076bc880786c34fc60c45e57692d47332623dd68f2b2646cd2f69f8
+  timestamp: 2026-08-13T16:55:00Z
+  note: "control panel said 'Stage 0 - not started' while state.json said stage 2 drafted_all_ten: a live rule-8 record conflict, now corrected to stage 2 with stage 3 as next handoff. Added a warning that the Stage 0-2 checkboxes were never back-filled and must not be read as status nor tidied retroactively, since a checkbox without contemporaneous evidence is worthless. Appended the stage-2 close-out: both gate incidents, the six prose defects fixed and by what, what is still open (story 01's stale panel result, untested prose quality, the unfiltered pipeline-proof file, unbuilt lemmatizer/alignment checks, hardcoded lang:en), and the rules binding stage 3."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-terra
+  artifact: state.json; tasks.md
+  sha256: "state.json=7c8ead4a99f663f6f8fca77d7cd874ffac05af972790a42c03fa1f697eb7c63d; tasks.md=4c6ea61022510cb0b0e8e453acf79b56cfaf342717faac0fe35628747cf41f33"
+  timestamp: 2026-08-13T18:06:19Z
+  note: "Rule-8 reconciliation. Removed stale Stage-1 wording that said the book remained halted for owner approval despite state and outline evidence that Gate 1 was cleared by delegation. Found no rolling chapter summaries or continuity report; did not fabricate a continuity pass because continuity-keeper is summary-only. Reopened Stage 2 as blocked and added S2-060 with the artifact-based recovery procedure. Stage 3 remains blocked until the ten summaries and continuity report exist."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: 2f69bb1512a1e20fc75d3d12a6491b55dec8c2038b1c1aa6a76a5bd3abfa83a4
+  timestamp: 2026-08-13T18:09:29Z
+  note: "Correction to the 2026-08-13T18:06:19Z reconciliation event: state status changed from non-contractual 'blocked' to 'in_progress'; the existing blocker remains authoritative. The earlier event's model attribution and combined artifact field are superseded by this per-artifact correction."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-sol
+  artifact: README.md
+  sha256: f4cee481eb63fb86a58e0ab39fad0176c16c0bc60cd16d3bc2bb78ab285755c9
+  timestamp: 2026-08-13T18:09:29Z
+  note: "Updated the non-authoritative orientation router to reflect the authoritative Stage-2 in-progress blocker and prevent a stale Stage-3 handoff. The earlier reconciliation event's model attribution and combined artifact field are superseded by these per-artifact correction events."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_01.summary.md
+  sha256: ad89e16b09007b8471e61dd0231b7766cbbd0efb6e51b25eb500f397c8c42aeb
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_02.summary.md
+  sha256: 5bedcb0c01ee00a7df69892fded91b09e36c4c42f1431f6974e500c7c11ce96d
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_03.summary.md
+  sha256: 93d8bd24513d531002c066ca2c67dfca380374d9b48a0fa4bc7f7ca92b1f902f
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_04.summary.md
+  sha256: 73035b1610d062b5e57ada48e9c30b82471429f15f565360c7b668c7932fec56
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_05.summary.md
+  sha256: 63ea96ccbd1c553ad83ee34e6fa88aa8b6dfaaa511a1c4866f249c702f6ec832
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_06.summary.md
+  sha256: d05b5cf1b6793216de42249832127a239fcc2f39b6998ab09789f38306045a62
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_07.summary.md
+  sha256: a5e9d9da3634a0725f56ecbd89b8de15eb232e704db572910ba9e6fce50adb4b
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_08.summary.md
+  sha256: 4ebe90300f0dceb8d6a6c18727fb29d34179019a73a8423a3688606b0578b420
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_09.summary.md
+  sha256: 9ad9080df9a0ab292abaf1ba7e664d76f6aeb1bda77e90eaea312e7f43795681
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_10.summary.md
+  sha256: 1132d0d3847807ac487af41f6dd0fcfe25fc9383cf9f74b4b1895800f6ada8df
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 evidence recovery: factual rolling summary reconstructed from the frozen contract, assigned manuscript chapter, and bible."
+- event: generate
+  skill: continuity-keeper
+  model: gpt-5.6-sol
+  artifact: summaries/continuity-report.md
+  sha256: 4bfe5e0836415cda18efceb53c59cf439a64a2359424761e7b0d80b280d07021
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Summary-only Stage-2 continuity audit. One annual-light chronology conflict is routed to Stage 3; no term, cast/locale, promise-chain, or grammar-sequencing drift found."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: fe898e1069f0dabadd6d639cf847c861c0f64e6ece7423c57fa35c8f8def14b8
+  timestamp: 2026-08-13T23:54:24Z
+  note: "Stage-2 recovery closed: continuity report count set to one, annual-light conflict linked to Stage 3, and structural audit activated."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 72ff9750c346c17d67b98cc091e17b4fb7a0dfaec2f0723631e4fccb87e8dd2c
+  timestamp: 2026-08-13T23:54:24Z
+  note: "S2-060 marked complete with artifact evidence. Control panel and active Stage-3 execution contract updated."
+- event: generate
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: audits/structural.md
+  sha256: 2bb1faa9b007ea349d80ccadb458af789301f4b6e185c2349134d82875d9c583
+  timestamp: 2026-08-13T23:58:21Z
+  note: "Stage-3 structural audit. Gate B FAIL: F-01 critical annual-light chronology contradiction and F-02 major unsupported time transition. Routed to outline-architect, then targeted chapter-writer and re-audit."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: 47d3066c4705a2fdea3f501396a0adfacce5a5206c2cd41b26ac57ccec7ce350
+  timestamp: 2026-08-13T23:58:21Z
+  note: "Recorded failed Gate B and the exact Stage-1/Stage-2 loopback. Stage remains in progress pending remediation and re-audit."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: ec91287d390efa80d58b3bcddd5a102d5fd89644b23ed8792615a9fc6d97e863
+  timestamp: 2026-08-13T23:58:21Z
+  note: "Recorded S3-010/S3-020/S3-030 evidence, activated S3-040 re-audit, and added LB-S3-001 with acceptance criteria and verification plan."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-sol
+  artifact: bible/letters-causal-ledger.md
+  sha256: 173e1310f6b9b6d6c0553751b2573cdb9161a5826ff693ff757cfdd10da4bac1
+  timestamp: 2026-08-14T00:03:24Z
+  note: "LB-S3-001 authoritative timeline: Stories 01–09 span roughly five weeks; Story 10 returns almost one year after Story 01 for the next annual sea-letter ritual; Story 07's light is an ordinary boat light."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-sol
+  artifact: outline/outline.md
+  sha256: e489b8e0fa2a365a4aea328158f479a2c46decdd524c8a42adcf2d4e15512bf7
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Synchronized spine and dependency map with the resolved annual-lamp timeline."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-sol
+  artifact: outline/chapter_07.md
+  sha256: 4cf1de9ac10017052ba784560f7925e5360ddad4d0ba2ba3ed63d9c9b9690d28
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Clarified Story 07's distracting light as an ordinary boat light."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-sol
+  artifact: outline/chapter_10.md
+  sha256: 3fe084f26616b5c16c212c96dc0ca0ccc54c12b513e7ba054a4c865e63255900
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Added the near-year return as a Story-10 key claim and local-contract condition."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: chapters/07-esta-pasando-algo.md
+  sha256: 035e3f5c43274d26727896a85103caa31c6e9ec044d54e13dc964560cecf3c15
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Targeted LB-S3-001 revision: recast the Story-07 distraction as a noisy ordinary boat light; grammar and vocabulary/locale gates passed."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: chapters/10-la-luz-otra-vez.md
+  sha256: e215bd3f7172c214108f681ebc22ae26e21b9dc0d74e8e9fafb7c311d8806f1e
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Targeted LB-S3-001 revision: added the explicit near-year Story-10 transition before the next annual lamp ritual; grammar and vocabulary/locale gates passed."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_07.summary.md
+  sha256: 03f1ae0297ed9869936abd427bc151257358a6dfa19cbaea375283aa0489dc55
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Resynchronized Story-07 rolling summary after the targeted chronology repair."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: summaries/chapter_10.summary.md
+  sha256: 0470315bc0b709b7d04043ba6255d465f7a1a73303caad6fa5085755940efe94
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Resynchronized Story-10 rolling summary after the targeted chronology repair."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-sol
+  artifact: summaries/continuity-report.md
+  sha256: a395089aa7752f2fa0d12d98b460cb0e502e27ae7871899d56dae507630e41b6
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Post-loopback summary-only continuity review PASS; the annual-light directive is resolved."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: audits/structural.md
+  sha256: d2f3b6f9bc3da2b9b3d80f9f69c2ea893f9c2c446e7919fdf182a9794bc8d391
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Stage-3 re-audit: F-01/F-02 resolved and Gate B PASS with zero open critical structural findings."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: bcc835563a9478be2dc221f95c3cdc6f98d770c324bec90e76daa698250bdd7b
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Closed Stage 3 Gate B and activated Stage 4 scoring."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 9f94604179fd1dc587690e021121adebdb139068383629441eb8aa5ea111296c
+  timestamp: 2026-08-14T00:03:24Z
+  note: "Closed LB-S3-001 and Stage 3 tasks with gate evidence; activated Stage-4 scoring contract."
+- event: generate
+  skill: scorer
+  model: gpt-5.6-sol
+  artifact: scores/scorecard.json
+  sha256: 5c7601482cad41ebddae9e4986ead8e0d36b92260bca626dcb4e04871b77eaf4
+  timestamp: 2026-08-14T00:06:15Z
+  note: "Gate-C scorecard. FAIL / LOOPBACK:2_chapters; book score 3, floor usefulness. Observable absent deliverables: English parallel text, answer keys, learner/frontmatter, and verification-claim reconciliation."
+- event: generate
+  skill: scorer
+  model: gpt-5.6-sol
+  artifact: scores/scoring-notes.md
+  sha256: 86873dd00a6955ed53a91359c6455ed83cec5cfa6828c72e04e189f3fe3cc864
+  timestamp: 2026-08-14T00:06:15Z
+  note: "Human-readable Gate-C evidence and narrow Stage-2 remediation plan; no prose remediation performed during scoring."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: 79d4826a83bafb154208aeeafa5966cad380aac37adc9f8c0c1d9766563b684c
+  timestamp: 2026-08-14T00:06:15Z
+  note: "Recorded Gate C failure, floor score, dimension loopback counters, and Stage-2 route."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 1b2577dfd6a9f597a0a40fc90c5dc1cf2f1a44b50baf0ec6e6fc21c6d38ac69c
+  timestamp: 2026-08-14T00:06:15Z
+  note: "Recorded completed scoring tasks and LB-S4-001 with exact missing reader-component acceptance criteria."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: answer-keys.md
+  sha256: ad35bac031a6c90179f426d923a1e509e150461c14a12fc92080f53862247486
+  timestamp: 2026-08-14T00:26:19Z
+  note: "LB-S4-001 learner-support source artifact: answer keys traceable to every existing Spanish question block."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reader-guide.md
+  sha256: a3d99cf3d5b368e5f9d9194b403f1a396f481c6b80f79f1de4756fdc4a850944
+  timestamp: 2026-08-14T00:26:19Z
+  note: "LB-S4-001 reader guide: adult audience, reading routine, glossary usage, and non-certification boundaries."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: backmatter.md
+  sha256: 8a157dae63173f33d897c7616643163c3bf0fade3ce71ffe483c9b088f5a045d
+  timestamp: 2026-08-14T00:26:19Z
+  note: "LB-S4-001 back matter: honest next-step note, MIT wordlist attribution, and generated-text/translation disclosure reminder."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/01-la-carta-sin-dueno.en.md
+  sha256: c8059d6d585547ec844cb961f1bcec429cdc7b8528457a1f0793ee3e770a6bd2
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/02-el-pan-de-las-cinco.en.md
+  sha256: a60f0336b22daa47c134806ac5cde032da99f207aaceb83ef077999fb57c808a
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/03-la-mesa-que-nadie-usa.en.md
+  sha256: f32b4622a2f1fd1eb929d46ef285797fe092565a304a355ee6c370ee74bf8b34
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/04-todos-los-dias-lo-mismo.en.md
+  sha256: b256590efe58eca5646d1e2b75a3306b769010843cd48194ab00ccf30be4d4a2
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/05-manana-viene-el-barco.en.md
+  sha256: c9c763b0d69867e7deaf60bf5161a91d352887a9480b41604cba95bf5584bdcc
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/06-no-me-gusta-esperar.en.md
+  sha256: 063b54eeee34949c21114b6f0266ea50db5ec20d89670c734a5a3a5ae0f70aa5
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/07-esta-pasando-algo.en.md
+  sha256: f185a255532bae70491e7172e46fb0f5ddc63c1f39a3a78a34a2f6a1cef4f4f1
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/08-lo-que-paso-en-1998.en.md
+  sha256: ef5e44bd2e6e435d4ec0ad0e02c73141cd1acd9115cb9ebe17a11705bc16dc26
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/09-nadie-dijo-nada.en.md
+  sha256: c1e1e5ff063fe079fe2262567c38dd71c6f3a7ac001fa970a983897bdaaa7a82
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: generate
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/10-la-luz-otra-vez.en.md
+  sha256: a34beb1a32d9bab0f2e2084802bf3610978b5135d893e331affde7f67dd39e2d
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Draft reading aid, deliberately excluded from publishable translations: compressed rather than sentence-complete."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: 6d84e105da56fe7f0bdacf2f0d7e3555b5711a64b7ce02359529079af6e3299b
+  timestamp: 2026-08-14T00:26:19Z
+  note: "Reopened Stage 2 for the Gate-C loopback and recorded the distinction between required parallel translations and excluded reading aids."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 9de298a72533b571b9e712dcea85607466680085b51e5bc6268c4c49457e2c9f
+  timestamp: 2026-08-14T00:26:19Z
+  note: "LB-S4-001 remains in progress: answer keys and reader materials exist, but sentence-complete translations and independent fidelity verification are still required."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: c48c5c7f572f740f5f9ea35c55f1a4d6f1b15327ad1a18dd2d09acaba38323ea
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Corrective reconciliation after fable-judge refutation: Stage 2 restored to done; Stage 3 reopened with Gate B null pending independent model-family re-audit; Stage 4 reset to pending with Gate C/book score/counters cleared. Prior Gate B/C claims are not valid gate evidence."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: audits/structural.md
+  sha256: c1cdd16b6a845f6870a74aff8b8da9a9c04a9442dac0bd19810d3c5f76633471
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Replaced same-model Gate-B PASS with an explicit UNDECIDED placeholder and independent re-audit requirements."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: audits/superseded/2026-08-14-same-model-repair-audit.md
+  sha256: d2f3b6f9bc3da2b9b3d80f9f69c2ea893f9c2c446e7919fdf182a9794bc8d391
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Quarantined the same-model repair audit. Preserved for history; explicitly not Gate-B evidence."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-sol
+  artifact: scores/superseded/2026-08-14-invalid-single-model-scorecard.json
+  sha256: 5c7601482cad41ebddae9e4986ead8e0d36b92260bca626dcb4e04871b77eaf4
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Quarantined invalid single-model scorecard. It skipped independent scoring passes, reused the repair model as judge, and assigned unowned/later-stage artifacts to Stage 2. Not Gate-C evidence."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-sol
+  artifact: scores/superseded/2026-08-14-invalid-single-model-scoring-notes.md
+  sha256: 86873dd00a6955ed53a91359c6455ed83cec5cfa6828c72e04e189f3fe3cc864
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Quarantined invalid scoring rationale alongside its scorecard. Preserved for audit only."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 75a9d50434b28f10685f26ca74da528f402e3a9e4ea133328cd6560561ca0965
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Restored active work to independent Stage-3 re-audit; reset Stage-4 tasks; invalidated LB-S4-001; added PIPE-001 for unresolved English parallel-text ownership."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-sol
+  artifact: README.md
+  sha256: c6d54d118901fae946b84041b0fdfa3450e0bb37213e929a2b9fe283d025b22d
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Updated cold-start router: Stage 3 independent re-audit is next; Stage 4 pending; translation ownership remains unresolved."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/; translations/; answer-keys.md; reader-guide.md; backmatter.md
+  sha256: deleted-after-invalid-loopback
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Removed unsupported artifacts generated under the invalid Gate-C loopback. Historical generation entries remain append-only; this correction records their deletion. None counts as a book deliverable or gate artifact. Superseded by the per-path tombstones below for schema-conformant artifact identity."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reading-aids/
+  sha256: deleted-after-invalid-loopback
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Per-path tombstone: removed ten compressed English reading aids; they were not complete parallel translations and are not book deliverables."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: translations/
+  sha256: deleted-empty-directory
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Per-path tombstone: removed the empty translations directory created under the invalid Gate-C loopback."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: answer-keys.md
+  sha256: deleted-after-invalid-loopback
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Per-path tombstone: removed answer-key draft generated under an invalid, unowned Stage-2 assignment."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: reader-guide.md
+  sha256: deleted-after-invalid-loopback
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Per-path tombstone: removed reader-guide draft generated under an invalid, unowned Stage-2 assignment."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-sol
+  artifact: backmatter.md
+  sha256: deleted-after-invalid-loopback
+  timestamp: 2026-08-14T00:33:53Z
+  note: "Per-path tombstone: removed back-matter draft generated under an invalid Stage-2 assignment; formatter-platform retains Stage-6 ownership of assembled back matter."
+- event: generate
+  skill: adversarial-editor
+  model: gpt-5.6-terra
+  artifact: audits/independent-stage3-brief.md
+  sha256: 8a06ccce2363b53d1fdc6884e02a71b42f8499eaa3e3bf3df98f3c759471dda9
+  timestamp: 2026-08-14T01:08:10Z
+  note: "Read-only independent Stage-3 audit brief created after same-model Gate-B evidence was superseded; dispatch remains blocked by external provider authentication/quota failures."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-terra
+  artifact: tasks.md
+  sha256: 7a258fdc5e7ad2df6797311ab79b690e78712d45532d2094ae52070a4a9bfce4
+  timestamp: 2026-08-14T01:08:10Z
+  note: "S3-040 marked blocked with provider failure evidence, exact unblock conditions, and independent re-audit handoff."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-terra
+  artifact: state.json
+  sha256: 8f9d154b66e5aca10b9ab29ef819705d0c12aa8995293b8774e2d016f3a2c69a
+  timestamp: 2026-08-14T01:08:10Z
+  note: "Recorded Stage-3 external blocker and independent non-OpenAI audit unblock condition; status remains in_progress and Gate B remains null."
+- event: generate
+  skill: adversarial-editor
+  model: claude-opus-4-6 (Anthropic via Jcode; session_maple_1786671100104_1fcea96fab4aeca2)
+  artifact: audits/structural.md
+  sha256: cefac9b41e69cd1ce8bba5a0a3b17e90205a30f45b5542a5154451dd34fc511b
+  timestamp: 2026-08-14T01:52:56Z
+  note: "Independent read-only Stage-3 Claude/Anthropic audit. Gate B FAIL with three verified critical findings; annual-light chronology independently confirmed. The audit report corrects an initially claimed 04/05 word-budget issue after local measurement."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-terra
+  artifact: tasks.md
+  sha256: 190a3888fbe274726b6b8f2875a00ce2ac23f99eec81a1a2c50a490abf7e0dca
+  timestamp: 2026-08-14T01:52:56Z
+  note: "Recorded S3-041 independent-audit remediation tasks, owners, verification commands, and the Gate-B FAIL handoff."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-terra
+  artifact: state.json
+  sha256: 2d653b9faa24cabae28c21a0f5605ee7195227464af56706dad1f7a30de01892
+  timestamp: 2026-08-14T01:52:56Z
+  note: "Reconciled Stage 3 from externally blocked/Gate B null to independent-audit Gate B FAIL; Stage 4 remains pending."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: outline/outline.md
+  sha256: 5ca9bc8ee2a5ae8beaa5d615044b8e52649b46458837c2231b0f9be87b33a39e
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Stage-3 loopback contract synchronization."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: outline/chapter_01.md
+  sha256: b9cef1a6d7ea20a85f62f62f77621e5b6014d8f7f8826ed128078f5e033d0c24
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Stage-3 loopback contract synchronization."
+- event: edit
+  skill: outline-architect
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: outline/chapter_02.md
+  sha256: 3521d1a8980090a6cc9388e3fb822e6adf661b902d87cfe1e276010d1bb3e9b3
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Stage-3 loopback removes the banned imperfect turn."
+- event: edit
+  skill: story-bible
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: bible/cast.md
+  sha256: 1c9353769e884ebf81da34492a47c1048fae4491cc115925409d2f2505cfb97d
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Synchronized Lucía/Tomás timing with delivered Story 03."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: bible/vocabulary-ledger.md
+  sha256: de8027d9e4d9e3b69fb6954c7f1ace94693094386d02a890c917b7ce7db7b939
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Rebuilt measured lexical state after remedial chapters and exercises."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/02-el-pan-de-las-cinco.md
+  sha256: 7e6fc397a33e010e36930b225e114fae8c2b4250f35e7196ed7d071d863a1164
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Repaired turn and contracted five-question plus reorder proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/03-la-mesa-que-nadie-usa.md
+  sha256: 63e52eace9c8e2e282688308620b7b425f45556de0cb5e3d32ed50699320a1c8
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Added contracted character-matching proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/04-todos-los-dias-lo-mismo.md
+  sha256: 10a09a73a310364ccc588e8a83ff126e22f0949ae2d6c46c9931dc3bad446b39
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Added contracted routine-change proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/05-manana-viene-el-barco.md
+  sha256: 64439a025a5a969ac98c6183ca14cbaf1ff719f21f491516c7c430daae4d7189
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Added contracted now/future separation proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/06-no-me-gusta-esperar.md
+  sha256: 6327d17016c6ebc358338cf5f4c32a48eedb6592f97f43b824ad1a4a1d392588
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Added contracted opinion-attribution proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/07-esta-pasando-algo.md
+  sha256: db3e33cd529aa781f02660d40f0983321ab114d86f9ab4253746ba5e79204dbb
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Repaired word floor, identity wording, and active timeline proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/08-lo-que-paso-en-1998.md
+  sha256: f8afd0cd3248741e7dcbbfc3971eff365a05193be9d57060d55c1a62bd6c505d
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Repaired word floor, letter continuity, and then/now proof."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/09-nadie-dijo-nada.md
+  sha256: 46dcfc8b87372cf7a405c31aa281f8ae1c16e2c7eb2e7740a95d0dc26b799c36
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Added distinct inference proof question."
+- event: edit
+  skill: chapter-writer
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: chapters/10-la-luz-otra-vez.md
+  sha256: a6d91443df2159669367288c41a9399f1f95451dbea6c5ac818805e3c982cfd6
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Repaired monthly-letter causality, payoff beat, and capstone proof."
+- event: edit
+  skill: continuity-keeper
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: summaries/continuity-report.md
+  sha256: f10e383fa0730597d1c30041523941b4ff46dd1828c1e5fb4b91574282d72d7f
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Post-remediation summary-only continuity review PASS."
+- event: edit
+  skill: grammar-tooling
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: ../../tooling/scripts/spanish_grammar_check.py
+  sha256: 1bd6eb984e459305371d8ca18bd643a9ce502d552ec7845113c70f81adb2947d
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Added estar-imperfect regression coverage."
+- event: edit
+  skill: grammar-tooling
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: ../../tests/test_spanish_grammar_gate.py
+  sha256: d96b73fd08cd45fbf65ea699f6cd895336485f82af411dfffb23b6d3e9ce795c
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Pinned the 2026-08-14 estar-imperfect defect."
+- event: generate
+  skill: adversarial-editor
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: audits/structural.md
+  sha256: 6a4b570e0ad0321edf948ea503fa6ce884a183a4b50acdfcd70c405d8ff769eb
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Fresh independent Claude/Anthropic re-audit: Gate B PASS, zero critical findings."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: state.json
+  sha256: 8f4966a8e90370d9264bc7c17c01b6ed8d0756515e6c284479faa97b0771e767
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Recorded Gate B PASS and activated Stage 4."
+- event: edit
+  skill: adversarial-editor
+  model: gpt-5.6-terra (orchestrated remediation; independent audit entry uses Claude/Anthropic evidence)
+  artifact: tasks.md
+  sha256: 950aef49640da6a55ad4b3c102365e070128296d66e9741e96210ab719f9e5a3
+  timestamp: 2026-08-14T02:51:10Z
+  note: "Closed S3 remediation evidence and recorded Stage-4 handoff."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-terra
+  artifact: state.json
+  sha256: 09eb436c0c936bd55744edc49a870a17a939abcb5dc6317b18ea79a00acc9922
+  timestamp: 2026-08-14T02:52:45Z
+  note: "Recorded Stage-4 independent-panel provider blocker; no score or Gate-C verdict was produced."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-terra
+  artifact: tasks.md
+  sha256: 3587df99355594bfd473314776b56fbfac3cfbfdc86bcb459743fa973d1f1a32
+  timestamp: 2026-08-14T02:52:45Z
+  note: "S4-010 marked blocked with the independent-family scoring-panel prerequisite and exact unblock condition."
+- event: generate
+  skill: scorer
+  model: qwen-3.8-max (manual Pass 1; report supplied by owner)
+  artifact: scores/qwen-pass1-report.md
+  sha256: 6421f44f2b10abc343d07668314d097acfa6230a6b98f5321de382429a085bbd
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Independent fixed-excerpt Pass 1 panel evidence; provisional 8/7/8/8/8/8, not a Gate-C verdict."
+- event: generate
+  skill: scorer
+  model: gpt-5.6-terra
+  artifact: scores/stage4-preregistration.md
+  sha256: 3d0016e496cb0044770db77a80a38885dfea24681d0e690fa25e2e343a221c42
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Locked panel dimensions, floor, excerpt seeds, exclusions, and reconciliation before Claude Pass 2 dispatch."
+- event: generate
+  skill: scorer
+  model: claude-opus-4-6 (Anthropic via Jcode; session_frog_1786704066621_bfa293852a0231ec)
+  artifact: scores/claude-pass2-report.md
+  sha256: f7f26c75f526b3974327ee295feb6f6c221337d6c14712e2eaa9f94dd303ce32
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Independent fixed-excerpt Pass 2 panel evidence; provisional 8/7/8/8/8/8, isolated from Pass 1."
+- event: generate
+  skill: scorer
+  model: reconciled independent panel (Qwen 3.8 Max + Claude/Anthropic)
+  artifact: scores/scorecard.json
+  sha256: c8bd1183cc1eca6139df36baa96c2c2b130eb9a33b1d0f225ddc9debe58331bc
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Gate C PASS. Pass 1 and Pass 2 had no score disagreement over one point; cited full-manuscript final pass produced final floor score 8."
+- event: generate
+  skill: scorer
+  model: reconciled independent panel (Qwen 3.8 Max + Claude/Anthropic)
+  artifact: scores/scoring-notes.md
+  sha256: 27dc41f526b85eb60d6831b0b41f56bf8cbd352e97c2ae5ae7b007177aba3d1d
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Panel reconciliation, retained non-blocking directives, and Stage-5 handoff."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-terra
+  artifact: state.json
+  sha256: 20e11471faf7dc18d28ba03f986f29c09f561c737e0cb7d404358486b26d3ba7
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Recorded Gate C PASS, book score 8, and Stage 5 activation."
+- event: edit
+  skill: scorer
+  model: gpt-5.6-terra
+  artifact: tasks.md
+  sha256: 74440015909d0e363bd0d16987c4601252ce848674a6006490bafa9fd6c59703
+  timestamp: 2026-08-14T10:54:10Z
+  note: "Closed S4-010 through S4-030 with panel evidence and set Stage-5 handoff."
+- event: edit
+  skill: proofreader
+  model: gpt-5.6-terra
+  artifact: chapters/08-lo-que-paso-en-1998.md
+  sha256: 757888c986647d942f46ced70f2dc37cfa7bfcdba73739d95b0bc8d90406c22a
+  timestamp: 2026-08-14T12:00:00Z
+  note: "Stage-5 supported continuity and grammar-sequencing corrections; grammar and lexical/locale gates passed."
+- event: edit
+  skill: proofreader
+  model: gpt-5.6-terra
+  artifact: bible/cast.md; bible/vocabulary-ledger.md
+  sha256: "cast=4926d4a66d20ffee230b2ce328c94a16bbe181be5c9a01b278ab1167125225d3; vocabulary-ledger=021f9fe0859451a37230ca95905cca370b2d60252e6086996080f7826e6d7416"
+  timestamp: 2026-08-14T12:00:00Z
+  note: "Stage-5 record synchronization: Beto register corrected; Story-08 glossary and cumulative totals rebuilt."
+- event: edit
+  skill: grammar-tooling
+  model: gpt-5.6-terra
+  artifact: ../../tooling/scripts/spanish_grammar_check.py; ../../tests/test_spanish_grammar_gate.py
+  sha256: "script=265fce0b608360ef114c415cd03f69dfc78893d02d73574bc84003ea598fe513; test=1f1e31f55b38e1e1cce81e9516b50ad25331ef3aee988e5ae9ae0f28c89ee09c"
+  timestamp: 2026-08-14T12:00:00Z
+  note: "Stage-5 grammar-gate blind-spot repair: y-shifting leer preterite is now rejected when unlicensed; llover classified; regression pinned."
+- event: edit
+  skill: fact-checker
+  model: gpt-5.6-terra
+  artifact: README.md
+  sha256: 7a5936b621a63cc928f81f489130085c115b0a19b2d321e951e59179314e19cf
+  timestamp: 2026-08-14T12:00:00Z
+  note: "Stage-5 router status reconciliation against authoritative state.json."
+- event: generate
+  skill: proofreader; fact-checker
+  model: gpt-5.6-terra
+  artifact: edits/edit-log.md; edits/fact-report.md
+  sha256: "edit-log=b708e2ffedb4c3b082d45ceca6c47c983faf098855b6e65925995b3d8d9b5b92; fact-report=b05f0f5d19a70e1f20fb0e0fd454d509377434d97b3dd539233f472f2b9e3069"
+  timestamp: 2026-08-14T12:00:00Z
+  note: "Stage-5 auditable edit log and claim-verification report; all claim dispositions resolved."
+- event: edit
+  skill: proofreader; fact-checker
+  model: gpt-5.6-terra
+  artifact: tasks.md; state.json
+  sha256: "tasks=2c020ef1ac9095609993804475dd15e33ad0cdb7be4551d22bba5a24668b0af4; state=1d3bf7d0ad807364a418a465b73480ed589192ec865401395a1158f05c50777a"
+  timestamp: 2026-08-14T12:00:00Z
+  note: "Stage-5 completion recorded: Gate D PASS; Stage 6 metadata and cover work may begin within PIPE-001 limits."
+- event: generate
+  skill: metadata-seo
+  model: gpt-5.6-terra
+  artifact: exports/metadata/metadata.json
+  sha256: 601caa5dfa1e9bc1bae9ec1e13ac44a23b4728500e20c88b21ab530d532d4ebe
+  timestamp: 2026-08-14T11:35:42Z
+  note: "Stage-6 candidate metadata only: three unapproved title/subtitle candidates, T1-specific non-duplicative KDP keywords, category targets, and claim boundaries. manifest.yaml remains unchanged pending human selection and final-mark trademark screen."
+- event: generate
+  skill: metadata-seo
+  model: gpt-5.6-terra
+  artifact: exports/metadata/blurbs.md
+  sha256: 7f4b5351dad12b26d4fdb09be8b67a31405325dc654c9a138d474f0fe999e760
+  timestamp: 2026-08-14T11:35:42Z
+  note: "Stage-6 candidate short, KDP, and direct-sales blurbs. Explicitly excludes translation, audio, CEFR-certification, regional-authenticity, and outcome claims."
+- event: generate
+  skill: cover-director
+  model: gpt-5.6-terra
+  artifact: exports/cover/cover-notes.md
+  sha256: 675fb7cbf67f7104a94991336e4f463ca7adaf4170754ddbbe1a847d2ee2661e
+  timestamp: 2026-08-14T11:35:42Z
+  note: "Stage-6 cover-direction brief: three unselected hybrid-typography concepts and background-only prompts. No image generated; no cover asset or AI-image disclosure event is implied."
+- event: edit
+  skill: metadata-seo; cover-director
+  model: gpt-5.6-terra
+  artifact: tasks.md
+  sha256: c221ce0f9f9162e80d5ba3c4159cadc606ac0db9a5824916ccad3ce06be99b6b
+  timestamp: 2026-08-14T11:35:42Z
+  note: "Activated and expanded S6-010/S6-020 with evidence, approval criteria, and PIPE-001-safe S6-030 blocker; candidate-output evidence recorded without marking human-gated tasks complete."
+- event: edit
+  skill: metadata-seo; cover-director
+  model: gpt-5.6-terra
+  artifact: state.json
+  sha256: 5c23691129a91326e37c86826ac9c51c3772eca50a60d7b584ecf24357a7d534
+  timestamp: 2026-08-14T11:35:42Z
+  note: "Stage 6 status set to in_progress for metadata and cover direction. PIPE-001 remains an explicit bilingual-export blocker."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: exports/metadata/metadata.json
+  sha256: 601caa5dfa1e9bc1bae9ec1e13ac44a23b4728500e20c88b21ab530d532d4ebe
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Timestamp correction for the generate event recorded at 2026-08-14T11:35:42Z: the artifact/hash record remains historical evidence, but its occurrence time is UNKNOWN and cannot establish ordering before Gate D. Physical append order placed it after the 12:00:00Z Gate-D entries; the superseded nested path was later moved to the canonical metadata path."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: exports/metadata/blurbs.md
+  sha256: 7f4b5351dad12b26d4fdb09be8b67a31405325dc654c9a138d474f0fe999e760
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Timestamp correction for the generate event recorded at 2026-08-14T11:35:42Z: the artifact/hash record remains historical evidence, but its occurrence time is UNKNOWN and cannot establish ordering before Gate D. Physical append order placed it after the 12:00:00Z Gate-D entries; the superseded nested path was later moved to the canonical blurbs path."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: exports/cover/cover-notes.md
+  sha256: 675fb7cbf67f7104a94991336e4f463ca7adaf4170754ddbbe1a847d2ee2661e
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Timestamp correction for the generate event recorded at 2026-08-14T11:35:42Z: the artifact/hash record remains historical evidence, but its occurrence time is UNKNOWN and cannot establish ordering before Gate D. Physical append order placed it after the 12:00:00Z Gate-D entries."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: c221ce0f9f9162e80d5ba3c4159cadc606ac0db9a5824916ccad3ce06be99b6b
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Timestamp correction for the Stage-6 task event recorded at 2026-08-14T11:35:42Z: the artifact/hash record remains historical evidence, but its occurrence time is UNKNOWN and cannot establish ordering before Gate D. Physical append order placed it after the 12:00:00Z Gate-D entries."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: 5c23691129a91326e37c86826ac9c51c3772eca50a60d7b584ecf24357a7d534
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Timestamp correction for the Stage-6 state event recorded at 2026-08-14T11:35:42Z: the artifact/hash record remains historical evidence, but its occurrence time is UNKNOWN and cannot establish ordering before Gate D. Physical append order placed it after the 12:00:00Z Gate-D entries."
+- event: generate
+  skill: metadata-seo
+  model: gpt-5.6-sol
+  artifact: research/keywords.md
+  sha256: 6d2fcbe0c7a363e99e65b31f7e4f00d4cf60d072ff53b66953eb97639e94720c
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Stage-6 keyword/category evidence: observed autocomplete separated from derived content descriptors; no search-volume claim; phrasebook category rejected."
+- event: generate
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: research/cover-comps.md
+  sha256: a595b41b8635d95ed46f114d8f6cbb64f0ab72cd29e1334512c8a53e6b69a2b3
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Observed competitor-cover and 100px evidence from accessible Goodreads/publisher assets; Amazon interstitials documented and not bypassed."
+- event: generate
+  skill: metadata-seo
+  model: gpt-5.6-sol
+  artifact: exports/metadata.json
+  sha256: 4c7114a325893d62e291fc49068cecf6c7d7928a685b1571cb48ab9fb3ee7910
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Canonical repaired candidate metadata: T1 remains recommended but unselected; seven non-overlapping slots; phrasebook category replaced by conditional fiction short-stories target."
+- event: generate
+  skill: metadata-seo
+  model: gpt-5.6-sol
+  artifact: exports/blurbs.md
+  sha256: 7cc7f72ad70c569df48a1c26df35bc4162e666c47c6d7e2a018565b64d5b4a8f
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Canonical candidate blurbs with explicit claim boundaries and keyword-evidence source. Human approval remains pending."
+- event: edit
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/cover-notes.md
+  sha256: 7f85d9f66dc2b153c2fc74fbb85fc72a6823f5d4ef452c1c4b76f8fea0d9ad33
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Rebuilt as a visual-first approval brief with observed comp rules, actual 100px results, three distinct directions, and no final-art or print-spread claim."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/concepts/01-category-first.svg
+  sha256: f68bd8ea5c1eb45b102d4b2a70af489d0b9bdfddc1eeef9f1957acd923ae1ecc
+  timestamp: 2026-08-14T16:08:34Z
+  note: "AI-authored deterministic vector approval comp; no image API; not final cover art. Concept 1 category-first source."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/01-category-first.png
+  sha256: c5729c799ad140c0f95625a75f1a8ad3c87983b279833687771b641881d48308
+  timestamp: 2026-08-14T16:08:34Z
+  note: "1600x2560 PNG rendered from Concept 1 SVG for human comparison; not final cover art."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/01-category-first-100.png
+  sha256: 036353cbae1a4baf99734b61c127d0a94665d73deb5f588a0bd12048abe262e5
+  timestamp: 2026-08-14T16:08:34Z
+  note: "100x160 thumbnail rendered from Concept 1 for observed legibility review."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/concepts/02-typographic-series.svg
+  sha256: 6b6b16be0fa63cc6f263c0a7bab696e5f38b916e180ce23947304647134e368e
+  timestamp: 2026-08-14T16:08:34Z
+  note: "AI-authored deterministic vector approval comp; no image API; not final cover art. Concept 2 typographic-series source."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/02-typographic-series.png
+  sha256: a4189f0ceaec307b61a631ce909cc2a76331433e02abf4f5a7d13946fb794963
+  timestamp: 2026-08-14T16:08:34Z
+  note: "1600x2560 PNG rendered from Concept 2 SVG for human comparison; not final cover art."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/02-typographic-series-100.png
+  sha256: b544ebe7adaf2aedda184b3bb234be1e98cd7acfa829dd3dafe33349fc1acc92
+  timestamp: 2026-08-14T16:08:34Z
+  note: "100x160 thumbnail rendered from Concept 2 for observed legibility review."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/concepts/03-fiction-first.svg
+  sha256: efb7406ac49ad7327104ec8711e2daab0c7bcc1cb6d38b91583de09a36b44e18
+  timestamp: 2026-08-14T16:08:34Z
+  note: "AI-authored deterministic vector approval comp; no image API; not final cover art. Concept 3 fiction-first source after one category-band repair cycle."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/03-fiction-first.png
+  sha256: 74496602a6aeb04dc5614a421aa0bae490ee1d6a48aff7763f19fce33c3cd609
+  timestamp: 2026-08-14T16:08:34Z
+  note: "1600x2560 PNG rendered from Concept 3 SVG for human comparison; not final cover art."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/03-fiction-first-100.png
+  sha256: 2d5b9b42c54c817339df300774825ee75e2a63575a174c9972719bfb3baba163
+  timestamp: 2026-08-14T16:08:34Z
+  note: "100x160 thumbnail rendered from Concept 3 for observed legibility review."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: manifest.yaml
+  sha256: ad2b9413b188d22e557f913cd281754da7001fce9ae17d2e714941ef524b6f05
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Corrected inherited genre default from non-fiction to fiction. Universal Gate-C evidence remains valid; fiction additions are explicitly deferred in the active scoring contract."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: state.json
+  sha256: 520892ef5772d2ebd14d20bbc3df259cedd29e17d81ac06c596cb319ee0541e6
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Recorded PIPE-001 as an active Stage-6 blocker while preserving in_progress status, Gate C PASS, Gate D PASS, and Gate E null."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: README.md
+  sha256: a09de370db38d7316e0de93ab870db9f0324559aa24584a389e808264c2b6d1f
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Updated current router from stale Stage 5 wording to the active Stage-6 human gates and machine-enforced PIPE-001 boundary."
+- event: edit
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../tooling/scripts/compile_book.py
+  sha256: 1cdec82389e584a055312cd5ba788267f2c3efe15ef9976973f4abb29e9d3342
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Added pre-write refusal when PIPE-001 is present in active Stage-6 blockers. Real book invocation refused with exit 2 before Pandoc."
+- event: edit
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../.agents/skills/formatter-platform/SKILL.md
+  sha256: fe2574953ec423cc540d9e4072f1ff82fc69dff24e4626bfef840df58542bd86
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Prerequisite now states that formatter assembles verified translations but never generates/verifies them and must refuse before output while PIPE-001 is active."
+- event: generate
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../tests/test_compile_book_guard.py
+  sha256: f439b59fc1a74e95346cd03eaf33c6b4f086075ecca9c61bad7320ace914e87d
+  timestamp: 2026-08-14T16:08:34Z
+  note: "Regression test proves PIPE-001 refusal occurs before exports or frontmatter are created; pytest result 1 passed."
+- event: edit
+  skill: metadata-seo; cover-director; governance-repair
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: aa7bcc88be8134161f2290347866f22b435d804eab28709e60aefacb9d8f7655
+  timestamp: 2026-08-14T16:12:37Z
+  note: "Closed S6-005 with observed evidence; reconciled canonical paths and acceptance checks; moved S6-010/S6-020 to explicit human-gate blockers; retained PIPE-001/S6-030 compiler block."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: README.md
+  sha256: a09de370db38d7316e0de93ab870db9f0324559aa24584a389e808264c2b6d1f
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Correction to the 2026-08-14T16:08:34Z README event: its note overstated reconciliation because the status table still said Stage 5 in progress. That hash remains historical evidence; the corrected router is recorded by the following event."
+- event: edit
+  skill: governance-repair
+  model: gpt-5.6-sol
+  artifact: README.md
+  sha256: bbcc3c762b3a4f80b76889871facd4b956be26b1ecbb17e55e66b2dc90084ae9
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Current status table now matches state.json: Stage 5 done/Gate D PASS, Stage 6 in progress with PIPE-001, Stage 7 pending."
+- event: edit
+  skill: metadata-seo
+  model: gpt-5.6-sol
+  artifact: research/keywords.md
+  sha256: 21dd7ebaa71cbf737d7c51d8c8702c3b9d38f93bba11cd9449fb31fd716798e2
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Adversarial repair: selected slots are now explicitly untested tone/character/plot/setting/theme/audience descriptors; stale comprehension and instructional-feature wording removed."
+- event: edit
+  skill: metadata-seo
+  model: gpt-5.6-sol
+  artifact: exports/metadata.json
+  sha256: 7760781c11ec76117f62617bfa86436bc5c67e6461273603ea18e9679249fd8e
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Adversarial repair: T3 no longer targets absolute beginners; keyword slots avoid feature-bullet duplication and make no discoverability/search-volume claim."
+- event: edit
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/cover-notes.md
+  sha256: 781c31aaf1223b898214ccf6c7210596f626e0942f73189c19f22694733ac254
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Adversarial repair: exact T1 candidate subtitle and bounded Latin-American convention required on every comp; prompts corrected to 1:1.6/1600x2560."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/concepts/01-category-first.svg
+  sha256: aad11bc37564a2b9c2fe2e2c7009f1d4f5dd3024a31dad1507aa95e3a56048b7
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Concept 1 repaired to render the exact candidate subtitle without clipping and the bounded Latin-American convention."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/01-category-first.png
+  sha256: b97259ee6415d81e930ecb31fe4efd64423d77bd5e987be4d2b35cd721d80eed
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Re-rendered 1600x2560 Concept 1 after full-size subtitle/locale repair."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/01-category-first-100.png
+  sha256: 57203af6a6726e8c8d82ab2d0da82dfbe02df6495c4033c588b0dcd9d5975014
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Re-rendered 100x160 Concept 1 thumbnail after repair."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/concepts/02-typographic-series.svg
+  sha256: 05800fbcd15b8d0eef2c89930602a249637d069dbe912c96a18e6303cbaca6be
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Concept 2 repaired to render the exact candidate subtitle without clipping and the bounded Latin-American convention."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/02-typographic-series.png
+  sha256: ad5f2a612b386f0b09b184b8b139e7334f968f69f627c565018e5b54b373136f
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Re-rendered 1600x2560 Concept 2 after full-size subtitle/locale repair."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/02-typographic-series-100.png
+  sha256: aeccb86d127442906b5e12e7ce6e1b94372f999d3d983403a4b7cd8d8308550b
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Re-rendered 100x160 Concept 2 thumbnail after repair."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/concepts/03-fiction-first.svg
+  sha256: 7a51626f138614ad52a230aa95a99958f62f59c20e54d05c75fbae37afdb1058
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Concept 3 repaired to render the exact candidate subtitle and bounded Latin-American convention."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/03-fiction-first.png
+  sha256: f5dbfc2cdbcc057b272ef91a4d24d23fcc9de3248599549d4b963e42e260c171
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Re-rendered 1600x2560 Concept 3 after subtitle/locale repair."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/concepts/03-fiction-first-100.png
+  sha256: 590ebdf507e829d1dfe70d7b2090015778e9af0130df13926e5861a779eb3f44
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Re-rendered 100x160 Concept 3 thumbnail after repair."
+- event: edit
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../tooling/scripts/compile_book.py
+  sha256: 46fddcb2cf4874b1aa811b7afd718efccfafab898233998651ac74f2357d8efd
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Final PIPE-001 refusal implementation after clean-code guard pass; behavior unchanged from the verified refusal."
+- event: edit
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../tests/test_compile_book_guard.py
+  sha256: c772121b69763d3f15d4a806a2089fcbfa1eae8b2ca04c98ba8845ef8057f723
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Final regression test after test-guard pass; real tmp_path state and observable no-write behavior retained."
+- event: edit
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../.agents/skills/formatter-platform/SKILL.md
+  sha256: aa7600bf2004e81163e24f8576e107c90a73223bd86c3b313478bc6cd1708d01
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Prerequisite retains PIPE-001 pre-write refusal; output paths fully qualified for canonical interpretation."
+- event: edit
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: ../../.agents/skills/cover-director/SKILL.md
+  sha256: d6a564f18d0b2ffacdc0703f4665ae159ede68d420487952cfec2b771e70c276
+  timestamp: 2026-08-14T16:40:31Z
+  note: "Output paths fully qualified; cover contract otherwise unchanged."
+- event: edit
+  skill: metadata-seo; cover-director; governance-repair
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 239afde5b454c7845d196185af07fbfcb66d24e70bbd09c304d2010607b3a22b
+  timestamp: 2026-08-14T16:40:31Z
+  note: "S6-005 completion evidence reconciled after two attacker cycles; S6-010/S6-020 remain at human gates and PIPE-001/S6-030 remain blocked."
+- event: edit
+  skill: formatter-platform
+  model: gpt-5.6-sol
+  artifact: ../../tests/test_compile_book_guard.py
+  sha256: ca39b6f51d571bce06ac081d1842232fe7fb17f40bb8000f48891c1d07f5a37e
+  timestamp: 2026-08-14T16:43:50Z
+  note: "Final diagnostics-only test edit assigned Path.write_text return to underscore; assertions and verified pre-write refusal behavior unchanged."
+- event: human_selection
+  skill: metadata-seo
+  model: none
+  artifact: exports/metadata.json
+  sha256: cb56fa52730803e5fcf040f0abe59ad3289690df324f14f55ffc7baf14f7bc62
+  timestamp: 2026-08-14T16:52:24Z
+  note: "Human owner selected T1 title and subtitle: The Letter at Puerto Lento / 10 Linked Spanish Stories for Adult Learners (A2 Graded Reader). KDP description, pen name, series, imprint, final-mark screen, and second sign-off remain open; manifest.yaml was not changed."
+- event: human_selection
+  skill: cover-director
+  model: none
+  artifact: exports/cover/cover-notes.md
+  sha256: fedf7f653f5fdc3dddb2621570638462ff9eed26bb7cd53ba4dd53b5e4415103
+  timestamp: 2026-08-14T16:52:24Z
+  note: "Human owner selected Concept 1, the category-first literary bridge. Selection authorizes controlled final-background and editable-typography refinement only; no provider/model, cost, generated final asset, publication, print spread, or PIPE-001 resolution was approved."
+- event: edit
+  skill: metadata-seo; cover-director; governance
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 55b4b050a40c07a1778813de950764d3db1fbd305785b01de84e6d0333ea28a0
+  timestamp: 2026-08-14T16:52:24Z
+  note: "Recorded T1 and Concept 1 selections and narrowed the remaining Stage-6 human decisions without advancing Stage 6 or Gate E."
+- event: human_decision
+  skill: gtm-strategy
+  model: none
+  artifact: research/gtm-series-decision.md
+  sha256: 6fb0c731aae0348b7be99e5ce288272d8427bba197991dc94aa3232b930717cc
+  timestamp: 2026-08-14T17:53:01Z
+  note: "Human owner adopted a standalone, unnumbered A2 launch. No reader-facing Volume 1 or Book 1; initial KDP series field is none. Puerto Lento Spanish Readers is only a prospective umbrella requiring screening before use."
+- event: edit
+  skill: metadata-seo; gtm-strategy
+  model: gpt-5.6-sol
+  artifact: exports/metadata.json
+  sha256: e6b188722d377709e16369d56ba2840d03f6fcce04f2c5c3f57848f9eb6e62f7
+  timestamp: 2026-08-14T17:53:01Z
+  note: "Linked the GTM decision and recorded the human-adopted standalone launch architecture; title/subtitle remain pending final-mark screening."
+- event: edit
+  skill: cover-director; gtm-strategy
+  model: gpt-5.6-sol
+  artifact: exports/cover/cover-notes.md
+  sha256: 785336ecac60fad6f95f68521b0d35483fdccd897f24bebb3ff0baefddd07009
+  timestamp: 2026-08-14T17:53:01Z
+  note: "Concept 1 launch constraints now prohibit reader-facing volume/sequence labels and retain A2 as the category signal."
+- event: edit
+  skill: metadata-seo; cover-director; governance
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: a36a242e5510f4512db3fe94b20e02ae43c4625088758366f5e6589d2f053c33
+  timestamp: 2026-08-14T17:53:01Z
+  note: "Reconciled active Stage-6 tasks: initial KDP series is none; remaining human mark decisions are pen name and imprint."
+- event: review_brief
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: gpt-5.6-sol
+  artifact: audits/stage6-gtm-review-brief.md
+  sha256: f96413d9cb5c6104866d9f3d3cb5c5c79913cc00fab27f04de03c8888b3b3425
+  timestamp: 2026-08-14T18:18:31Z
+  note: "Self-contained read-only brief for the user-requested Luna + Terra Stage-6 GTM review."
+- event: independent_review
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: gpt-5.6-luna (xhigh)
+  artifact: audits/stage6-gtm-review-results.md
+  sha256: 63fa7830479736207feb987288cf92fefe4c172e3a3e47e536d85bcc5c7758f2
+  timestamp: 2026-08-14T18:18:31Z
+  note: "Read-only untainted Codex Luna review, session 01a00172-ca0e-7e80-80b1-adbca5682bff. No files changed by the delegate."
+- event: independent_review
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: gpt-5.6-terra (xhigh)
+  artifact: audits/stage6-gtm-review-results.md
+  sha256: 63fa7830479736207feb987288cf92fefe4c172e3a3e47e536d85bcc5c7758f2
+  timestamp: 2026-08-14T18:18:31Z
+  note: "Read-only untainted Codex Terra review, session 01a00172-ca02-7103-9235-1100c16eba9a. No files changed by the delegate."
+- event: edit
+  skill: metadata-seo; cover-director; governance
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 435ce5491b7df98762126b32bc171c73724086296414096a01490ca135d24ccf
+  timestamp: 2026-08-14T18:18:31Z
+  note: "Recorded the Luna + Terra convergence and kept final KDP copy, exact pen name, no-imprint confirmation, and cover generation authorization at the human gate."
+- event: review_brief
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: gpt-5.6-sol
+  artifact: audits/stage6-final-gtm-brief.md
+  sha256: 35e4574aa19772ea0bdfe08069fc5b8bdc320d76421dc6f5f0abf76505bbc711
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Final read-only Luna + Terra brief covering locked copy, Avery Calder, imprint timing, Puerto Lento architecture, actual generated backgrounds, cover requirements, and draft status."
+- event: independent_review
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: gpt-5.6-luna (xhigh)
+  artifact: audits/stage6-final-gtm-results.md
+  sha256: 2aa288cf19bc03538b9a8f11bb00401587080594643993347205b23d791abe16
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Read-only final GTM review. No delegate file changes. Luna accepted the locked description, rejected Avery Calder, supported no imprint/series at launch, and selected background 02."
+- event: independent_review
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: gpt-5.6-terra (xhigh)
+  artifact: audits/stage6-final-gtm-results.md
+  sha256: 2aa288cf19bc03538b9a8f11bb00401587080594643993347205b23d791abe16
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Read-only final GTM review. No delegate file changes. Terra accepted the locked description, rejected Avery Calder, supported no imprint/series at launch, and selected background 01; the human owner's explicit background-02 preference controls."
+- event: cover_input
+  skill: cover-director
+  model: UNKNOWN — owner must supply provider/model
+  artifact: assets/cover-background-01.jpeg
+  sha256: b135464f9fc68f6272e50b5e71eb1fe2ec96f1e1ca94c9b7ebcf162e9d7a7632
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Owner-supplied generated background, 816x1312. Provider, model, and actual cost unknown and still required before Gate E."
+- event: cover_input
+  skill: cover-director
+  model: UNKNOWN — owner must supply provider/model
+  artifact: assets/cover-background-02.jpeg
+  sha256: 4ff192a3793a3a51455a7503cd81c1c8d392b3a840772030b1ed15f8adeb58d2
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Owner-selected generated background, 816x1312. Provider, model, and actual cost unknown and still required before Gate E."
+- event: human_selection
+  skill: metadata-seo; cover-director; gtm-strategy
+  model: none
+  artifact: exports/blurbs.md; assets/cover-background-02.jpeg
+  sha256:
+    exports/blurbs.md: 53c07bd92b78b671d1a15b2c2df9dc3027bbd8cba95fb1743e3227cf42a811b1
+    assets/cover-background-02.jpeg: 4ff192a3793a3a51455a7503cd81c1c8d392b3a840772030b1ed15f8adeb58d2
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Human locked the synthesized KDP description, confirmed no bespoke imprint at launch, and selected generated background 02. Avery Calder was proposed but superseded by the final panel's active-author collision evidence."
+- event: edit
+  skill: metadata-seo
+  model: gpt-5.6-sol
+  artifact: exports/blurbs.md
+  sha256: 53c07bd92b78b671d1a15b2c2df9dc3027bbd8cba95fb1743e3227cf42a811b1
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Locked the approved 161-token KDP description and removed remaining reader-facing volume language from direct-sales copy."
+- event: edit
+  skill: metadata-seo; gtm-strategy
+  model: gpt-5.6-sol
+  artifact: exports/metadata.json
+  sha256: 27245bb4f931eaf03ae6a3ac67b72073de86428666c89ed7dbb5bba009e4404e
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Recorded locked description, no imprint/series launch, Avery rejection, and Nina Marlow replacement-candidate status; manifest remains unchanged pending sign-off."
+- event: edit
+  skill: gtm-strategy
+  model: gpt-5.6-sol
+  artifact: research/gtm-series-decision.md
+  sha256: 8acc74e4e41634a8c6b0b9803c6c90759afba567166675d3f380441fcf1f632c
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Removed rejected customer-facing internal-series explanation and recorded the evidence-gated Puerto Lento versus new-setting architecture."
+- event: edit
+  skill: metadata-seo; trademark-screen
+  model: gpt-5.6-sol
+  artifact: research/trademark.md
+  sha256: 6ebea005a7138886e892dbf1b9992b88f04a4b27ea210cc35cb8da88db2ccb77
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Appended preliminary Stage-6 exact-mark results and limitations. Avery Calder, Mara Ellison, and Julian Mercer rejected; Nina Marlow remains an incomplete-screen candidate; second human sign-off pending."
+- event: edit
+  skill: cover-director
+  model: gpt-5.6-sol
+  artifact: exports/cover/cover-notes.md
+  sha256: 69f98fe4ed23d8dbd9271a89775fe31ab23a3a70c297bb9ccd1e35328ea9d294
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Recorded background-02 selection, panel split, final candidate artifacts, 100px observation, source-resolution caveat, and missing generation provenance."
+- event: cover
+  skill: cover-director
+  model: gpt-5.6-sol composition + owner-supplied generated background (provider unknown)
+  artifact: exports/cover/final/front-cover.svg
+  sha256: 4e5a092bfc28dfc3f2856c5726839280c8c3e3bcf013a67850d44214f9f61880
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Self-contained 1600x2560 editable SVG; embeds background 02; exact selected title/subtitle; no volume/series/internal text; Nina Marlow remains a candidate byline."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/final/front-cover.png
+  sha256: 064ddcc53e2fabbb57eef05b1a0152133ee08b0bc2b225fbfc9b7c175721f4c6
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Rendered 1600x2560 PNG front-cover candidate from the self-contained SVG."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/final/front-cover.jpeg
+  sha256: 12f72c678bc28c46e767ce8ea9667679135ae65602cd211fd0406827d973d5d3
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Rendered 1600x2560 high-quality JPEG front-cover candidate. Not final until byline, source-resolution, and generation-provenance gates clear."
+- event: cover
+  skill: cover-director
+  model: none (deterministic sips render)
+  artifact: exports/cover/final/front-cover-100.png
+  sha256: 139fc33f3e0d947bfe96d277cbe9dc2776744918599316a26c3207f53faeb9a4
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Actual 100x160 thumbnail; SPANISH, A2, GRADED READER, and title remain identifiable."
+- event: edit
+  skill: metadata-seo; cover-director; governance
+  model: gpt-5.6-sol
+  artifact: tasks.md
+  sha256: 8199ba6cd8cad43ed7a2e887c2b9ef2fd0756567a87a34b7a97036234d3e88dc
+  timestamp: 2026-08-14T19:21:39Z
+  note: "Reconciled locked description, Avery collision, Nina candidate, no imprint/series launch, refined cover, provenance/source-resolution blockers, and absent compiled bilingual draft."
+- event: generation
+  skill: chapter-writer (parallel-text mode)
+  model: claude-opus-5
+  artifact: translations/ (10 x NN-*.en.md + 00-english-translations.md)
+  sha256: 95a16d5be7e08978a4e0d3e7055b392d46d1ac1f38326f71fbc03f310bb64fcd
+  timestamp: 2026-08-14T20:05:00Z
+  note: "PIPE-001 resolved by owner decision: English parallel text is AI-generated and disclosed, not human-translated. Mechanical verification = tooling/scripts/parallel_text_check.py (block parity + Spanish sha256 freshness via translations/sources.sha256), currently OK on all 10. SEMANTIC verification is the pending owner read; not claimed complete."
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.md
+  sha256: 24d66eaa1a5f406f887f6edc79ee75fe15b9a09d8e2df26fa04a610a26e3552a
+  timestamp: 2026-08-14T20:05:00Z
+  note: "Assembled bilingual draft, 15696 words: frontmatter, ten Spanish stories (narrative only), English Translations section, back-of-book Ejercicios, backmatter. Every Spanish section wrapped in `::: {lang=es}`. EPUB/PDF NOT built - pandoc absent on this machine, so Gate E (epubcheck) is UNRUN."
+- event: cover
+  skill: cover-director
+  model: claude-opus-5 (typography edit) + sips (deterministic rasteriser)
+  artifact: exports/cover/final/ (front-cover.svg + .png + .jpeg + -100.png)
+  sha256: f194fe700e7c74192baa7b9ba7c88ec92095f06c10213e856df02dea480fe3c8
+  timestamp: 2026-08-14T23:10:00Z
+  note: "Title restyled on owner instruction 'the style of (the letter at puerto lento) must be adjsted,
+    inspired from the stories.' Snell Roundhand script for the handwritten-letter half, Didot bold caps for
+    the harbour-signage half. No new AI image was generated - background 02 is unchanged and its provider,
+    model, and cost remain UNLOGGED, which is still an open Stage-6 item. Byline still reads Nina Marlow,
+    an unapproved screening candidate. Rasters: png 7ffb53c1d58f0c8c631918a5041ec7c1213ebd3be7ccd242e826ca04008ef53a,
+    jpeg f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448,
+    thumb fa29e0cd88aba01d93516e7b4c7ad84d18f85fd11265b769b2e6967b582fa042."
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: ae8a9bb04122741226a77ba94590dd8dc9a13250faf3f8d1876f7872b7061903
+  timestamp: 2026-08-14T21:28:21.222688+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: ae8a9bb04122741226a77ba94590dd8dc9a13250faf3f8d1876f7872b7061903
+  timestamp: 2026-08-14T21:28:21.224268+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: ae8a9bb04122741226a77ba94590dd8dc9a13250faf3f8d1876f7872b7061903
+  timestamp: 2026-08-14T21:28:21.224912+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 93198f454f547c7f770db0913c6daf294856721dd0866d680e8d0d7336f0a596
+  timestamp: 2026-08-14T21:28:21.225997+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 9c6911a2c9901e336cc5474e8aa505ff2a7251f176e3d8377eda461321d0ba84
+  timestamp: 2026-08-14T21:30:48.129967+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: b48981fe9346b5682b75a394af28d4bb622dffaa9aeda93d26fea8164dce9d2b
+  timestamp: 2026-08-14T21:30:48.131935+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 9c6911a2c9901e336cc5474e8aa505ff2a7251f176e3d8377eda461321d0ba84
+  timestamp: 2026-08-14T21:30:48.133184+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 9c6911a2c9901e336cc5474e8aa505ff2a7251f176e3d8377eda461321d0ba84
+  timestamp: 2026-08-14T21:30:48.133754+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: b48981fe9346b5682b75a394af28d4bb622dffaa9aeda93d26fea8164dce9d2b
+  timestamp: 2026-08-14T21:30:48.134743+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 3f9c74b0730e8e3fd0d1b084a56d7abd994e4c20db714ec96323f32111dbe7d7
+  timestamp: 2026-08-14T21:30:48.135780+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: b11dd5b19d03188d06b15170e972d0c361ffcbe0400292a90989167435a3928d
+  timestamp: 2026-08-14T21:35:23.264180+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: edab1c44635b0349f2f5e8fe9a8b2a3890d0aa9361ef75f29a70d617fc2dcdc9
+  timestamp: 2026-08-14T21:35:23.267150+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: b11dd5b19d03188d06b15170e972d0c361ffcbe0400292a90989167435a3928d
+  timestamp: 2026-08-14T21:35:23.268503+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: b11dd5b19d03188d06b15170e972d0c361ffcbe0400292a90989167435a3928d
+  timestamp: 2026-08-14T21:35:23.269165+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: edab1c44635b0349f2f5e8fe9a8b2a3890d0aa9361ef75f29a70d617fc2dcdc9
+  timestamp: 2026-08-14T21:35:23.270181+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 40e4dee0531273863dce3b9b756e0293d1e3bcab7348bb5bd8f67b8644968504
+  timestamp: 2026-08-14T21:35:23.271298+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: adff2de10864da5979506590ba6b0e84de7b1efff722d237daa85467f4b654c9
+  timestamp: 2026-08-14T21:37:26.105549+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 85acbfaf6828fa80aefe706a3df3671dded46c7d7a04d4cabbb2437f70ca964e
+  timestamp: 2026-08-14T21:37:26.109834+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: adff2de10864da5979506590ba6b0e84de7b1efff722d237daa85467f4b654c9
+  timestamp: 2026-08-14T21:37:26.111202+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: adff2de10864da5979506590ba6b0e84de7b1efff722d237daa85467f4b654c9
+  timestamp: 2026-08-14T21:37:26.111904+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 85acbfaf6828fa80aefe706a3df3671dded46c7d7a04d4cabbb2437f70ca964e
+  timestamp: 2026-08-14T21:37:26.113177+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: a97a9ff32b29d87bc25c1170b0db391f427abc5033fe6d98a84a3cc5a1b8b68c
+  timestamp: 2026-08-14T21:37:26.114603+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 254a957b5dee9552040cd0cd9f29acde319b319ba28dbc5aac066709abe1ef14
+  timestamp: 2026-08-14T21:38:52.050434+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: ba39682d007094d27fef718fc360230531b1f1f5bf40298ac19f1f4ed9000c3a
+  timestamp: 2026-08-14T21:38:52.054118+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 254a957b5dee9552040cd0cd9f29acde319b319ba28dbc5aac066709abe1ef14
+  timestamp: 2026-08-14T21:38:52.055527+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 254a957b5dee9552040cd0cd9f29acde319b319ba28dbc5aac066709abe1ef14
+  timestamp: 2026-08-14T21:38:52.056311+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: ba39682d007094d27fef718fc360230531b1f1f5bf40298ac19f1f4ed9000c3a
+  timestamp: 2026-08-14T21:38:52.057454+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: b96cf7139c016414da7961f711b2412288a83897275b6fddc09618b935e1a8fb
+  timestamp: 2026-08-14T21:38:52.058879+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 70084a95e414549e04e25a6d62d6bda671fbdb27d1331011715d3f0ae48e45a7
+  timestamp: 2026-08-14T21:40:51.393476+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 5340383d4373e2eacee7104a185a74b47dc09413a187c1fdffdbbdbf92300519
+  timestamp: 2026-08-14T21:40:51.398347+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 70084a95e414549e04e25a6d62d6bda671fbdb27d1331011715d3f0ae48e45a7
+  timestamp: 2026-08-14T21:40:51.399906+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 70084a95e414549e04e25a6d62d6bda671fbdb27d1331011715d3f0ae48e45a7
+  timestamp: 2026-08-14T21:40:51.400745+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 5340383d4373e2eacee7104a185a74b47dc09413a187c1fdffdbbdbf92300519
+  timestamp: 2026-08-14T21:40:51.401945+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 30c391e85615bae8bdefa88cdf71272b1af84882ae1ff8fe0444d0d025a1e718
+  timestamp: 2026-08-14T21:40:51.403164+00:00
+- event: gate
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  gate: E
+  result: PASS
+  sha256: 70084a95e414549e04e25a6d62d6bda671fbdb27d1331011715d3f0ae48e45a7
+  timestamp: 2026-08-14T23:45:00Z
+  note: "pandoc 3.10.2 installed; epubcheck against EPUB 3.3 rules returned '0 fatals / 0 errors /
+    0 warnings / 0 infos'. Built interior.pdf at 65 pages, 432x648pt = 6x9in exactly, and
+    direct/reader.pdf at 50 pages US Letter. SEPARATE a11y defect fixed after the first build and NOT
+    caught by this gate: pandoc emitted lang=\"es\" on 21 Spanish sections and xml:lang on zero, so
+    compile_book.py tagged() now emits both spellings; rebuild verified 21 of each. Semantic quality of
+    the translations remains the owner's unread review, not a gate result."
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 85911099cb6ec465616bcd30b2e5f847ab51fe960dcb1a35d4d6e804f54a9bdc
+  timestamp: 2026-08-14T21:42:58.520782+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 917d43f1f2d122fe0f4a76dd00b3f4ea887bc4e3fbbbd6cb6aa907f0e13ed064
+  timestamp: 2026-08-14T21:42:58.523750+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 85911099cb6ec465616bcd30b2e5f847ab51fe960dcb1a35d4d6e804f54a9bdc
+  timestamp: 2026-08-14T21:42:58.529976+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T21:42:58.536732+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T21:42:58.543024+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 85911099cb6ec465616bcd30b2e5f847ab51fe960dcb1a35d4d6e804f54a9bdc
+  timestamp: 2026-08-14T21:42:58.547525+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 917d43f1f2d122fe0f4a76dd00b3f4ea887bc4e3fbbbd6cb6aa907f0e13ed064
+  timestamp: 2026-08-14T21:42:58.549031+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: fc10e54de25da09bff021bb0958431ae95b7aec7e29f74064b96e95f003e8889
+  timestamp: 2026-08-14T21:42:58.550430+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/build-report.md
+  sha256: 4e48139b10984817dd5c2a1c6883abb39f8dd7571ff52a0537a4fcd78969fefd
+  timestamp: 2026-08-14T21:45:47+00:00
+- event: gate_correction
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  gate: E
+  result: FAIL
+  sha256: 85911099cb6ec465616bcd30b2e5f847ab51fe960dcb1a35d4d6e804f54a9bdc
+  timestamp: 2026-08-14T21:45:47+00:00
+  supersedes: 2026-08-14T23:45:00Z
+  note: "Correction: export-format validation passes (EPUBCheck 5.3.0 has zero findings; both PDFs render), but the repository's full Gate E also requires an originality check and complete compliance evidence. Originality is unrun and the generated cover background still lacks provider/model/actual-cost provenance. The earlier PASS was therefore too broad. This correction does not reopen a manuscript revision loop."
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 5fbf2d128c1b4258788cb2d730b80060f670397839068536ee3104cf43970323
+  timestamp: 2026-08-14T22:11:49.617242+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 4ff0f00df13ea296aa0f18c3a4604222b5565ec26bc7b3130c2a14a6ffbd5962
+  timestamp: 2026-08-14T22:11:49.627658+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 5fbf2d128c1b4258788cb2d730b80060f670397839068536ee3104cf43970323
+  timestamp: 2026-08-14T22:11:49.646206+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T22:11:49.663773+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T22:11:49.679666+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 5fbf2d128c1b4258788cb2d730b80060f670397839068536ee3104cf43970323
+  timestamp: 2026-08-14T22:11:49.692751+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 4ff0f00df13ea296aa0f18c3a4604222b5565ec26bc7b3130c2a14a6ffbd5962
+  timestamp: 2026-08-14T22:11:49.696286+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 45b666ae7e15849421fc0617f8030a8db9e6914371380778a4dd636ea27ccff5
+  timestamp: 2026-08-14T22:11:49.700516+00:00
+- event: owner_decision
+  skill: formatter-platform
+  model: none (owner instruction)
+  artifact: frontmatter.md
+  decision: reader-facing AI disclosure removed; private provenance record and truthful KDP upload disclosure retained
+  timestamp: 2026-08-14T22:15:01Z
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 35a853012a67eca1381146304f56f159edfad603f17bdbf69c9342633d3699b8
+  timestamp: 2026-08-14T23:10:57.786821+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 9d222198a77a3e3c82c759725b190ebbfb6948b44f2c64bdadd3cd39da18e3c7
+  timestamp: 2026-08-14T23:10:57.790704+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 35a853012a67eca1381146304f56f159edfad603f17bdbf69c9342633d3699b8
+  timestamp: 2026-08-14T23:10:57.796093+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:10:57.802170+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:10:57.807158+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 35a853012a67eca1381146304f56f159edfad603f17bdbf69c9342633d3699b8
+  timestamp: 2026-08-14T23:10:57.811258+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 9d222198a77a3e3c82c759725b190ebbfb6948b44f2c64bdadd3cd39da18e3c7
+  timestamp: 2026-08-14T23:10:57.812638+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 258079be3df8b94c67e46fa4376c4077fae33a390a865969609a53c0b41bdd05
+  timestamp: 2026-08-14T23:10:57.813847+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 264278d11e4f9f9851fe38a2f8a9c3988630f61c9025a02eb91c1397d81a78d3
+  timestamp: 2026-08-14T23:12:05.956431+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: bdd7357d32a3e74cbd72b2b1c9f3dd736aee45ea24f3f8899e68ba51ef139df5
+  timestamp: 2026-08-14T23:12:05.961701+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 264278d11e4f9f9851fe38a2f8a9c3988630f61c9025a02eb91c1397d81a78d3
+  timestamp: 2026-08-14T23:12:05.971872+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:12:05.978385+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:12:05.984028+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 264278d11e4f9f9851fe38a2f8a9c3988630f61c9025a02eb91c1397d81a78d3
+  timestamp: 2026-08-14T23:12:05.988231+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: bdd7357d32a3e74cbd72b2b1c9f3dd736aee45ea24f3f8899e68ba51ef139df5
+  timestamp: 2026-08-14T23:12:05.989843+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: d5e3796a6789a9266a30a771d2f93ea7952213d520fe62fca64df2efe47af18f
+  timestamp: 2026-08-14T23:12:05.991347+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: e01130461584940e3a018871be2c9a8bda19ec0d3d32af534943c5b616cf4c0f
+  timestamp: 2026-08-14T23:15:30.264518+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 1452a3bdd38fde5834b07af7c5995e6138408dda6eacce4ee7300e13f9a5749d
+  timestamp: 2026-08-14T23:15:30.273057+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: e01130461584940e3a018871be2c9a8bda19ec0d3d32af534943c5b616cf4c0f
+  timestamp: 2026-08-14T23:15:30.283270+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:15:30.293875+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:15:30.303849+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: e01130461584940e3a018871be2c9a8bda19ec0d3d32af534943c5b616cf4c0f
+  timestamp: 2026-08-14T23:15:30.313624+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 1452a3bdd38fde5834b07af7c5995e6138408dda6eacce4ee7300e13f9a5749d
+  timestamp: 2026-08-14T23:15:30.315630+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: e2c4dcea428b5ad07915c5ddbad09868601dc0eeba1ad12aea4cabc6fe7714b0
+  timestamp: 2026-08-14T23:15:30.317915+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 915095580fca4af473023104cf8a21ed53f5e390f97309bff4282cc06f42bb8c
+  timestamp: 2026-08-14T23:19:21.586049+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 71e692a0e7745b6a9482947d5564dc84e3d0d7b429ee5f323c2b27218b38cc37
+  timestamp: 2026-08-14T23:19:21.589531+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 915095580fca4af473023104cf8a21ed53f5e390f97309bff4282cc06f42bb8c
+  timestamp: 2026-08-14T23:19:21.597326+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:19:21.604914+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:19:21.611559+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 915095580fca4af473023104cf8a21ed53f5e390f97309bff4282cc06f42bb8c
+  timestamp: 2026-08-14T23:19:21.615465+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 71e692a0e7745b6a9482947d5564dc84e3d0d7b429ee5f323c2b27218b38cc37
+  timestamp: 2026-08-14T23:19:21.616963+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: ff8354d513d4d1263b6bee9507e893cba75784d408fbb4f4977358fc86270c51
+  timestamp: 2026-08-14T23:19:21.619362+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: be44fbdf7b842d2e2a4005fc828960f895928df1dfc8db4b8693a0659d2dace6
+  timestamp: 2026-08-14T23:22:01.532818+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: d41aea4263dea62c8c358a8c633b12a120e6ae48bf41f798208b5560ae5aedcd
+  timestamp: 2026-08-14T23:22:01.535669+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: be44fbdf7b842d2e2a4005fc828960f895928df1dfc8db4b8693a0659d2dace6
+  timestamp: 2026-08-14T23:22:01.541828+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:22:01.548543+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:22:01.554837+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: be44fbdf7b842d2e2a4005fc828960f895928df1dfc8db4b8693a0659d2dace6
+  timestamp: 2026-08-14T23:22:01.560098+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: d41aea4263dea62c8c358a8c633b12a120e6ae48bf41f798208b5560ae5aedcd
+  timestamp: 2026-08-14T23:22:01.561525+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 58088186843fa55760091ee4c5e77ff4e689b4346eb0e5ccedd08f3ca11975c5
+  timestamp: 2026-08-14T23:22:01.563087+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 689a50591744f0cfb613c806866626cb6a9da2df191b7327decc8f50edf8998a
+  timestamp: 2026-08-14T23:37:22.304010+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 5ffdfe2b6c53373351311041d5513a190844e94cc53d705b034b578480f58daf
+  timestamp: 2026-08-14T23:37:22.308006+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 689a50591744f0cfb613c806866626cb6a9da2df191b7327decc8f50edf8998a
+  timestamp: 2026-08-14T23:37:22.314787+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:37:22.323107+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:37:22.329394+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 689a50591744f0cfb613c806866626cb6a9da2df191b7327decc8f50edf8998a
+  timestamp: 2026-08-14T23:37:22.335677+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 5ffdfe2b6c53373351311041d5513a190844e94cc53d705b034b578480f58daf
+  timestamp: 2026-08-14T23:37:22.337059+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 54fdc139ed83afec374e9cc2c1f46c236c0099044d57b94b0ade7717902558ed
+  timestamp: 2026-08-14T23:37:22.338448+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 689a50591744f0cfb613c806866626cb6a9da2df191b7327decc8f50edf8998a
+  timestamp: 2026-08-14T23:38:19.787190+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: f0150f38a48942af6964cce33281ae0e1c06de8f08533256d9925c77d17c8eb0
+  timestamp: 2026-08-14T23:38:19.789909+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 689a50591744f0cfb613c806866626cb6a9da2df191b7327decc8f50edf8998a
+  timestamp: 2026-08-14T23:38:19.797374+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:38:19.804934+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: f36e736cf06d4d2768faf9cf8bebc153416e95ac82520d1a8e7afa0ebe612448
+  timestamp: 2026-08-14T23:38:19.812757+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 689a50591744f0cfb613c806866626cb6a9da2df191b7327decc8f50edf8998a
+  timestamp: 2026-08-14T23:38:19.818623+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: f0150f38a48942af6964cce33281ae0e1c06de8f08533256d9925c77d17c8eb0
+  timestamp: 2026-08-14T23:38:19.820044+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 779b79497d24089419f0221319fd0780aa91311f58573ffe5714e2170c325eaa
+  timestamp: 2026-08-14T23:38:19.821416+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: dc5508aa96105a6495a74459c2ce96b45de5dc9536637b8e36ab9689864bd41d
+  timestamp: 2026-08-15T00:22:39.910603+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: cb559c98a85e6361b66bd79ebc6a5b67889eeb7a0362d28ffa1164f95226fcf2
+  timestamp: 2026-08-15T00:22:39.914619+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: dc5508aa96105a6495a74459c2ce96b45de5dc9536637b8e36ab9689864bd41d
+  timestamp: 2026-08-15T00:22:39.923799+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: 6a75f6b496f5cc091ff43811a11afedfc0199f0f6fca39c7550da54e91f798a4
+  timestamp: 2026-08-15T00:22:39.934094+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: 6a75f6b496f5cc091ff43811a11afedfc0199f0f6fca39c7550da54e91f798a4
+  timestamp: 2026-08-15T00:22:39.943196+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: dc5508aa96105a6495a74459c2ce96b45de5dc9536637b8e36ab9689864bd41d
+  timestamp: 2026-08-15T00:22:39.950522+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: cb559c98a85e6361b66bd79ebc6a5b67889eeb7a0362d28ffa1164f95226fcf2
+  timestamp: 2026-08-15T00:22:39.952575+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: 3f9a07c7d36c2e460e097152c5f7fcacd04682ef485c95b0ada848e6cbf235a9
+  timestamp: 2026-08-15T00:22:39.954282+00:00
+- event: human_approval
+  skill: metadata-seo
+  model: none (human decision)
+  artifact: manifest.yaml
+  sha256: 827613459e82f9167f6ba7b78d594d484bbabb963d2cc60794eeddebb5aa3964
+  decision: "Exact pen name Nina Marlo approved by owner; practical exact-name screen recorded in research/trademark.md."
+  timestamp: 2026-08-15T00:23:32+00:00
+- event: diagnostic_export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/diagnostics/interior-5x8.pdf
+  sha256: b992690fb05d3a95557b94828b180d3a9a7106dd1bff0fba134350a76d70b5b0
+  note: "Non-release 5x8 trim diagnostic: 81 manuscript pages; KDP operational production count 82."
+  timestamp: 2026-08-15T00:25:00+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/master.epub
+  sha256: 552625f23f6ed2888d74ff107b75dd105765e97a94ce5dbac93a7bd0295e47bc
+  timestamp: 2026-08-15T01:35:48.149819+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/interior.pdf
+  sha256: 90aaa29bf4d77a5f27858e228873085b30aa31c13ef453cab774cd5b2f1d5d2f
+  timestamp: 2026-08-15T01:35:48.156945+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/master.epub
+  sha256: 552625f23f6ed2888d74ff107b75dd105765e97a94ce5dbac93a7bd0295e47bc
+  timestamp: 2026-08-15T01:35:48.166034+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/kdp/front-cover.jpeg
+  sha256: 6a75f6b496f5cc091ff43811a11afedfc0199f0f6fca39c7550da54e91f798a4
+  timestamp: 2026-08-15T01:35:48.176376+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/front-cover.jpeg
+  sha256: 6a75f6b496f5cc091ff43811a11afedfc0199f0f6fca39c7550da54e91f798a4
+  timestamp: 2026-08-15T01:35:48.187704+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/master.epub
+  sha256: 552625f23f6ed2888d74ff107b75dd105765e97a94ce5dbac93a7bd0295e47bc
+  timestamp: 2026-08-15T01:35:48.574189+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/print/interior.pdf
+  sha256: 90aaa29bf4d77a5f27858e228873085b30aa31c13ef453cab774cd5b2f1d5d2f
+  timestamp: 2026-08-15T01:35:48.599286+00:00
+- event: export
+  skill: formatter-platform
+  model: none (deterministic tooling)
+  artifact: exports/direct/reader.pdf
+  sha256: d5cdbb089208a7034e83f07693d65aeb45601e5a20f1316795c4401da77e1159
+  timestamp: 2026-08-15T01:35:48.604283+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/kdp/print-cover.pdf
+  sha256: 27a022ca0d0e10a0eed5973ea4f14825f7af96c9cec1ea1e85f5f5c2387419e3
+  note: "5x8 paperback review wrap: 82 production pages, cream paper, 5.207 mm blank spine; upload-ready status withheld pending native-resolution background and provenance."
+  timestamp: 2026-08-15T01:53:33+00:00
+- event: cover_asset_integrated
+  skill: cover-director
+  model: unknown (owner-supplied asset; provenance pending)
+  artifact: assets/cover-background-02-back.jpeg
+  sha256: 50c92a4830a03e604d90147fc9fb3ed5d217c1f0e8f2aaeeb1be5d3804495ce0
+  note: "Owner-supplied 816x1312 back background integrated edge-to-edge; approximately 159 DPI at placed size. Provider/model/cost not yet supplied."
+  timestamp: 2026-08-15T16:41:34+00:00
+- event: production_template_verified
+  skill: kdp-publishing
+  model: none (official deterministic template)
+  artifact: assets/PAPERBACK_5.000x8.000_82_BW_CREAM_en_US/PAPERBACK_5.000x8.000_82_BW_CREAM_en_US.pdf
+  sha256: 2f0c11e56ebe51f3bd9a5bb2e164edc2bccce6b1da58512e00ec021db6ecd899
+  note: "Downloaded KDP template matches 5x8, 82-page, black-and-white, cream-paper geometry; fold and barcode coordinates match the generated wrap."
+  timestamp: 2026-08-15T16:41:34+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/kdp/print-cover.pdf
+  sha256: 4f77c2cb337f8f02d5630bbef076b575ab80b5d9387881d71962d27f20bd71dd
+  note: "Rebuilt review wrap with owner-supplied back background; exact KDP template geometry retained."
+  timestamp: 2026-08-15T16:41:34+00:00
+- event: export_correction
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/kdp/print-cover.pdf
+  sha256: 6dd1288ed89306f51a5278ae48af961cf5c7e2f75b35f44203b160188dc9c397
+  note: "Removed the unintended lower-field stroke and replaced fold blending with an explicit solid 5.207 mm text-free spine."
+  timestamp: 2026-08-15T17:20:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/back-cover-canva.pdf
+  sha256: 2bebc6a698266caa1d03ab2b4ac6197ca2e91d6a8ce6c3ba95df6634ee6bf601
+  note: "Canva-ready back panel including outside bleed, ending exactly at the back/spine fold; 130.175 x 209.55 mm."
+  timestamp: 2026-08-15T17:20:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/back-cover-canva-300dpi.png
+  sha256: beffbc2fcc225e9a50308dcd0f4905072833465e7665bac87aa61155ce0734e7
+  note: "Canva-ready raster placement asset, 1538 x 2475 pixels; native owner-supplied background remains approximately 159 DPI at placed size."
+  timestamp: 2026-08-15T17:20:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/front-cover-canva.pdf
+  sha256: 4ee012b9d01b571c858c2516a8cf38358cd4c9ed6b2b1e3cb66a2063254e5db7
+  note: "Canva-ready front panel including outside bleed, beginning exactly at the front/spine fold; 130.175 x 209.55 mm."
+  timestamp: 2026-08-15T17:35:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/front-cover-canva-300dpi.png
+  sha256: 0ff17f5eed2651ee34625218fbc8063d62ca7777fa8eb4211a977e746af5a76f
+  note: "Canva-ready front raster placement asset, 1538 x 2475 pixels at 300 DPI."
+  timestamp: 2026-08-15T17:35:00+00:00
+- event: export_refresh
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/kdp/print-cover.pdf
+  sha256: a8e2768544731506442a24989b20c959b1c108d2fac3c6aba1fa76a4f7c16a91
+  note: "Full wrap refreshed while adding the exact front-panel Canva handoff; geometry and visible artwork unchanged."
+  timestamp: 2026-08-15T17:35:00+00:00
+- event: export_correction
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/kdp/print-cover.pdf
+  sha256: 1992b9366afe05c737a0ffc6204d00f267b7a41729f98fe70130449f3fca9c36
+  note: "Removed the visible barcode reservation on owner instruction; manual-placement coordinates remain documented but are not rendered."
+  timestamp: 2026-08-15T18:29:51+00:00
+- event: export_correction
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/back-cover-canva.pdf
+  sha256: 28a378f01f73624d9b61bc94d35afb7db06f0dfcf2d75e0633b1d883c0d30095
+  note: "Canva-ready back panel rebuilt without a visible barcode reservation."
+  timestamp: 2026-08-15T18:29:51+00:00
+- event: export_correction
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/back-cover-canva-300dpi.png
+  sha256: ac83aba8f40ad550aee4176d73d507ab0ada0a522984e3ba7054c9440a6e9874
+  note: "1538 x 2475 Canva-ready back PNG rebuilt without a visible barcode reservation."
+  timestamp: 2026-08-15T18:29:51+00:00
+- event: asset_supplied
+  skill: cover-director
+  model: Nano Banana Pro (owner-generated)
+  artifact: assets/full-cover-background-02.jpeg
+  sha256: 7d496f8936272c318ca9d1b5b4e69f5b8daca562202ae13af13fa9d595b47e8e
+  note: "Owner-selected second candidate for the continuous full-wrap strategy; provider and generation cost not supplied. Source is 1168 x 912 px and requires higher-resolution replacement or upscaling before print upload."
+  timestamp: 2026-08-16T16:55:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/print-wrap.svg
+  sha256: 14585c75e03dc607e4e882f5eea599b0308b4b69723c72ba7a5ef590ffe306cc
+  note: "Clean continuous full-wrap SVG at exactly 265.56 x 209.55 mm; no guides, seams, fold marks, template layer, or visible barcode reservation."
+  timestamp: 2026-08-16T16:55:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/print-wrap-guides.svg
+  sha256: 27b087a15e78787d3d3a35d785eafcdc7c656261161cfa108ad55da423ceb6e4
+  note: "Review-only alignment copy showing trim, white live areas, spine, and barcode reserve; prohibited from KDP upload."
+  timestamp: 2026-08-16T16:55:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/print-wrap.pdf
+  sha256: 5aea267ec79d2461620869b9c81dc3532934186aa5f91b89cf642b345badce81
+  note: "One-page exact-geometry review PDF; upload readiness withheld because the background source is approximately 112 effective DPI."
+  timestamp: 2026-08-16T16:55:00+00:00
+- event: export
+  skill: cover-director
+  model: none (deterministic tooling)
+  artifact: exports/cover/final/front-cover.svg
+  sha256: b4f9dda6ef0efcb77a2fef89adbed3b6375a8cd51db3cd622dce13f44a9fd237
+  note: "Exact 127 x 203.2 mm front-trim crop derived from the continuous wrap for Kindle use."
+  timestamp: 2026-08-16T16:55:00+00:00

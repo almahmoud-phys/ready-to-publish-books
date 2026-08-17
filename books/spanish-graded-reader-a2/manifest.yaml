@@ -1,0 +1,67 @@
+# books/<slug>/manifest.yaml — the book's contract. Loaded at EVERY stage (context rule 1). Keep < 60 lines.
+#
+# FIELD OWNERSHIP. This file is the highest-traffic information channel in the system,
+# so a guess written here propagates to every stage and is indistinguishable from a
+# researched value. Each field is filled by whoever holds its truth, at the stage that
+# earns it — never all at once at birth. [HUMAN] = only you know it, fill before stage 0.
+# [FACTORY] = new-book.sh wrote it. [STAGE n] = that stage's output; leave the placeholder
+# until it runs. [DEFAULT] = correct as-is; change only with a recorded reason.
+slug: spanish-graded-reader-a2
+title: "Spanish A2 Graded Reader — Volume 1"  # [OWNER 2026-08-13] was A1. Retitled to match the
+                              # measurement, not the other way round: PCIC puts A2 grammar in all ten
+                              # stories (19-39 irregular-present tokens each, 21 in story 01), so there
+                              # is no A1 band to label. "A1-A2" was rejected as a second mislabel.
+                              # Full reasoning: constitution.md amendment log + _planning/pcic-ruling.md.
+                              # The SLUG was renamed to match, by owner instruction the same day:
+                              # `spanish-graded-reader-a1` -> `spanish-graded-reader-a2`, directory and
+                              # all 16 path references. I had argued for leaving it as internal churn;
+                              # the owner overruled that, and correctly — a slug reading `a1` on an A2
+                              # book is the kind of stale record CLAUDE.md rule 8 exists to stop.
+                              # Two classes of file were deliberately NOT rewritten: the verbatim codex
+                              # reports in `_planning/`, because editing a quote falsifies it, and
+                              # `compliance_log.yaml`, which is append-only — the rename is recorded
+                              # there as a new event instead.
+subtitle: "<keyword-loaded subtitle>"   # [STAGE 6] metadata-seo; needs stage-0 keyword data
+genre: fiction                # [STAGE 6 RECONCILIATION 2026-08-14] ten linked fictional stories;
+                              # inherited non-fiction default contradicted the manuscript and Stage-5 fact scope.
+subgenre: graded-reader       # controlled-vocabulary narrative; parallel text remains blocked by PIPE-001
+track: generated              # [STAGE 1 normally] set at birth here, deliberately, not by default:
+                              # research/charter.md's authority_envelope already fixes this as a
+                              # generated, machine-verified book with no lived authority. Leaving
+                              # `assisted` would put the manifest in direct conflict with the charter,
+                              # and the constitution's conflict rule would halt the pipeline at Gate 1.
+                              # Gate 1 still confirms it; it no longer gets to contradict it.
+pen_name: "Nina Marlo"        # [STAGE 6, FINAL OWNER LOCK 2026-08-15] exact KDP/cover byline
+language: en                  # [DEFAULT] interior is bilingual: Spanish source + English parallel text.
+                              # NOTE: Pandoc metadata hardcodes `lang: en` (see discovery-log
+                              # "Language direction"); the Spanish spans need their own lang tagging
+                              # before export, or screen readers mispronounce the whole book.
+source_language: es           # [STAGE 6 2026-08-14] ACCESSIBILITY field, not a marketplace field —
+                              # it does not touch the title/subtitle/pen-name selection frozen pending
+                              # the final-mark screen. compile_book.py wraps every Spanish section in
+                              # `::: {lang=es}` so a screen reader switches voice instead of reading ten
+                              # Spanish stories with an English one. Closes the note directly above.
+print_binding: paperback      # [OWNER-APPROVED 2026-08-15] final KDP production contract
+print_trim: "5x8in"           # 127 x 203.2 mm
+print_ink: black
+print_paper: cream
+print_interior_bleed: false
+print_reading_direction: ltr
+niche_seed: "A graded reader that takes an adult English speaker who finished a beginner app from decoding Spanish word-by-word to reading continuous Spanish stories for meaning, inside a declared, machine-checked vocabulary."
+persona: "An adult English speaker (25-60) who finished a beginner app or course, recognises words and conjugation tables, but cannot read continuous Spanish without translating every sentence — and quits. Hires this book to feel like a reader rather than a pupil. Buys on Kindle, often reads inside Kindle Unlimited. NOT a child, not a classroom, not exam prep."  # [STAGE 0] niche-research OUTPUT, not an input.
+                              # Writing this by hand pre-answers the question stage 0 exists to answer.
+word_count_target: 20000      # graded reader, NOT the 25k–45k practitioner default. Roughly
+                              # 10 stories x ~700 Spanish words, plus English parallel text,
+                              # glossaries and comprehension checks. Both verified comps are short;
+                              # padding a graded reader to 30k breaks the level, it does not add value.
+platforms: [kdp, direct]      # kdp | direct | wide (wide = M5+)
+print: true                   # KDP paperback via LaTeX interior
+cover:
+  method: ai-images           # ADR-005; sub-decision recorded by cover-director
+models:                       # override router.py defaults only with reason
+  # outline-architect: opus-class
+  # chapter-writer: sonnet-class
+gates:
+  floor: 7                    # do not edit per-book — change control lives in .agents/rules/quality-gates.md
+  max_loopbacks: 3
+notes: ""

@@ -2,8 +2,18 @@
 % Used as: pandoc -H print-preamble-6x9.tex --pdf-engine=xelatex
 \usepackage[paperwidth=6in,paperheight=9in,margin=0.75in,inner=0.875in]{geometry}
 \usepackage{fontspec}
-\setmainfont{TeX Gyre Pagella}
-\setmonofont{DejaVu Sans Mono}
+% Resolve fonts by their TeX-distribution filenames. This stays deterministic on
+% minimal TeX Live installs whose system font cache does not expose the family names.
+\setmainfont{texgyrepagella-regular.otf}[
+  BoldFont=texgyrepagella-bold.otf,
+  ItalicFont=texgyrepagella-italic.otf,
+  BoldItalicFont=texgyrepagella-bolditalic.otf
+]
+\setmonofont{DejaVuSansMono.ttf}[
+  BoldFont=DejaVuSansMono-Bold.ttf,
+  ItalicFont=DejaVuSansMono-Oblique.ttf,
+  BoldItalicFont=DejaVuSansMono-BoldOblique.ttf
+]
 \usepackage{microtype}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -12,10 +22,10 @@
 \fancyhead[RO]{\small\rightmark}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\usepackage{titlesec}
-\titleformat{\chapter}[display]{\normalfont\bfseries\Large}{\chaptertitlename\ \thechapter}{12pt}{\LARGE}
-\titlespacing*{\chapter}{0pt}{-24pt}{18pt}
-\setcounter{secnumdepth}{0}          % chapters unnumbered in body; TOC carries structure
+\input{tooling/latex/story-heading-style.tex}
+% In the book class, chapters are level -1. A value below that suppresses the
+% redundant automatic "Chapter N" label (the manuscript already says Historia N).
+\setcounter{secnumdepth}{-2}
 \setcounter{tocdepth}{1}
 \raggedbottom
 \emergencystretch=2em                % reduce overfull boxes (formatter-platform render check)

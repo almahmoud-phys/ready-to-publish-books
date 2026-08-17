@@ -4,10 +4,10 @@ description: "Stage 2 (after each parallel batch) — guard the book's consisten
 model_tier: cheap
 stage: 2
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/bible/terminology.md, books/<slug>/bible/canon.md]
-  read: [books/<slug>/summaries/, books/<slug>/outline/]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/constitution.md, books/<slug>/bible/terminology.md, books/<slug>/bible/canon.md, .agents/rules/task-ledger.md]
+  read: [books/<slug>/tasks.md (Stage 2 continuity and linked chapter tasks only), books/<slug>/summaries/, books/<slug>/outline/]
   never_read: [books/<slug>/chapters/ (full), scores/, audits/]
-outputs: [books/<slug>/summaries/continuity-report.md, books/<slug>/summaries/continuity-canon-proposals.md]
+outputs: [books/<slug>/summaries/continuity-report.md, books/<slug>/summaries/continuity-canon-proposals.md, books/<slug>/tasks.md continuity evidence]
 ---
 
 # Continuity Keeper

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560" role="img" aria-labelledby="title desc">
+  <title id="title">Category-first literary cover concept</title>
+  <desc id="desc">Warm cream cover with large Spanish typography, an A2 badge, a restrained envelope mark, and the candidate title The Letter at Puerto Lento.</desc>
+  <rect width="1600" height="2560" fill="#F4EBDD"/>
+  <rect x="0" y="0" width="52" height="2560" fill="#D76B3E"/>
+  <text x="126" y="190" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" letter-spacing="10" fill="#17324A">A PUERTO LENTO MYSTERY</text>
+  <text x="120" y="620" font-family="Arial, Helvetica, sans-serif" font-size="270" font-weight="900" letter-spacing="-8" fill="#C9522D">SPANISH</text>
+  <text x="126" y="760" font-family="Georgia, Times New Roman, serif" font-size="88" font-weight="700" fill="#17324A">A2 GRADED READER</text>
+  <circle cx="1325" cy="250" r="150" fill="#2C8C72"/>
+  <text x="1325" y="286" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="900" fill="#FFFFFF">A2</text>
+  <line x1="126" y1="940" x2="1470" y2="940" stroke="#17324A" stroke-width="12"/>
+  <text x="126" y="1190" font-family="Georgia, Times New Roman, serif" font-size="128" font-weight="700" fill="#17324A">THE LETTER AT</text>
+  <text x="126" y="1350" font-family="Georgia, Times New Roman, serif" font-size="128" font-weight="700" fill="#17324A">PUERTO LENTO</text>
+  <g transform="translate(245 1580) rotate(-5)">
+    <rect width="1080" height="580" rx="22" fill="#E6D4B7" stroke="#17324A" stroke-width="18"/>
+    <path d="M0 0 L540 350 L1080 0" fill="none" stroke="#17324A" stroke-width="18"/>
+    <circle cx="540" cy="350" r="92" fill="#C9522D"/>
+    <path d="M500 350h80M540 310v80" stroke="#F4EBDD" stroke-width="16"/>
+  </g>
+  <text x="126" y="2285" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="2" fill="#17324A">10 LINKED SPANISH STORIES FOR ADULT LEARNERS</text>
+  <text x="126" y="2350" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="2" fill="#17324A">(A2 GRADED READER)</text>
+  <text x="126" y="2430" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="3" fill="#2C8C72">LATIN-AMERICAN SPANISH CONVENTION</text>
+  <text x="126" y="2505" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="5" fill="#6D6254">STAGE-6 CANDIDATE · NOT FINAL ART</text>
+</svg>

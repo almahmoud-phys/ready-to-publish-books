@@ -171,6 +171,36 @@ trademark_status: UNKNOWN
         else:
             print("SKIP  ledger-backed cases: no .kdp-research ledger (run research-init.sh)")
 
+        # A book-local ledger is the reproducible evidence artifact and must outrank the
+        # ignored workstation cache. This is the only precedence that survives a clean clone.
+        local_seed = "book-local-test-seed"
+        local_dir = make_book(
+            root,
+            "local-ledger",
+            FILLED_CHARTER,
+            full_evidence(local_seed, 2),
+            trademark="verdict: no_conflict_found\nhuman_signoff: owner 2026-08-09\n",
+        )
+        with (local_dir / "niche-ledger.csv").open("w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                "keyword", "marketplace", "format", "recurring_problem",
+                "audience_specificity", "seasonality", "competitor_concentration",
+                "median_review_count", "observed_bsr_range", "trademark_status",
+                "differentiation_hypothesis", "last_checked",
+            ])
+            for suffix in ("one", "two"):
+                writer.writerow([
+                    f"{local_seed} {suffix}", "us", "", "", "", "", "", "", "", "",
+                    f"mined from seed: {local_seed}", "2026-08-09",
+                ])
+        check(
+            "book-local ledger outranks machine cache",
+            run(root, "local-ledger"),
+            "GO",
+            "autocomplete_ledger=book-local",
+        )
+
     print()
     if failures:
         print(f"{len(failures)} FAILED: {', '.join(failures)}")

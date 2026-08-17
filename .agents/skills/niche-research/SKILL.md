@@ -4,10 +4,10 @@ description: "Stage 0 — validate a book idea against demand, competition, and 
 model_tier: strong_synthesis_cheap_gatherers
 stage: 0
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/research/charter.md]
-  read: [.agents/memories/, books/<slug>/research/niche-ledger.csv, books/<slug>/research/candidates.csv, books/<slug>/research/evidence.yaml, books/<slug>/research/reviews.md, books/<slug>/research/trademark.md]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/constitution.md, books/<slug>/research/charter.md, .agents/rules/task-ledger.md, .agents/rules/owner-identity.md]
+  read: [books/<slug>/tasks.md (Stage 0 only), .agents/memories/, books/<slug>/research/niche-ledger.csv, books/<slug>/research/candidates.csv, books/<slug>/research/evidence.yaml, books/<slug>/research/reviews.md, books/<slug>/research/trademark.md]
   never_read: [books/<slug>/chapters/, other books' workspaces]
-outputs: [books/<slug>/research/niche.md, books/<slug>/research/keywords.md, books/<slug>/research/evidence.yaml, books/<slug>/research/candidates.csv, books/<slug>/research/trademark.md]
+outputs: [books/<slug>/research/niche.md, books/<slug>/research/keywords.md, books/<slug>/research/evidence.yaml, books/<slug>/research/candidates.csv, books/<slug>/research/trademark.md, books/<slug>/tasks.md Stage-0 evidence]
 tooling: [kdp-scout (local CLI, MIT), trendspyg (Google Trends), USPTO+EUIPO trademark search]
 ---
 
@@ -22,6 +22,74 @@ Kill bad books cheaply. A book that can't win its niche must die at stage 0, not
 - **trendspyg** (MIT): Google Trends demand-direction — sustained/rising vs declining. Cache results.
 - **Trademark gate**: USPTO + EUIPO search for final title/series/brand candidates.
 - **Risk tiers (hard rule)**: suggestion-API mining = allowed with conservative rate limits · product-page snapshots = low volume, top-10 ALWAYS human-verified · bulk scraping/proxies/UA evasion = banned permanently (ADR-008).
+
+## Autonomy: book 2 onward runs UNINTERRUPTED (binding, 2026-08-13)
+
+**Read `.agents/rules/owner-identity.md` first. It already contains the owner's identity and a
+standing authorization.** With it present and `standing_authorization: true`, you do NOT stop to
+ask permission for anything in stage 0. Run the whole loop — candidate discovery, mining,
+comps, categories, trends, workspace creation, charter drafting, evidence, trademark screen,
+verdict — and only surface at the end, or at one of that file's six hard stops.
+
+Do not ask "shall I proceed?", do not ask for a signature that file already supplies, and do not
+re-confirm a decision the owner has already made. Asking a question the standing authorization
+answers is itself a defect — it costs the owner tokens and time to say "yes" again.
+
+The hard stops remain hard: a real trademark conflict, a KILL, an unfillable placeholder, an
+outward-facing action, a record conflict, or any temptation to fabricate a measurement. Those are
+assertions, not actions, and no standing authorization can supply them.
+
+## Collect the human-only fields FIRST (learned 2026-08-13, book 1)
+
+Exactly two fields no agent may originate from thin air: `charter.md: owner_attested` and
+`trademark.md: human_signoff`. From book 2 they come from `.agents/rules/owner-identity.md`
+without asking. If that file is ever missing, **ask for both in ONE question, at charter time,
+before any mining** — identity + date, ten seconds of the owner's time.
+
+What happened when this was not done: the agent authored the charter, left both placeholders,
+ran a full evidence pass, computed the verdict, and only then hit the sign-off gate. It then
+re-surfaced the same blocker across several turns while the owner had already said "GO" and
+"proceed in yolo mode". Tokens burned re-explaining a blocker one up-front question removes.
+The gate was right; **the ordering was wrong**.
+
+- Ask once, early, both together. Record the owner's exact words beside the value.
+- `owner_attested` means the owner accepts accountability for a charter the agent may have
+  drafted. Authorship and accountability are different — record which is which.
+- A standing "go ahead" IS authorization to proceed; it is NOT the identity string the gate
+  stores. Don't conflate them — and don't idle waiting either: mine, measure and record while
+  it is outstanding, then fill it.
+- Never write a signature the human did not say. Transcribing "it is me:: Mouhamad" is
+  transcription; inventing a name is forgery.
+- **Placeholders must never satisfy a gate.** `human_signoff: <who>` once passed the `\S+`
+  regex in `niche_verdict.py`. Fixed 2026-08-13: values matching `^<.*>` count as absent. Any
+  new human-gated field gets the same guard plus an assertion.
+
+## Measurement traps that actually cost time (2026-08-12/13)
+
+Each of these produced a wrong number that a cross-check or a later read caught. Check for them
+by name before recording any figure.
+
+- **Wrapper delta vs cumulative total.** `niche_mine.sh` prints `ledger += N` — the rows added by
+  THAT run. `evidence.yaml: autocomplete_richness` wants the cumulative per-seed count in the
+  ledger. Claiming the delta inflated the control from 442 to 67 and `niche_verdict.py` rejected it.
+- **Amazon's result count is capped.** A head term reporting exactly `1,000` or `over 1,000` is a
+  DISPLAY CEILING, not a measurement. Narrower queries return true counts (302, 431, 499, 661).
+  Record a real number from the actual positioning query, never the ceiling.
+- **Use the wrapper, not the raw endpoint.** Calling `completion.amazon.com` directly returned 7
+  suggestions on the `historical fiction` control and looked like a block. The same control run
+  through `tooling/scripts/niche_mine.sh` returned a full harvest. Degradation was the call, not Amazon.
+  ADR-009 P24 already says this — believe it before declaring a collector unhealthy.
+- **Amazon review pages are unobtainable.** They redirect to sign-in, and even a logged-in owner
+  sees "We're showing a limited selection of reviews." Do not spend turns on it. Go to Goodreads
+  for critical review text, and record the standing limitation: Goodreads hides individual star
+  values and merges editions, so the result is attributable dated CRITICAL OBSERVATIONS, not a
+  star-mapped 1-3 star sample.
+- **Autocomplete harvests carry semantic pollution.** `spanish reading` returned reading rods,
+  manipulatives, kindergarten, toddler, decor. Count on-target rows separately from raw rows and
+  say which is which; a raw total is not buyer intent.
+- **Check the venv before declaring a tool missing.** `trendspyg` is installed in
+  `.kdp-research/kdp-scout/.venv`, not system Python. It also returns a plain list of dicts, and
+  rate-limits on first call — one retry after ~45s succeeded.
 
 ## The charter — the thing this loop may not edit
 
@@ -40,13 +108,19 @@ human wanted and the authority that made it defensible.
 
 ## Autonomy boundary (what runs unattended, what does not)
 
+Superseded in part by `.agents/rules/owner-identity.md` (2026-08-13): with a standing
+authorization on file, the right column collapses to the hard stops only.
+
 | Runs unattended | Requires the human |
 |---|---|
-| Autocomplete mining, cached trend checks | Writing or widening the charter |
-| Normalising, deduping, ranking harvested phrases | Attesting authority fit |
-| Recording evidence + provenance | Verifying top-10 comps on live pages |
-| Computing the verdict via `niche_verdict.py` | Confirming trademark evidence |
-| Auto-continuing a **PIVOT** within the charter | Choosing a new niche after a **KILL** |
+| Autocomplete mining, cached trend checks | Choosing a new niche after a **KILL** |
+| Normalising, deduping, ranking harvested phrases | A real trademark **conflict** or `uncertain` |
+| Recording evidence + provenance | Publishing / uploading / spending (HITL Gate 2) |
+| Computing the verdict via `niche_verdict.py` | A record conflict needing reconciliation |
+| Auto-continuing a **PIVOT** within the charter | A placeholder no evidence can fill |
+| **Drafting the charter** (agent authors, owner is accountable) | |
+| **Writing `owner_attested` / `human_signoff`** from owner-identity.md | |
+| **Verifying comps on live pages** (agent-operated browser is acceptable evidence; label it as such) | |
 
 **Asymmetric confirmation**: the human may veto a computed GO. Neither human nor agent may
 promote a PIVOT or KILL to GO without new evidence. The ratchet only turns one way.

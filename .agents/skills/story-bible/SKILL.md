@@ -4,10 +4,10 @@ description: "Stage 1 (parallel with outline) — build the book's single source
 model_tier: strong
 stage: 1
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/research/niche.md, .agents/rules/style.md]
-  read: [books/<slug>/outline/outline.md]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/constitution.md, books/<slug>/research/niche.md, .agents/rules/style.md, .agents/rules/task-ledger.md]
+  read: [books/<slug>/tasks.md (Stage 1 bible tasks only), books/<slug>/outline/outline.md]
   never_read: [books/<slug>/scores/]
-outputs: [books/<slug>/bible/style-sheet.md, books/<slug>/bible/terminology.md, books/<slug>/bible/canon.md]
+outputs: [books/<slug>/bible/style-sheet.md, books/<slug>/bible/terminology.md, books/<slug>/bible/canon.md, books/<slug>/tasks.md bible evidence]
 ---
 
 # Story Bible (non-fiction: Argument & Voice Bible)

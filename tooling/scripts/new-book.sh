@@ -26,6 +26,7 @@ for d in "${STAGE_DIRS[@]}"; do touch "$BOOK_DIR/$d/.gitkeep"; done
 # SLUG is kebab-case-validated above and can contain none of these.
 TITLE_YAML="$(printf '%s' "$TITLE" | sed -e 's|\\|\\\\|g' -e 's|"|\\"|g')"
 TITLE_ESC="$(printf '%s' "$TITLE_YAML" | sed -e 's|[\\&|]|\\&|g')"
+TITLE_MD_ESC="$(printf '%s' "$TITLE" | sed -e 's|[\\&|]|\\&|g')"
 sed -i.bak \
   -e "s|^slug:.*|slug: $SLUG|" \
   -e "s|^title:.*|title: \"$TITLE_ESC\"  # [FACTORY] provisional — a stage-0 PIVOT may rename the book|" \
@@ -33,6 +34,11 @@ sed -i.bak \
 NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 sed -i.bak -e "s|<slug>|$SLUG|g" -e "s|<iso8601>|$NOW|g" \
   "$BOOK_DIR/state.json" "$BOOK_DIR/compliance_log.yaml" && rm -f "$BOOK_DIR"/*.bak
+sed -i.bak \
+  -e "s|<book title>|$TITLE_MD_ESC|g" \
+  -e "s|<slug>|$SLUG|g" \
+  -e "s|<iso8601>|$NOW|g" \
+  "$BOOK_DIR/tasks.md" && rm -f "$BOOK_DIR/tasks.md.bak"
 
 TODAY="$(date +%F)"
 # TITLE_YAML, not raw TITLE: the registry is the catalog ledger and a title containing
@@ -52,8 +58,9 @@ EOF
 echo "✅ books/$SLUG created and registered."
 echo ""
 echo "Stage 0 — niche-research checklist:"
-echo "  1. Edit books/$SLUG/manifest.yaml (niche_seed)"
-echo "  2. Fill books/$SLUG/research/charter.md"
-echo "  3. ./tooling/scripts/niche_mine.sh \"<seed>\" -m us   # marketplace enum: us|de|uk|fr|es|it|ca|au"
-echo "  4. Human-verify top-10 comps on the live marketplace (ADR-009)"
-echo "  5. Run the niche-research skill → research/niche.md → GO/PIVOT/KILL"
+echo "  1. Open books/$SLUG/tasks.md and expand the active task contracts"
+echo "  2. Edit books/$SLUG/manifest.yaml (niche_seed)"
+echo "  3. Fill books/$SLUG/research/charter.md"
+echo "  4. ./tooling/scripts/niche_mine.sh \"<seed>\" -m us   # marketplace enum: us|de|uk|fr|es|it|ca|au"
+echo "  5. Human-verify top-10 comps on the live marketplace (ADR-009)"
+echo "  6. Run the niche-research skill → research/niche.md → GO/PIVOT/KILL"

@@ -4,10 +4,10 @@ description: "Stage 4 — evidence-based scoring against the scoring contract, A
 model_tier: strong
 stage: 4
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/bible/, .agents/rules/scoring-contract.md, .agents/rules/quality-gates.md]
-  read: [books/<slug>/outline/, books/<slug>/audits/structural.md, books/<slug>/summaries/, books/<slug>/chapters/ (targeted excerpts; full read only at final pass), books/<slug>/research/niche.md (Market dimension only)]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/constitution.md, books/<slug>/bible/, .agents/rules/scoring-contract.md, .agents/rules/quality-gates.md, .agents/rules/task-ledger.md]
+  read: [books/<slug>/tasks.md (Stage 4 and linked loopback tasks only), books/<slug>/outline/, books/<slug>/audits/structural.md, books/<slug>/summaries/, books/<slug>/chapters/ (targeted excerpts; full read only at final pass), books/<slug>/research/niche.md (Market dimension only)]
   never_read: [other books' scorecards, .agents/memories/ during judging (bias guard)]
-outputs: [books/<slug>/scores/scorecard.json, books/<slug>/scores/scoring-notes.md]
+outputs: [books/<slug>/scores/scorecard.json, books/<slug>/scores/scoring-notes.md, books/<slug>/tasks.md scoring and loopback evidence]
 ---
 
 # Scorer

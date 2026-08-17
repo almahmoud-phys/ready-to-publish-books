@@ -1,0 +1,222 @@
+# Stage-0 evidence scaffold for a single book. Values start as UNKNOWN.
+# `clear` is deliberately NOT a legal trademark_status value: agents only record
+# `no_conflict_found`, then humans convert that to `clear` at sign-off.
+#
+# Collected 2026-08-12 via an agent-operated browser on US Amazon. Everything not
+# actually measured stays UNKNOWN. The owner said "GO"; that authorizes building the
+# book, it does not convert an unmeasured field into a measured one. This file is what
+# niche_verdict.py reads, so a courtesy value here would become indistinguishable from
+# research at every later stage.
+
+collector_health: CONFIRMED        # 2026-08-12, SECOND run of the day. The morning attempt called the
+                                   # raw completion endpoint directly and the `historical fiction`
+                                   # control returned 7 vs a known-healthy ~27 — DEGRADED. Re-running
+                                   # through the project wrapper `tooling/scripts/niche_mine.sh`
+                                   # returned a full harvest (ledger += 67 rows on the control).
+                                   # The morning degradation was the endpoint call, not Amazon
+                                   # blocking us. Use the wrapper; ADR-009 P24 says so.
+
+trend_direction: rising            # trendspyg via .kdp-research/kdp-scout/.venv, US, `today 5-y`,
+                                   # 2026-08-12, partial weeks excluded (261 complete weekly points).
+                                   # Averages over the first and last 52 complete weeks:
+                                   #   `learn spanish`          34.54 -> 51.85  = +50%
+                                   #   `spanish short stories`  30.17 -> 56.27  = +86%
+                                   # Both rising well past the +/-10% flat band. For contrast, the
+                                   # `SQL` family measured -25% in the run that retired it.
+                                   # Caveat: Trends measures general search attention, not book
+                                   # purchases. It corroborates the BSR and category evidence here;
+                                   # it does not independently prove demand.
+                                   # Method note: the first call failed with DownloadError
+                                   # ("rate-limited on replay"). One retry after ~45s succeeded.
+                                   # trendspyg returns a plain list of dicts, not an envelope object.
+
+autocomplete_richness:             # via tooling/scripts/niche_mine.sh, marketplace us, 2026-08-12,
+                                   # under a CONFIRMED control. Ledger row counts, not curated:
+  learn spanish: 23
+  spanish short stories for beginners: 7
+  spanish reading: 15
+  spanish for beginners: 9
+  spanish stories: 8
+  learn spanish books: 1
+                                   # RAW harvest counts, 63 rows total. Read them with the
+                                   # pollution in view rather than as 63 points of buyer intent:
+                                   #   `spanish reading` (15) is mostly CLASSROOM/KIDS SUPPLIES —
+                                   #     reading rods, manipulatives, kindergarten, toddler, decor,
+                                   #     reading pen, stations, cards. Only 2 rows
+                                   #     (`spanish reading for beginners`,
+                                   #     `spanish reading and comprehension`) address our reader.
+                                   #     Same semantic-pollution shape that got Obsidian and Notion
+                                   #     rejected earlier in docs/discovery-log.md.
+                                   #   `spanish for beginners` (9) is half author/title navigation
+                                   #     (angela wilkes, duff, juan fernandez) plus kids/teens/high
+                                   #     school. On-target: adult, kindle, workbook.
+                                   #   `learn spanish books` (1) collapsed to a kids row. Thin.
+                                   # ON-TARGET SUBSET, counted honestly: ~12 of 63 rows describe an
+                                   # ADULT self-study reader. The two that matter most:
+                                   #   `spanish stories with english translation` — parallel text is
+                                   #     demanded buyer language, not our design preference.
+                                   #   `spanish stories a2` / `spanish stories for intermediate` —
+                                   #     buyer language for volumes 2-3. The series ladder now has
+                                   #     evidence instead of being an assumption.
+                                   # `spanish stories` (7 of 8 on-target) is the CLEAN seed for this
+                                   # reader and should drive titling, not `spanish reading`.
+                                   # Counts are cumulative ledger rows in
+                                   # research/niche-ledger.csv (book-local, committed), NOT the
+                                   # wrapper's per-run "ledger += N" delta. I claimed the delta
+                                   # first and niche_verdict.py caught it — recorded because the
+                                   # same mistake would silently inflate every future book.
+                                   # The `historical fiction` control is deliberately absent: it is
+                                   # a collector-health probe, not a candidate seed, and it belongs
+                                   # in collector_health above.
+                                   # Reading: the parent `learn spanish` carries a real buyer-language
+                                   # cluster. The exact long-tail phrase is thin at 7 — a
+                                   # title-navigation signal, the same shape that retired the SQL and
+                                   # Playwright candidates. It does NOT sink this book, because the
+                                   # demand case here rests on verified BSR and category rank rather
+                                   # than on autocomplete breadth; but the final title must not bet on
+                                   # that long-tail phrase carrying traffic by itself.
+
+comps_under_50k_bsr: 2             # B0FGKLXLGN #10,839 and B0BCKHC9VR #21,564, both Kindle Store,
+                                   # both verified on the live detail page 2026-08-12.
+
+comp_table:
+  - title: "Spanish Short Stories for Beginners (A1)"
+    author: "Fluent with Stories (pen name)"
+    asin: B0FGKLXLGN
+    bsr: 10839
+    bsr_scope: "Kindle Store"
+    category_ranks: ["#1 Spanish Language Instruction (Kindle Store)", "#1 Travel Language Phrasebooks (Kindle Store)", "#1 Foreign Language Phrasebooks"]
+    price: "KU $0.00 / $2.99 buy / paperback $11.99"
+    review_count: 188
+    rating: 4.8
+    histogram: {5: "90%", 4: "8%", 3: "2%", 2: "0%", 1: "0%"}
+    publication_date: 2025-07-03
+    latest_review_date: UNKNOWN    # review pages are behind a sign-in wall; not collected
+    note: "Zero low-star ratings across 188 is suspiciously pristine; supports demand more than quality."
+  - title: "Learn Spanish with Short Stories for Adult Beginners"
+    author: "Explore ToWin (pen name)"
+    asin: B0BCKHC9VR
+    bsr: 21564
+    bsr_scope: "Kindle Store"
+    category_ranks: ["#1 Reference in Spanish", "#2 Spanish Language Instruction (Kindle Store)"]
+    price: "KU $0.00 / $0.99 buy / paperback $12.97"
+    review_count: 188
+    rating: 4.6
+    publication_date: 2022-08-30
+    latest_review_date: UNKNOWN
+    note: "Still ranking four years post-publication — the shelf is evergreen, not decaying."
+  - title: "Short Stories in Spanish for Beginners"
+    author: "Olly Richards"
+    publisher: "Teach Yourself / Hodder"
+    asin: B07HWZX3JB
+    bsr: 50969
+    bsr_scope: "Kindle Store"
+    price: "$13.99"
+    review_count: 802
+    rating: 4.4
+    histogram: {5: "66%", 4: "21%", 3: "9%", 2: "2%", 1: "2%"}
+    publication_date: 2018
+    latest_review_date: UNKNOWN
+    role: "trade incumbent / ceiling check — both indie comps outrank it"
+
+result_count_or_subniche: 431      # Kindle result count for `spanish stories a1`, the book's PRIMARY
+                                   # positioning query, measured 2026-08-12. LOW band (<1,000).
+                                   #
+                                   # Why this number and not the head term. `spanish short stories
+                                   # for beginners` reports "1,000" — that is Amazon's DISPLAY CAP,
+                                   # not a count; the true head-term figure is unobtainable and sits
+                                   # somewhere in the contested band. Reporting a capped ceiling as
+                                   # if it were a measurement would be the same class of error as
+                                   # the delta-vs-cumulative mistake caught earlier in this file.
+                                   #
+                                   # The sub-niche is measured and genuinely low, across five
+                                   # uncapped queries (Kindle, US, 2026-08-12):
+                                   #   spanish a1 reader                   302
+                                   #   spanish stories a1                  431  <- this field
+                                   #   spanish stories a2                  499  (volume 2 ladder)
+                                   #   spanish graded reader               661
+                                   #   spanish stories for adult beginners 834
+                                   # Every one is under the repo's 1,000 low-competition threshold.
+                                   #
+                                   # Shelf composition at the head term remains as recorded earlier:
+                                   # indie/pen-name dominated, 4.3-4.8, heavy Kindle Unlimited, one
+                                   # trade incumbent at organic #4, no A-list wall.
+                                   #
+                                   # Honest reading: we do NOT enter at the head term. We enter at
+                                   # the level-tagged adult sub-niche, which is where the autocomplete
+                                   # evidence (`spanish stories a1/a2`, `with english translation`)
+                                   # and the differentiation contract both point.
+
+category_difficulty:               # BSR of the rank-#20 book in two target categories, 2026-08-12.
+                                   # Method: open the category bestseller list, take the #20 slot,
+                                   # open THAT book's detail page, read its overall Kindle Store BSR.
+  spanish_language_instruction:
+    node: 158224011
+    rank20_title: "Spanish: 201 Easy Spanish Phrases"
+    rank20_asin: B00UGUMWKU
+    rank20_overall_bsr: 116747
+  foreign_language_phrasebooks:
+    node: 158215011
+    rank20_title: "Easy Learning Spanish Conversation (Collins)"
+    rank20_asin: B00PFBTM5S
+    rank20_overall_bsr: 191323
+  reading: "Both target categories are WINNABLE. A top-20 slot costs roughly #117k overall in the
+    primary category and #191k in the secondary. Our two verified comps sit at #10,839 and #21,564 —
+    an order of magnitude better than the rank-20 bar, which means the visible top of these
+    categories is genuinely contested by books at our achievable level, not walled off."
+  caveat: "Bestseller lists lag: B00UGUMWKU appeared at #20 on the list while its own detail page
+    reported #25 in the same category. Treat these as approximate bars, not constants. Also note
+    the phrasebook category is a phrasebook shelf, not a reader shelf — codex flagged that
+    ranking there does not prove reader-format demand."
+
+gap_statement: "On this shelf the teaching method is not the problem — reviewers praise the
+  scaffolding. The prose is the problem. The category's trade incumbent is criticised by three of
+  four collected reviewers for stories that are dull, silly and childish, written by someone who is
+  a language teacher rather than a writer; by a fourth for peninsular Spanish sold to a US audience
+  whose real exposure is Latin American; and for uncaught errors in a product whose only value is
+  being correct. The gap is a graded reader an adult is not embarrassed to read, in one declared
+  Latin American locale, with correctness that is mechanically proven rather than asserted."
+
+differentiation_contract:          # 3 promises, each traceable to a dated review in reviews.md.
+                                   # None is a phrase we invented and then validated against its
+                                   # own plausibility.
+  - promise: "Stories written for adults: no talking animals, no children's-primer register, and
+      no textbook framing. Every story has an actual narrative reason to turn the page."
+    cites: "Ramona Mead 2019-10-19 ('silly... out of a kid's early reader... feels like a text
+      book. I was looking for a more casual read'); Mikael 2021-10-05 ('painfully obvious that the
+      author is not a writer. The stories are dull and lack imagination'); soph 2019-08-01
+      ('awful and a little ridiculous in places')."
+    how_verified: "Editorial, not mechanical. This is the one promise the check suite cannot prove;
+      it is judged at stage 3/4 against the rubric. Recorded as such rather than dressed up."
+  - promise: "One declared Latin American locale on the cover and enforced throughout — no
+      peninsular/Latin American mixing anywhere in the book."
+    cites: "Shawn 2019-08-05 ('el problema es las historias fueran escriben en espanol de Espana.
+      En el Estados Unidos mas los hispanicos de Mexico o Centro America')."
+    how_verified: "MECHANICAL — tooling/scripts/graded_reader_check.py locale_violations(), already
+      built and self-checked. Fails the build on a single vosotros/vuestro."
+  - promise: "Every Spanish sentence passes a published, reproducible check before it ships:
+      controlled-vocabulary coverage against a cited A1 wordlist, plus morphology and agreement."
+    cites: "soph 2019-08-01 ('there were also a couple of errors in there which won't really help
+      your learning')."
+    how_verified: "MECHANICAL — coverage() is built and self-checked; the morphology analyzer is
+      NOT yet built and is listed as an open task. This promise is not fully honoured today."
+
+authority_fit: y                   # charter.authority_envelope is generated-track and
+                                   # machine-verified; it claims no fluency, credential, or lived
+                                   # experience, so nothing in the envelope is unearned. NOTE: the
+                                   # charter is DRAFTED, NOT ATTESTED until owner_attested is filled.
+
+asset_feasibility: "Text-only interior; no photography, no screenshots, no hardware, no field
+  testing. Verification is fully computational (wordlist coverage, morphology, locale consistency,
+  sentence-aligned translation checks). Cover is AI-images per ADR-005. Flagged risks: several
+  comps ship an audio download, which we do not have and must not imply; and the check suite is
+  real engineering work that must exist before drafting, not after."
+
+trademark_status: no_conflict_found  # searched 2026-08-12 across classes 9 / 16 / 41 over indexed
+                                   # USPTO mirrors — see research/trademark.md for scope and sources.
+                                   # NOT `clear`: that word is the owner's to write at sign-off.
+                                   # `research/trademark.md: human_signoff` is still a placeholder,
+                                   # so GO remains uncomputable on this field alone.
+                                   # Also: only the descriptive term `graded reader` was screened.
+                                   # The final title, series name, imprint and pen name do not exist
+                                   # yet, so the screen that actually matters happens at stage 6.

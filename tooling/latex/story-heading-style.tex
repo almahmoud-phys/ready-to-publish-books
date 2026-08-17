@@ -1,0 +1,29 @@
+% Shared story-opening typography for print and direct-reader PDFs.
+% The Lua filter keeps the full heading in the TOC and passes its two visual parts
+% to \StoryHeading for the page rendering.
+\usepackage{xcolor}
+\usepackage{titlesec}
+\definecolor{StoryHeadingBlue}{HTML}{214A67}
+
+\newcommand{\StoryHeading}[2]{%
+  {\normalfont\fontsize{10}{12}\selectfont\scshape\color{StoryHeadingBlue}#1\par}%
+  \vspace{5pt}%
+  {\normalfont\fontsize{24}{28}\selectfont\bfseries#2}%
+}
+
+% H1 is a chapter in the 6x9 book build and a section in the direct PDF.
+\makeatletter
+\@ifundefined{chapter}{}{%
+  \titleformat{\chapter}[display]
+    {\normalfont\raggedright}{}{0pt}{}
+  \titlespacing*{\chapter}{0pt}{-24pt}{30pt}
+}
+\makeatother
+
+\titleformat{\section}[block]
+  {\normalfont\raggedright\Large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{2.2ex plus .4ex minus .2ex}{2.4ex}
+
+\titleformat{\subsection}[block]
+  {\normalfont\raggedright\large\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{2ex plus .3ex minus .2ex}{2.2ex}

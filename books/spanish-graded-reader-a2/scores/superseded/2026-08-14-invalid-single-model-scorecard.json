@@ -1,0 +1,91 @@
+{
+  "book": "spanish-graded-reader-a2",
+  "timestamp": "2026-08-14T00:03:24Z",
+  "model": "gpt-5.6-sol",
+  "dimensions": {
+    "originality": {
+      "score": 7,
+      "citations": [
+        "research/niche.md:L108-L126 — the differentiated shelf gap is adult linked stories, a declared Latin American locale, and reproducible checks.",
+        "chapters/02-el-pan-de-las-cinco.md:L56-L117 — Rosa's location question and the excess bread communicate refusal through action rather than a lesson explanation."
+      ],
+      "weakest_passage": "chapters/01-la-carta-sin-dueno.md:L70-L85 — the ending explains ownership of the letter rather than leaving the decision entirely in action."
+    },
+    "prose": {
+      "score": 7,
+      "citations": [
+        "audits/part1-panel-results.md:L56-L72 — the preregistered three-family panel found adult dignity and concrete withholding craft in Stories 01–04.",
+        "chapters/02-el-pan-de-las-cinco.md:L56-L117 — the scene lands its revelation through Rosa's question and the uneaten bread."
+      ],
+      "weakest_passage": "chapters/04-todos-los-dias-lo-mismo.md:L112-L118 — Ana explicitly explains the thematic meaning of 'no hay nada' after Miguel already dramatized it."
+    },
+    "coherence": {
+      "score": 6,
+      "citations": [
+        "audits/structural.md:L9-L20 — the re-audit records a coherent letter, Tomás, and annual-lamp chronology after the targeted repair.",
+        "manifest.yaml:L34-L44 — the promised interior is bilingual and its target includes English parallel text, glossaries, and comprehension checks; the chapter directory currently contains only Spanish manuscript files."
+      ],
+      "weakest_passage": "books/spanish-graded-reader-a2/chapters/ — no English parallel-text artifacts exist despite the product contract."
+    },
+    "market": {
+      "score": 5,
+      "citations": [
+        "research/niche.md:L85-L91 — 'spanish stories with english translation' is explicit buyer language and parallel text is required by demand evidence.",
+        "outline/outline.md:L184-L190 — English translations must be present and findable after each complete Spanish story; none exists in the manuscript directory."
+      ],
+      "weakest_passage": "books/spanish-graded-reader-a2/chapters/ — a buyer cannot receive the promised English translation product because no translation artifacts exist."
+    },
+    "voice": {
+      "score": 7,
+      "citations": [
+        "bible/cast.md:L11-L16 — character speech registers and roles are defined across the book.",
+        "chapters/01-la-carta-sin-dueno.md:L29-L48 and chapters/10-la-luz-otra-vez.md:L98-L127 — the recurring plain dialogue, town silence, and final public speech preserve the established register."
+      ],
+      "weakest_passage": "chapters/04-todos-los-dias-lo-mismo.md:L112-L118 — explicit thematic explanation briefly replaces the otherwise restrained voice."
+    },
+    "opening": {
+      "score": 5,
+      "citations": [
+        "chapters/01-la-carta-sin-dueno.md:L15-L27 — the letter produces a concrete mystery early and supports a cold reader continuing.",
+        "outline/outline.md:L213-L217 — the opening contract requires buyer-facing information about audience, Latin American Spanish, linked stories, and dictionary expectations; no frontmatter or opening artifact containing that material exists."
+      ],
+      "weakest_passage": "books/spanish-graded-reader-a2/chapters/01-la-carta-sin-dueno.md:L1-L3 — the actual on-disk opening begins immediately with the story and does not satisfy the required buyer-facing opening contract."
+    },
+    "accuracy": {
+      "score": 5,
+      "citations": [
+        "research/charter.md:L25-L27 — the authority envelope claims aligned parallel translation, entailment/back-translation, and story-integrity checks.",
+        "research/niche.md:L124-L126 — only coverage is built and green; morphology, alignment, and back-translation are explicitly not built."
+      ],
+      "weakest_passage": "research/charter.md:L25 — the stated verification envelope exceeds the checks currently evidenced in the repository."
+    },
+    "usefulness": {
+      "score": 3,
+      "citations": [
+        "outline/outline.md:L187-L190 — the learner-facing design requires English translation after every story.",
+        "outline/outline.md:L204-L210 — the book budget contracts for English parallel text and comprehension answer keys; the manuscript contains only Spanish stories and question blocks, for example chapters/01-la-carta-sin-dueno.md:L87-L93."
+      ],
+      "weakest_passage": "books/spanish-graded-reader-a2/chapters/ — no English translations, answer keys, learner glossary presentation, or how-to-use material exists for the target adult learner."
+    },
+    "structure": {
+      "score": 5,
+      "citations": [
+        "outline/outline.md:L97-L124 — the ten-story Spanish spine and capability progression are complete and ordered.",
+        "outline/outline.md:L202-L211 — the required book-level components include translations, glossaries, answer keys, and front/back matter; these components are absent from the current manuscript artifact set."
+      ],
+      "weakest_passage": "books/spanish-graded-reader-a2/chapters/ — the present deliverable is a story draft set, not the full bilingual graded-reader architecture promised by the outline and manifest."
+    }
+  },
+  "book_score": 3,
+  "floor_dimension": "usefulness",
+  "loopbacks_used": {
+    "coherence": 1,
+    "market": 1,
+    "opening": 1,
+    "accuracy": 1,
+    "usefulness": 1,
+    "structure": 1
+  },
+  "verdict": "LOOPBACK:2_chapters",
+  "uncertainty": "This is an evidence-based Gate C score, not an independent multi-family panel. The sub-floor outcome rests on observable absent deliverables rather than subjective literary disagreement. The existing independent panel covers only Stories 01–04 and cannot validate the unproduced bilingual, answer-key, and frontmatter components."
+}

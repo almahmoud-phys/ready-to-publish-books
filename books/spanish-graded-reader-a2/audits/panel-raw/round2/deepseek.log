@@ -1,0 +1,94 @@
+
+relay: completed (exit 0)  ·  provider deepseek
+isolation: in-tree (live working tree)
+touched files: 2
+  ?? .codanna/
+  ?? runs/
+
+--- provider final report ---
+# Literary Judgement
+
+I judged each sample as a discrete reading experience for the intended adult reader, applying the six dimensions uniformly.
+
+---
+
+**SAMPLE A**
+  adult_dignity: 1
+  local_closure: 8
+  character_motivation: 6
+  desire_to_continue: 0
+  natural_spanish: 6
+  sentence_pleasure: 2
+  critical: yes
+  evidence: "¡Ocho! ¿Puedes contar ocho? ¡Muy bien!" — direct address to a "amigo lector" who must count along and be praised is the language of a picture book / comprehension worksheet, not prose an adult reads for pleasure.
+
+**SAMPLE B**
+  adult_dignity: 10
+  local_closure: 9
+  character_motivation: 9
+  desire_to_continue: 9
+  natural_spanish: 10
+  sentence_pleasure: 9
+  critical: no
+  evidence: (No low score; highest scores.) The single low-adjacent is none.
+
+**SAMPLE C**
+  adult_dignity: 10
+  local_closure: 8
+  character_motivation: 8
+  desire_to_continue: 8
+  natural_spanish: 9
+  sentence_pleasure: 8
+  critical: no
+  evidence: (No score ≤6.)
+
+**SAMPLE D**
+  adult_dignity: 4
+  local_closure: 3
+  character_motivation: 3
+  desire_to_continue: 1
+  natural_spanish: 6
+  sentence_pleasure: 3
+  critical: yes
+  evidence: "Carlos se levanta a las seis y media de la mañana. Primero se baña. Después se viste." — an inventory of habit delivered as data; no tension, no scene, no inside, no ending.
+
+**SAMPLE E**
+  adult_dignity: 10
+  local_closure: 8
+  character_motivation: 8
+  desire_to_continue: 9
+  natural_spanish: 9
+  sentence_pleasure: 9
+  critical: no
+  evidence: (No score ≤6.)
+
+---
+
+**RANKING:** B > E > C > D > A
+
+---
+
+**1. Which is most clearly written for an ADULT, and which is most clearly not?**
+B is unmistakably adult prose. Its linguistic signals are restraint and omission: sentences are short but carry subtext — "Rosa no pregunta quién es Tomás Ferrer. No pregunta por qué Ana tiene una carta... Pregunta dónde está la carta." Meaning lives in what is *not* said, dialogue does one thing while the plot does another, and the final beat (the untasted bread) is communicated through behavior, never explained. A is the clearest non-adult: it speaks to the reader directly ("¿Te gusta el cuento, amigo lector?"), stages a counting exercise, fronts rhetorical exclamation marks, and closes with "colorín colorado, este cuento se ha acabado" plus five comprehension questions. Those are the fingerprints of a pedagogical product, not reading for pleasure.
+
+**2. The single strongest sample:**
+B. The one thing it does that none of the others does is turn the entire dramatic hinge on an *unasked* question. Rosa never answers "who is Tomás Ferrer"; the revelation is that she checks the story's tension by interrogating the *letter's location* instead — and then refuses Ana's answer not with words but by feeding her bread. Subtext-as-structure, held entirely within the beginner ceiling. No other sample makes the gap between what's said and what's meant do the work.
+
+**3. The single weakest sample:**
+D. It sinks because it is pure inventory with zero scene-structure: "Primero se baña. Después se viste." predicates in series, a paragraph per daily activity, colleagues introduced but never speaking, and a wish to travel dropped in the last paragraph as an afterthought. There is no obstacle, no exchange, no consequence — the terminally flat "El próximo año, quizás." is not an ending, it's a shrug. A is childish but at least has a complete arc; D has no arc to be childish about.
+
+**4. Would an adult pay money for this and finish it?**
+Yes — for B specifically, and by extension the narrative it belongs to. B delivers a genuine dramatic scene with real adult stakes (a name everyone is avoiding, a town that answers dangerous questions with bread), a character whose reticence is meaning rather than vocabulary paddling, and an ending that lands emotionally while inviting another chapter. An adult reading B at night would buy the book and keep reading for the resolution of Tomás Ferrer. E and C are competent chapters of that same book. D and A would not be bought by this reader — D because it is work, A because it would embarrass them on the train.
+
+---
+
+**VERDICT**
+  for_point id="1": stand
+  for_point id="2": stand
+  for_point id="3": stand
+
+A note on point 3, since the contract forbids prose inside the block: my "stand" rests on B, which is a genuinely complete, self-contained story with a landing beat (local_closure 9). E is closer to a chapter-opener that closes its own single scene (local_closure 8) — it works alone but leans forward into the next installation. So the universal "each top-ranked sample stands fully alone" is stronger than the evidence for E, but it is not true that the top-rankers are mere fragments: the best sample's completeness is real and is precisely what the ranking rewards.
+--- end report ---
+
+result: /var/folders/lb/5vwhyfv96bnfblmssx3795pw0000gp/T/delegate-relay/panel2-2026-08-13T01-03-04-133Z/result.json
+relay created no worktree and made no commit. Review the diff and re-run the project gates in the current tree.

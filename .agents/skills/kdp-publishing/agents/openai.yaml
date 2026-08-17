@@ -1,0 +1,4 @@
+interface:
+  display_name: "KDP Publishing"
+  short_description: "Preflight and release-control Kindle and print books for KDP."
+  default_prompt: "Use $kdp-publishing to verify this book against current official Amazon KDP requirements, promote one canonical release package, and produce exact upload and proof instructions."

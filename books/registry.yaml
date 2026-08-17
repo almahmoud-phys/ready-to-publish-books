@@ -28,3 +28,12 @@ books:
     published: null
     book_score: null
     cost_usd: null
+  - slug: spanish-graded-reader-a2
+    title: "Spanish A1 Graded Reader — Volume 1"
+    track: generated    # matches research/charter.md authority_envelope; see manifest.yaml note
+    stage: 0
+    verdict: GO         # computed 2026-08-13. Stage 1 (outline) is now unblocked.
+    created: 2026-08-12
+    published: null
+    book_score: null
+    cost_usd: null

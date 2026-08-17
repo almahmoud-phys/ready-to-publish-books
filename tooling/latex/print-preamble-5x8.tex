@@ -1,0 +1,31 @@
+% Diagnostic/production print interior preamble (5x8 in, KDP paperback).
+% Use the resulting PDF page count—not a differently sized PDF—in the KDP cover calculator.
+\usepackage[paperwidth=5in,paperheight=8in,top=0.70in,bottom=0.70in,outer=0.625in,inner=0.75in]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella-regular.otf}[
+  BoldFont=texgyrepagella-bold.otf,
+  ItalicFont=texgyrepagella-italic.otf,
+  BoldItalicFont=texgyrepagella-bolditalic.otf
+]
+\setmonofont{DejaVuSansMono.ttf}[
+  BoldFont=DejaVuSansMono-Bold.ttf,
+  ItalicFont=DejaVuSansMono-Oblique.ttf,
+  BoldItalicFont=DejaVuSansMono-BoldOblique.ttf
+]
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\leftmark}
+\fancyhead[RO]{\small\rightmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\input{tooling/latex/story-heading-style.tex}
+\setcounter{secnumdepth}{-2}
+\setcounter{tocdepth}{1}
+\raggedbottom
+\emergencystretch=2em
+\usepackage{setspace}
+\setstretch{1.08}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,fontsize=\small}

@@ -4,10 +4,10 @@ description: "Stage 3 — attack the complete draft's structure BEFORE any scori
 model_tier: strong
 stage: 3
 context_budget:
-  always_read: [books/<slug>/manifest.yaml, books/<slug>/bible/, books/<slug>/outline/]
-  read: [books/<slug>/chapters/ (full draft — first full read in the pipeline), books/<slug>/summaries/continuity-report.md]
+  always_read: [books/<slug>/manifest.yaml, books/<slug>/constitution.md, books/<slug>/bible/, books/<slug>/outline/, .agents/rules/task-ledger.md]
+  read: [books/<slug>/tasks.md (Stage 3 and linked remediation tasks only), books/<slug>/chapters/ (full draft — first full read in the pipeline), books/<slug>/summaries/continuity-report.md]
   never_read: [books/<slug>/scores/, .agents/rules/scoring-contract.md]
-outputs: [books/<slug>/audits/structural.md]
+outputs: [books/<slug>/audits/structural.md, books/<slug>/tasks.md task evidence]
 ---
 
 # Adversarial Editor

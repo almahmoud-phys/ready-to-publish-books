@@ -1,0 +1,136 @@
+{
+  "slug": "spanish-graded-reader-a2",
+  "created": "2026-08-12T03:30:47Z",
+  "stages": {
+    "0_niche-research": {
+      "status": "done",
+      "verdict": "GO",
+      "verdict_note": "GO computed 2026-08-13 by niche_verdict.py. Demand: 2 comps <50k BSR (#10,839 / #21,564), Trends +50% / +86% over 5y. Competition: 431 results at the primary sub-niche query, LOW band; category rank-20 at #116,747 / #191,323. Differentiation: 3 promises cited to 4 dated Goodreads critical reviews. Trademark: no_conflict_found + owner sign-off (scope = descriptive term only; stage 6 must re-screen the real marks). Pipeline proven: A1 story passed at 0.979 coverage, 0 locale violations.",
+      "pivot_cycles": 0,
+      "seed_lineage": [
+        "spanish short stories for beginners"
+      ],
+      "collector_health": "CONFIRMED",
+      "collector_health_note": "2026-08-12: raw completion endpoint gave control=7 (DEGRADED); re-run through tooling/scripts/niche_mine.sh gave a full harvest. Degradation was the direct endpoint call, not Amazon blocking. Use the wrapper (ADR-009 P24).",
+      "charter_attested": true
+    },
+    "1_outline": {
+      "status": "done",
+      "gate_a": "self-checked pass; two external review rounds by codex; round-2 findings (letter causality, false turns in 03/06/07/09, cumulative grammar defect) all applied",
+      "hitl_gate_1": "cleared_by_delegation 2026-08-13 — owner cannot judge Spanish content; substituted by 2 codex review rounds with all findings applied",
+      "artifacts": [
+        "outline/outline.md",
+        "outline/chapter_01..10.md",
+        "bible/cast.md",
+        "bible/places.md",
+        "bible/vocabulary-ledger.md"
+      ],
+      "note": "Outline v1.2. Letter causality fixed via bible/letters-causal-ledger.md. All ten stories now pass a local-closure test. Grammar rule is the cumulative union 01-NN. Part I gate is a preregistered cross-family LLM panel, blinded, with a juvenile negative control. Gate 1 was cleared by delegated review on 2026-08-13; the former owner-approval halt wording was stale and reconciled on 2026-08-13.",
+      "track_locked": "generated"
+    },
+    "2_chapters": {
+      "status": "done",
+      "chapters_done": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10"
+      ],
+      "continuity_reports": 1,
+      "continuity_report": "summaries/continuity-report.md",
+      "note": "All ten stories drafted and machine-clean 2026-08-13. The missing rolling summaries and summary-only continuity review were recovered on 2026-08-13. The report found one annual-light chronology conflict, formally routed to Stage 3; no term, cast/locale, promise-chain, or grammar-sequencing drift was found. Part I (01-04) passed the blinded panel. 05-10 delegated to codex (luna 05/07/10, terra 06/08/09), drafted 07-10 in parallel, every draft reviewed by claude-opus-5 and bounced back for repair. Volume glossary 99 distinct words of a ~250 budget; zero locale violations; every story exits 0. NOT YET JUDGED: stories 05-10 have not faced the quality panel.",
+      "part1_panel": {
+        "verdict": "PASS",
+        "preregistered": "audits/part1-panel-preregistration.md",
+        "results": "audits/part1-panel-results.md",
+        "raw": "audits/panel-raw/ and audits/panel-raw/round2/",
+        "families": [
+          "openai/codex",
+          "qwen/qwenmax",
+          "deepseek"
+        ],
+        "families_attempted_and_failed": [
+          "kimi/kimicode - 403 quota exhausted, replaced by deepseek before any result was read"
+        ],
+        "open_finding": "qwen penalised the final line ADDED by the story-01 fix ('Y manana, a las cinco, Ana pregunta en la panaderia') as still forward-pointing. Deleting it and ending on 'Ahora la carta es de ella' is the obvious improvement. NOT applied: the version that passed the panel is the version on disk. Routed to stage 3."
+      },
+      "delegated_drafting": {
+        "05": "codex gpt-5.6-luna @xhigh — 6 defects, all repaired by the model itself",
+        "06": "codex gpt-5.6-terra @xhigh — 6 defects, 5 repaired by the model, 1 finished by claude-opus-5",
+        "rule": ".agents/rules/model-routing.md — measured 2026-08-13",
+        "unjudged": "stories 05 and 06 are contract-clean and machine-clean but have NOT faced the judge panel"
+      },
+      "open_contract_drift": [
+        "RESOLVED 2026-08-13 — lexical gate. Root cause was a real bug: graded_reader_check.py never consumed the cumulative vocabulary ledger, so a word taught in story 01 was charged again in 02-10. Fixed: --ledger/--story, both gates independently fatal, evidence printed. Thresholds RESTORED to the original 0.95/0.93 - none lowered. All ten stories now pass. Recorded in .agents/rules/quality-gates.md (Gate L) and pinned by tests/test_graded_reader_gate.py (22 passing).",
+        "RESOLVED 2026-08-13 — word budgets. Story 01 -> 550 (now 577), story 02 -> 650 (now 653). Both frontmatter and the acceptance-criterion lines were synced; the criterion lines had been missed on the first pass and were caught by codex gpt-5.6-sol.",
+        "RESOLVED 2026-08-13 — story 01 was rewritten as the sample/hook: coverage 0.928 -> 0.956, new types 24 -> 16. Cut the travelogue location list and the boat-lights paragraph; reintroduced bodega/botes character-anchored via Beto so story 04 keeps its pre-taught vocabulary; replaced the present-for-past 'la persona de antes'; cut the forward-pointing final line on two independent judges' evidence (qwen, then codex). Ending now closes on 'Ahora es de ella.'",
+        "RESOLVED 2026-08-13 — story 01's contract required it to establish that Ana took Tomas Ferrer's job, but story 03 treats that as Ana's discovery. Contract amended: story 01 establishes only an UNNAMED predecessor.",
+        "RESOLVED 2026-08-13 - grammar conformance is now machine-checked. History: the per-story ladder was authored by the agent, never compared against any external source, and was wrong in BOTH directions - it banned A1 material (basic reflexives, basic interrogatives) and taught A2 material as if it were A1. Nothing ever checked it. Settled against the Instituto Cervantes PCIC A1-A2 inventory by codex gpt-5.6-sol (_planning/pcic-ladder-table.md, _planning/pcic-ruling.md). Owner retitled the volume A2 rather than rewrite it (constitution amendment log). BUILT: tooling/scripts/spanish_grammar_check.py - stdlib only, forms generated from a declared lemma set rather than ending heuristics (483 of 558 manuscript tokens end in something verb-shaped, so endings are useless as a verb detector). Pinned by tests/test_spanish_grammar_gate.py (17 tests). ALL TEN CONTRACTS rebuilt from PCIC with per-construct levels; interrogatives moved to story 01 where PCIC puts them and the prose uses them; story 09 now licenses irregular preterite BY LEMMA in 1sg/3sg, matching its own prose (dije/pude). PROSE DEFECTS FOUND AND FIXED by the new checker or by the PCIC audit: 'Le gusta' x2 in story 01 and 'no le gusta' in story 02 (gustar belongs to story 06); 'no va a contestar' in story 02 (ir a + inf belongs to story 05); 'Mientras' in story 03 (simultaneity belongs to story 07); 'Escriba' x2 in stories 03/04 (imperative, absent from the book); 'Antes es de el' in story 03 (present doing a past tense's job - a correctness bug). TWO FALSE POSITIVES in the checker's first run were themselves bugs, both fixed and pinned: 'desaparecer' filed as -ar so 'desaparece' read as an imperative, and interrogatives detected by 'does this file contain a question mark' instead of by the accent, so the subordinator in 'cuando Ana vuelve' was flagged. STATUS: vocabulary gate 10/10, grammar gate 10/10, 39 tests green. CEILING, stated rather than implied: the checker is LINT, not certification. It reads forms and patterns and CANNOT see temporal misuse ('Antes es de el') or future-value present ('manana viene'); habitual present is likewise undetectable from morphology. Two constructs - interrogative 'cuando' and 'mientras' - cannot be levelled from the PCIC page at all and carry recorded house decisions, never PCIC-backed claims. Do not describe the ladder as CEFR-certified anywhere reader-facing.",
+        "RESOLVED 2026-08-14 — Preguntas placement, decided at stage 6 as scheduled. Exercises are preserved verbatim but collected into a back-of-book 'Ejercicios' section by compile_book.py (split at the first **Preguntas** block, each set relabelled with its story heading). The Look Inside sample now opens on story text only. books/spanish-graded-reader-a2/exercises.md tells the reader why the drills moved and how to use them. Codex's requirement met without cutting a single exercise.",
+        "RESOLVED 2026-08-13 - CEFR label. Volume retitled A1 -> A2 across manifest.yaml, charter.md useful_outcome, outline/outline.md, tasks.md, research/niche.md and research/trademark.md. Prose unchanged: the label moved to match the measurement, the manuscript was not cut to fit the label. The SLUG stays spanish-graded-reader-a2 (internal directory ID, 16+ path references, never reader-facing) - do not read it as a level claim. Historical records were deliberately NOT rewritten: compliance_log.yaml, audits/ panel records and the dated trademark screening still say A1 because that is what was true when they were written."
+      ]
+    },
+    "3_adversarial-editor": {
+      "status": "done",
+      "gate_b": "PASS",
+      "note": "Independent final Claude/Anthropic re-audit completed 2026-08-14 via Jcode after all critical remediation. Zero critical structural findings remain. Two major quality directives (late-story `mirar` density and Beto bible/register mismatch) and one minor causal cue for Rosa are carried into Stage 4 assessment; they do not block Gate B under the fixed rule.",
+      "audit": "audits/structural.md",
+      "independent_auditor": "Claude / Anthropic via Jcode, claude-opus-4-6, session_chick_1786674816656_aeb24a226b6d11e9",
+      "next_action": "Run the Stage-4 scorer protocol with its preregistered independent pass requirements; route any below-floor dimension to the exact cited stage."
+    },
+    "4_scorer": {
+      "status": "done",
+      "gate_c": "PASS",
+      "book_score": 8,
+      "loopbacks_used": {},
+      "note": "Gate C passed 2026-08-14. Qwen 3.8 Max Pass 1 and independent Claude/Anthropic Pass 2 both scored 8/7/8/8/8/8, so no tiebreak was required. Claude's cited full-manuscript final pass adjusted Prose to 8 and Coherence to 9; reconciled floor score is 8. English parallel text and Stage-6 frontmatter were correctly excluded because PIPE-001 remains unowned.",
+      "scorecard": "scores/scorecard.json",
+      "scoring_notes": "scores/scoring-notes.md"
+    },
+    "5_proof-fact": {
+      "status": "done",
+      "gate_d": "PASS",
+      "note": "Gate D passed 2026-08-14. Supported mechanical edits are fully logged in edits/edit-log.md; all identified factual/process claims are resolved in edits/fact-report.md. Grammar and cumulative lexical/locale gates pass for all ten chapters; 30 targeted regression tests pass. PIPE-001 remains an explicit Stage-6 bilingual-production boundary, not a Gate-D failure."
+    },
+    "6_exports": {
+      "status": "in_progress",
+      "gate_e": "FAIL",
+      "blockers": [
+        "ORIGINALITY-CHECK-UNRUN",
+        "COVER-PROVENANCE-INCOMPLETE",
+        "COVER-NATIVE-RESOLUTION-BELOW-300DPI",
+        "RELEASE-MANIFEST-MISSING",
+        "EXACT-UPLOAD-HASHES-UNRECORDED",
+        "PHYSICAL-PROOF-NOT-INSPECTED"
+      ],
+      "note": "Stage 6 review build reconciled through the first KDP proof request on 2026-08-17. PIPE-001 remains resolved: ten English narrative translations align block-for-block with the ten Spanish stories and pass the sha256 source-freshness gate. KDP Previewer displayed the complete 81-page 5x8 interior and continuous wrap, after which the owner requested a proof copy. The contents page, two-level Historia N / Story N openings, fresh story pages, and title spacing are present in the Previewer evidence. The exact pen name Nina Marlo is owner-approved. A proof request is not a physical-proof pass, and the exact uploaded file hashes were not recorded. The local Canva PDF named cover-Mouhamad-Canva.pdf contains three pages and fails the new release preflight; the one-page print-wrap.pdf passes page-count and geometry checks, but equivalence to the uploaded/approved cover and its provenance remain unresolved. Gate E therefore remains FAIL for originality, cover provenance/resolution, missing release manifest/upload hashes, and uninspected proof. Translation semantics are not claimed as machine-verified.",
+      "identity_metadata": "reconciliation_required",
+      "golden_sample": "human-reviewed in KDP Previewer; repository evidence incomplete",
+      "release_manifest": null,
+      "kdp_previewer": "reviewed and accepted for proof request; exact uploaded hashes unrecorded",
+      "physical_proof": "requested; not yet received or inspected"
+    },
+    "7_publish-checklist": {
+      "status": "pending",
+      "go_no_go": null,
+      "hitl_gate_2": null,
+      "upload_record": null,
+      "storefront_reconciliation": null
+    }
+  },
+  "cost_usd": {
+    "by_stage": {},
+    "total": 0.0,
+    "ceiling": 50.0
+  },
+  "published": {
+    "kdp": null,
+    "direct": null
+  }
+}

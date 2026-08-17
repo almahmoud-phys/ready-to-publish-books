@@ -18,11 +18,33 @@ SCOUT="$SCOUT_DIR/.venv/bin/kdp-scout"
 DB="$SCOUT_DIR/data/kdp_scout.db"
 LEDGER="$RESEARCH_DIR/ledger/niche-ledger.csv"
 TODAY="$(date +%F)"
+TMP_OUTPUT="$(mktemp)"
+
+cleanup() {
+  rm -f "$TMP_OUTPUT"
+}
+trap cleanup EXIT
 
 [[ -x "$SCOUT" ]] || { echo "ERROR: KDP Scout not found — run ./tooling/scripts/research-init.sh first."; exit 1; }
 
 echo "Mining '$SEED' (-m $MARKET) — ~40s at the default 1.5s autocomplete rate limit."
-(cd "$SCOUT_DIR" && "$SCOUT" mine "$SEED" -m "$MARKET" --department books)
+set +e
+(cd "$SCOUT_DIR" && "$SCOUT" mine "$SEED" -m "$MARKET" --department books) 2>&1 | tee "$TMP_OUTPUT"
+SCOUT_RC=${PIPESTATUS[0]}
+set -e
+
+# KDP Scout logs network/CAPTCHA failures but may still exit 0 and leave cached rows in its
+# SQLite database. Never let those stale rows masquerade as a successful current harvest.
+if grep -Eqi \
+  'CAPTCHA detected|search failed or CAPTCHA|No niches could be analyzed|Network error querying|NameResolutionError|Failed to resolve|Max retries exceeded|HTTP[^[:alnum:]]*(403|429)' \
+  "$TMP_OUTPUT"; then
+  echo "Refusal or collector failure detected — circuit-breaker triggered (exit 3)."
+  echo "No cached database rows were appended. All Amazon activity must stop for this session."
+  echo "If KDP Scout suggests configuring a proxy, ignore it: ADR-008 bans proxies permanently."
+  exit 3
+fi
+
+[[ $SCOUT_RC -eq 0 ]] || exit "$SCOUT_RC"
 
 python3 - "$DB" "$SEED" "$MARKET" "$TODAY" "$LEDGER" <<'PY'
 import csv, sqlite3, sys

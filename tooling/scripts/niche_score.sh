@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # tooling/scripts/niche_score.sh — competition scoring for candidate keywords (ADR-009/010).
 # Usage: ./tooling/scripts/niche_score.sh "<keyword>" ["<keyword>" ...]
-# Stage-0 Step 2: searches Amazon per keyword and scores the top results' BSR/reviews/revenue
-# into a 0–100 opportunity score. MEDIUM-RISK TIER — search probes are rate-limited to 2.0s
+# Stage-0 Step 2: searches Amazon per keyword and scores the top results' reviews plus a
+# position/review-based BSR heuristic into a 0–100 opportunity score. The displayed BSR is
+# NOT a live product-page BSR and cannot satisfy the Stage-0 comp-table gate. MEDIUM-RISK
+# TIER — search probes are rate-limited to 2.0s
 # by KDP Scout config; keep the keyword list short and never loop this in a script.
 #
 # niche-score takes NO -m flag: marketplace comes from the MARKETPLACE env var (default us).
@@ -25,9 +27,9 @@ MARKETPLACE="${MARKETPLACE:-us}" "$SCOUT" niche-score "$@" --department books 2>
 SCOUT_RC=${PIPESTATUS[0]}
 set -e
 
-if grep -Fq "CAPTCHA detected" "$TMP_OUTPUT" || \
-   grep -Fq "search failed or CAPTCHA" "$TMP_OUTPUT" || \
-   grep -Fq "No niches could be analyzed" "$TMP_OUTPUT"; then
+if grep -Eqi \
+   'CAPTCHA detected|search failed or CAPTCHA|No niches could be analyzed|Network error querying|NameResolutionError|Failed to resolve|Max retries exceeded|HTTP[^[:alnum:]]*(403|429)' \
+   "$TMP_OUTPUT"; then
   echo "Refusal detected in niche-score output — circuit-breaker triggered (exit 3)."
   echo "If KDP Scout suggests configuring a proxy, ignore it: ADR-008 bans proxies permanently."
   rm -f "$TMP_OUTPUT"
@@ -36,4 +38,5 @@ fi
 
 rm -f "$TMP_OUTPUT"
 [[ $SCOUT_RC -eq 0 ]] || exit "$SCOUT_RC"
-echo "NOTE: a score is a prior, not a verdict — the top-10 comps still get human-verified (ADR-009)."
+echo "WARNING: KDP Scout's displayed BSR is a search-position/review heuristic, not a live BSR."
+echo "NOTE: use this only for shelf discovery; top-10 live comps still require human verification (ADR-009)."

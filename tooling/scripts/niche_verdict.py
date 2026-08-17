@@ -102,13 +102,15 @@ def _parse_charter(path: Path) -> Tuple[Dict[str, str], List[str]]:
 
 
 def _ledger_path(book_dir: Path) -> Tuple[Path | None, str | None]:
-    global_ledger = REPO / ".kdp-research" / "ledger" / "niche-ledger.csv"
-    if global_ledger.exists():
-        return global_ledger, "global"
-
+    # This committed artifact must outrank the ignored workstation cache. Otherwise the same
+    # evidence can produce a different verdict in a clean clone.
     book_ledger = book_dir / "research" / "niche-ledger.csv"
     if book_ledger.exists():
         return book_ledger, "book-local"
+
+    global_ledger = REPO / ".kdp-research" / "ledger" / "niche-ledger.csv"
+    if global_ledger.exists():
+        return global_ledger, "global-fallback"
 
     return None, None
 
@@ -344,9 +346,14 @@ def main() -> None:
     trademark_signoff = False
     _tm = book_dir / "research" / "trademark.md"
     if _tm.exists():
-        trademark_signoff = bool(
-            re.search(r"(?im)^\s*human_signoff\s*[:=]\s*\S+", _tm.read_text(encoding="utf-8"))
-        )
+        # `\S+` alone was not enough: the template ships `human_signoff: <who> <YYYY-MM-DD>`,
+        # and `<who>` is \S+, so an UNFILLED PLACEHOLDER satisfied the legal gate — the exact
+        # silent pass this check exists to prevent. Any value still in <angle brackets> is
+        # treated as absent, matching how charter placeholders are handled elsewhere here.
+        _m = re.search(r"(?im)^[ \t]*human_signoff[ \t]*[:=][ \t]*(.+?)[ \t]*$",
+                       _tm.read_text(encoding="utf-8"))
+        _sig = _m.group(1).strip() if _m else ""
+        trademark_signoff = bool(_sig) and not _sig.startswith("<")
     trademark_clear = evidence.get("trademark_status") == "no_conflict_found" and trademark_signoff
 
     go_conditions = (

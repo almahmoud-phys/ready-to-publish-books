@@ -1,0 +1,59 @@
+{
+  "book": "spanish-graded-reader-a2",
+  "timestamp": "2026-08-14T03:10:00Z",
+  "model": "reconciled independent panel: Qwen 3.8 Max Pass 1 + Claude/Anthropic claude-opus-4-6 Pass 2 and full-manuscript final pass",
+  "dimensions": {
+    "Originality": {
+      "score": 8,
+      "citations": [
+        "outline/outline.md:L68-L83 — linked letter engine replaces disconnected-vignette structure.",
+        "chapters/09-nadie-dijo-nada.md:L93-L94 — grief expressed through the sea-versus-road distinction."
+      ],
+      "weakest_passage": null
+    },
+    "Prose": {
+      "score": 8,
+      "citations": [
+        "chapters/01-la-carta-sin-dueno.md:L7-L9 — spare adult exposition establishes mystery within the vocabulary constraint.",
+        "chapters/08-lo-que-paso-en-1998.md:L33-L43 — repeated mirar forms are the sentence-level quality ceiling."
+      ],
+      "weakest_passage": "chapters/08-lo-que-paso-en-1998.md:L33-L43 — action annotation and repeated mirar forms flatten Rosa's reaction passage."
+    },
+    "Coherence": {
+      "score": 9,
+      "citations": [
+        "bible/letters-causal-ledger.md — monthly hand placement and annual sea-letter mechanism are delivered across Stories 01, 06, 07, and 10.",
+        "chapters/08-lo-que-paso-en-1998.md:L54-L66 and chapters/09-nadie-dijo-nada.md:L44-L73 — Rosa's list account and Lucía's non-boarding account are compatible."
+      ],
+      "weakest_passage": null
+    },
+    "Market": {
+      "score": 8,
+      "citations": [
+        "research/niche.md:L101-L126 — documented competitor complaints and differentiation contract.",
+        "chapters/01-la-carta-sin-dueno.md:L1-L20 — adult setting and immediate mystery in the buyer sample."
+      ],
+      "weakest_passage": null
+    },
+    "Voice": {
+      "score": 8,
+      "citations": [
+        "chapters/02-el-pan-de-las-cinco.md:L31-L45 — Rosa's indirect question-driven dialogue.",
+        "chapters/07-esta-pasando-algo.md:L43-L52 — wordless Lucía encounter sustains the restrained narrative voice."
+      ],
+      "weakest_passage": null
+    },
+    "Opening": {
+      "score": 8,
+      "citations": [
+        "chapters/01-la-carta-sin-dueno.md:L3-L13 — adult job, setting, town silence, and readable entry.",
+        "chapters/01-la-carta-sin-dueno.md:L14-L22 — letter hook and Beto's refusal arrive in the opening pages."
+      ],
+      "weakest_passage": null
+    }
+  },
+  "book_score": 8,
+  "floor_dimension": "Originality, Prose, Market, Voice, Opening (tied at 8)",
+  "loopbacks_used": {},
+  "verdict": "PASS"
+}

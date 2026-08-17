@@ -1,0 +1,153 @@
+{
+  "artifact": "Stage-6 metadata candidates — title/subtitle selected, not final marketplace metadata",
+  "status": "T1_title_subtitle_description_and_pen_name_locked",
+  "evidence_files": {
+    "market_and_persona": "research/niche.md",
+    "keyword_and_category_analysis": "research/keywords.md",
+    "claim_boundaries": "edits/fact-report.md",
+    "final_mark_status": "research/trademark.md",
+    "blurbs": "exports/blurbs.md",
+    "gtm_series_decision": "research/gtm-series-decision.md"
+  },
+  "claim_boundary": {
+    "allowed": [
+      "A2 graded reader (internal evidence-backed classification, not CEFR certification)",
+      "ten linked stories for adult English-speaking Spanish learners",
+      "declared Latin-American Spanish convention",
+      "measured cumulative lexical coverage, new-type load, selected locale-marker consistency, and grammar-ladder lint",
+      "English parallel text for all ten stories, machine-checked for block-by-block alignment and source freshness; exercises stay untranslated"
+    ],
+    "prohibited": [
+      "CEFR-certified or certification claim",
+      "native, authenticated, or region-wide Latin-American authority claim",
+      "human-translated, professionally translated, or certified-translation claim",
+      "audio",
+      "fluency, outcome, or timeframe guarantee",
+      "unimplemented morphology, agreement, alignment, entailment, or back-translation checks"
+    ],
+    "source": "edits/fact-report.md, especially F-001 through F-009"
+  },
+  "title_candidates": [
+    {
+      "id": "T1",
+      "title": "The Letter at Puerto Lento",
+      "subtitle": "10 Linked Spanish Stories for Adult Learners (A2 Graded Reader)",
+      "positioning": "Narrative-first title with explicit category and adult-reader clarity in the subtitle.",
+      "evidence": [
+        "The letter is the volume's central narrative engine (outline/outline.md:68-79).",
+        "The validated persona is an adult English speaker who wants to feel like a reader rather than a pupil (research/niche.md:24-33).",
+        "The book contains ten linked stories and is evidence-backed as A2, without CEFR certification (outline/outline.md:21-31; edits/fact-report.md:F-001)."
+      ],
+      "trademark_status": "unreviewed final mark; requires Stage-6 re-screen before selection"
+    },
+    {
+      "id": "T2",
+      "title": "Letters from Puerto Lento",
+      "subtitle": "An Adult Spanish A2 Graded Reader of 10 Linked Stories",
+      "positioning": "Series-ready, atmospheric alternative that keeps the level and format unmistakable.",
+      "evidence": [
+        "Letters recur as the causal spine of the book (outline/outline.md:68-79).",
+        "Adult positioning and level-tagged entry are supported by the validated niche (research/niche.md:24-33, 58-73)."
+      ],
+      "trademark_status": "unreviewed final mark; requires Stage-6 re-screen before selection"
+    },
+    {
+      "id": "T3",
+      "title": "Puerto Lento After Dark",
+      "subtitle": "10 Connected Spanish Stories for Adults at A2 Level",
+      "positioning": "Atmospheric alternative for post-beginner adults; avoids implying suitability for absolute beginners, whom the validated persona excludes.",
+      "evidence": [
+        "Ana's night work and the harbor-light mystery support the after-dark framing (outline/outline.md:60-79).",
+        "The validated starting state is an adult who already knows some Spanish, not an absolute beginner (research/niche.md:24-33)."
+      ],
+      "trademark_status": "unreviewed final mark; requires Stage-6 re-screen before selection"
+    }
+  ],
+  "recommended_candidate": {
+    "id": "T1",
+    "reason": "It leads with the actual narrative hook, avoids competing-book phrasing in the title, and retains category clarity and adult positioning in the subtitle."
+  },
+  "human_selection": {
+    "date": "2026-08-14",
+    "candidate_id": "T1",
+    "title": "The Letter at Puerto Lento",
+    "subtitle": "10 Linked Spanish Stories for Adult Learners (A2 Graded Reader)",
+    "scope": "Title, subtitle, KDP description, and exact pen name Nina Marlo selected by the human owner. Initial KDP series and bespoke imprint are none. Avery Calder was rejected after both final reviewers found an active-author collision. A comparative practical screen on 2026-08-15 unanimously retained Nina Marlo over Nina Marlow because the latter has materially greater real-person and educational-brand crowding; this is not legal clearance."
+  },
+  "kdp_description": {
+    "status": "locked_by_human_owner_2026-08-14",
+    "artifact": "exports/blurbs.md",
+    "reopen_condition": "concrete factual, compliance, or KDP-policy defect only"
+  },
+  "pen_name": {
+    "rejected": {
+      "name": "Avery Calder",
+      "reason": "Active author identity collision independently found by Luna and Terra; do not use."
+    },
+    "selected": "Nina Marlo",
+    "status": "FINAL_LOCKED_BY_OWNER_2026-08-15; unanimously retained by independent Terra, Luna, and primary comparative screen against Nina Marlow; reopen only on a concrete legal, marketplace, or identity-conflict defect; practical screening only, not legal clearance"
+  },
+  "launch_series_architecture": {
+    "decision_date": "2026-08-14",
+    "status": "human_adopted",
+    "reader_facing_number": "none",
+    "kdp_series_at_initial_launch": "none",
+    "positioning": "Standalone A2 entry point for adults who completed a beginner app or course; no prior Puerto Lento book is required.",
+    "prospective_umbrella": "Puerto Lento Spanish Readers",
+    "prospective_umbrella_status": "strategy candidate only; not approved metadata; requires final-mark screening before use",
+    "source": "research/gtm-series-decision.md"
+  },
+  "kdp_keywords_for_recommended_T1": [
+    {
+      "phrase": "quiet suspense",
+      "evidence": "Accurate story tone: the linked mystery is restrained rather than action-driven (outline/outline.md:35-40,60-79)."
+    },
+    {
+      "phrase": "female protagonist",
+      "evidence": "Ana is the viewpoint and decision-making lead throughout the ten-story spine (bible/cast.md; outline/outline.md:60-79)."
+    },
+    {
+      "phrase": "reluctant witnesses",
+      "evidence": "Town residents evade Ana's questions while revealing pieces of the past (outline/outline.md:68-79)."
+    },
+    {
+      "phrase": "community secrets",
+      "evidence": "The central plot concerns what Puerto Lento will and will not say about Tomás and the letters (outline/outline.md:68-79)."
+    },
+    {
+      "phrase": "harbor night setting",
+      "evidence": "Ana works nights in a coastal harbor town and the recurring light is a central visual motif (outline/outline.md:60-79)."
+    },
+    {
+      "phrase": "family separation",
+      "evidence": "Tomás's long absence and its effects on Lucía, Rosa, and the town drive the volume's emotional history (outline/outline.md:68-79)."
+    },
+    {
+      "phrase": "post beginner fiction",
+      "evidence": "The evidence-backed A2 starting state assumes prior beginner study and excludes absolute beginners (research/niche.md:24-33; edits/fact-report.md:F-001)."
+    }
+  ],
+  "keyword_submission_note": "These seven slots supplement recommended candidate T1 with KDP-permitted tone, character, plot, setting, and audience descriptors that are not stated in the candidate title/subtitle and are not used as feature bullets in the KDP description. They are accurate but untested for discoverability: no search-volume claim is made, and only the Stage-0 autocomplete phrases are observed buyer language. If another title or description is selected, recalculate all seven slots against the complete marketplace metadata. Never add competitor/author names, brands, promotions, Amazon program names, translation, audio, certification, or unsupported outcome terms.",
+  "category_targets": [
+    {
+      "target": "Spanish Language Instruction",
+      "evidence": "Research measured the rank-20 overall BSR in this category at #116,747 (research/niche.md:75-78).",
+      "submission_note": "Request the current KDP browse path corresponding to this target; KDP paths may change."
+    },
+    {
+      "target": "Fiction > Short Stories > Single Author (or closest current equivalent)",
+      "evidence": "Content-accurate for ten linked fictional stories. Competitive difficulty was not measured for this shelf; relevance takes priority over the easier but mismatched phrasebook rank (research/keywords.md).",
+      "submission_note": "Conditional path only. Confirm the exact current KDP ebook and print browse paths during account-specific title setup; category availability changes by marketplace and format."
+    }
+  ],
+  "platform_constraints": {
+    "kdp_select_or_ku": "Do not enroll in KDP Select/KU; the product also targets direct sales (kdp-compliance.md:27-35).",
+    "private_kdp_submission": "Produce accurate KDP upload-form answers at Stage 7 from compliance_log.yaml. Do not add production disclosures to reader-facing metadata or book files.",
+    "parallel_text": "PIPE-001 is resolved. The interior contains English parallel text for all ten stories; describe only the alignment and source-freshness checks actually performed."
+  },
+  "approval_requirements": [
+    "Human approval is recorded for the title, subtitle, KDP description, and exact pen name Nina Marlo.",
+    "The final title, subtitle, and pen name have dated practical collision screens. Re-screen any future series or imprint before use.",
+    "KDP-category eligibility confirmation at upload, because the research recorded category targets rather than an immutable KDP taxonomy."
+  ]
+}

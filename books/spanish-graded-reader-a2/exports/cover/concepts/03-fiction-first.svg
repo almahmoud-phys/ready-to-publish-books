@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560" role="img" aria-labelledby="title desc">
+  <title id="title">Fiction-first coastal mystery cover concept</title>
+  <desc id="desc">A dark coastal night scene with a kiosk counter, an envelope, one amber harbor light, the candidate title, and a prominent A2 Spanish graded reader band.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#071827"/><stop offset="1" stop-color="#214A5B"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#163B4E"/><stop offset="1" stop-color="#071827"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1480" fill="url(#sky)"/>
+  <rect y="1480" width="1600" height="1080" fill="url(#water)"/>
+  <circle cx="1270" cy="1050" r="38" fill="#F5B44B"/>
+  <path d="M1245 1110 L1295 1110 L1380 2050 L1160 2050 Z" fill="#F5B44B" opacity="0.16"/>
+  <path d="M0 1460 C310 1400 500 1495 770 1450 C1040 1408 1300 1490 1600 1435 L1600 1520 L0 1520 Z" fill="#0A2735"/>
+  <rect x="0" y="1760" width="1600" height="800" fill="#14222A"/>
+  <rect x="145" y="1850" width="840" height="450" rx="16" fill="#DCC9A6" stroke="#071827" stroke-width="18" transform="rotate(-4 565 2075)"/>
+  <path d="M130 1815 L570 2090 L1015 1785" fill="none" stroke="#071827" stroke-width="18" transform="rotate(-4 565 2075)"/>
+  <rect x="0" y="0" width="1600" height="320" fill="#E9DFCD"/>
+  <text x="800" y="135" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="900" letter-spacing="7" fill="#0C2033">A2 SPANISH</text>
+  <text x="800" y="245" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800" letter-spacing="7" fill="#9A542E">GRADED READER</text>
+  <text x="90" y="590" font-family="Georgia, Times New Roman, serif" font-size="150" font-weight="700" fill="#F4EBDD">THE LETTER AT</text>
+  <text x="90" y="770" font-family="Georgia, Times New Roman, serif" font-size="150" font-weight="700" fill="#F4B44B">PUERTO LENTO</text>
+  <text x="90" y="900" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="2" fill="#B7D0D0">10 LINKED SPANISH STORIES FOR ADULT LEARNERS</text>
+  <text x="90" y="970" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="2" fill="#B7D0D0">(A2 GRADED READER)</text>
+  <text x="90" y="2390" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="3" fill="#F4B44B">LATIN-AMERICAN SPANISH CONVENTION</text>
+  <text x="90" y="2480" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="5" fill="#82989C">STAGE-6 CANDIDATE · NOT FINAL ART</text>
+</svg>
